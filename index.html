@@ -3,1039 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="XeVUGWBRjZH5mjTWQJiAL7mJFJ27vopU9fFpLLbrD8k" />
-
-<!-- SEO BÁSICO -->
-<title>Danni Apuesta! | Tracker de Apuestas Deportivas Gratis</title>
-<meta name="description" content="Lleva el control de tus apuestas deportivas gratis. Registra partidos, calcula tu Win Rate, ROI y bankroll. Incluye reto escalera y análisis por sistema. La mejor app para apostadores de fútbol.">
-<meta name="keywords" content="tracker apuestas deportivas, control de apuestas, registro apuestas fútbol, seguimiento apuestas, win rate apuestas, ROI apuestas deportivas, reto escalera apuestas, gestión bankroll fútbol, app apuestas gratis">
-<meta name="author" content="Danni Apuesta">
+<meta name="google-site-verification" content="XeVUGWBRjZH5mjTWQJiAL7mJFJ27vopU9fFpLLbrD8k">
+<title>Blog de Apuestas Deportivas | Guías, Estrategias y Consejos | Danni Apuesta</title>
+<meta name="description" content="Aprende a controlar tus apuestas deportivas, mejorar tu Win Rate y gestionar tu bankroll. Guías gratuitas para apostadores de fútbol en español.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://danniapuesta.com">
-
-<!-- OPEN GRAPH (para redes sociales) -->
-<meta property="og:title" content="Danni Apuesta! | Tracker de Apuestas Deportivas Gratis">
-<meta property="og:description" content="Registra y controla tus apuestas deportivas. Calcula tu Win Rate, ROI y bankroll automáticamente. Gratis y sin descargas.">
-<meta property="og:url" content="https://danniapuesta.com">
+<link rel="canonical" href="https://danniapuesta.com/blog">
+<meta property="og:title" content="Blog de Apuestas Deportivas | Danni Apuesta">
+<meta property="og:description" content="Guías y estrategias para apostadores de fútbol. Control de apuestas, Win Rate, ROI, reto escalera y más.">
+<meta property="og:url" content="https://danniapuesta.com/blog">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="es_CL">
-
-<!-- TWITTER CARD -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Danni Apuesta! | Tracker de Apuestas Deportivas">
-<meta name="twitter:description" content="La mejor app gratuita para registrar y controlar tus apuestas de fútbol. Win Rate, ROI, reto escalera y más.">
-
-<!-- DATOS ESTRUCTURADOS para Google -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Danni Apuesta!",
-  "url": "https://danniapuesta.com",
-  "description": "Tracker gratuito de apuestas deportivas. Registra tus apuestas de fútbol, calcula Win Rate, ROI y gestiona tu bankroll.",
-  "applicationCategory": "SportsApplication",
-  "operatingSystem": "Web",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "CLP"
-  },
-  "inLanguage": "es",
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Apostadores deportivos"
-  }
-}
-</script>
-
-<title>Danni Apuesta!</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6874737308281072" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--verde:#00e676;--rojo:#ff1744;--amarillo:#ffd600;--bg:#080c10;--bg2:#0d1219;--bg3:#131a24;--card:#161f2e;--border:#1e2d42;--text:#e8f0fe;--muted:#4a6080;--accent:#00b4d8;}
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;}
-/* LOGIN */
-#login-screen{position:fixed;inset:0;background:var(--bg);z-index:9000;display:flex;align-items:center;justify-content:center;}
-#login-screen::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(0,180,216,0.15),transparent 60%);pointer-events:none;}
-.lbox{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:2.5rem;width:90%;max-width:420px;position:relative;z-index:1;}
-.llogo{text-align:center;margin-bottom:2rem;}
-.llogo h1{font-family:'Bebas Neue';font-size:2.8rem;letter-spacing:3px;color:var(--accent);text-shadow:0 0 30px rgba(0,180,216,0.5);}
-.llogo p{font-size:0.75rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:4px;}
-.ltabs{display:flex;background:var(--bg2);border-radius:10px;padding:4px;margin-bottom:1.5rem;}
-.ltab{flex:1;padding:8px;text-align:center;border-radius:8px;border:none;cursor:pointer;font-family:'DM Sans';font-size:0.85rem;font-weight:600;color:var(--muted);background:transparent;transition:all .2s;}
-.ltab.active{background:var(--accent);color:#000;}
-.lform{display:flex;flex-direction:column;gap:12px;}
-.lform input{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:12px 16px;border-radius:10px;font-family:'DM Sans';font-size:.95rem;outline:none;transition:border-color .2s;}
-.lform input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,180,216,.1);}
-.lbtn{background:var(--accent);color:#000;border:none;padding:13px;border-radius:10px;font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:2px;cursor:pointer;transition:all .2s;margin-top:4px;}
-.lbtn:hover{background:#00d4ff;transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,180,216,.4);}
-.lerr{color:var(--rojo);font-size:.82rem;text-align:center;min-height:18px;}
-.lfooter{text-align:center;margin-top:1rem;font-size:.75rem;color:var(--muted);}
-/* ANIM OVERLAY */
-#anim-overlay{position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;}
-#anim-overlay.show{display:flex;}
-.anim-bg{position:absolute;inset:0;}
-.anim-ct{position:relative;z-index:2;text-align:center;pointer-events:none;}
-.conf{position:absolute;border-radius:2px;}
-.rain{position:absolute;width:3px;border-radius:2px;}
-@keyframes confFall{0%{transform:translateY(-50px) rotate(0);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
-@keyframes rainFall{0%{transform:translateY(-30px);opacity:1}100%{transform:translateY(110vh);opacity:.3}}
-@keyframes ballKick{0%{transform:translate(-300px,150px) scale(.3) rotate(0);opacity:0}50%{opacity:1}100%{transform:translate(0,0) scale(1) rotate(1080deg)}}
-@keyframes popIn{0%{transform:scale(0) rotate(-10deg);opacity:0}60%{transform:scale(1.3)}100%{transform:scale(1);opacity:1}}
-@keyframes bounceIn{0%{transform:scale(0);opacity:0}60%{transform:scale(1.2)}100%{transform:scale(1);opacity:1}}
-@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-15px)}40%{transform:translateX(15px)}60%{transform:translateX(-10px)}80%{transform:translateX(10px)}}
-@keyframes glowP{0%,100%{text-shadow:0 0 20px currentColor}50%{text-shadow:0 0 80px currentColor,0 0 120px currentColor}}
-/* HEADER */
-header{background:linear-gradient(135deg,#0a1628,#0d1f3c);border-bottom:1px solid var(--border);padding:0 2rem;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.logo{display:flex;align-items:center;gap:12px;}
-.logo-icon{width:36px;height:36px;background:var(--accent);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;}
-.logo-text{font-family:'Bebas Neue';font-size:1.6rem;letter-spacing:2px;color:var(--accent);}
-.logo-sub{font-size:.7rem;color:var(--muted);letter-spacing:3px;text-transform:uppercase;}
-.ubadge{display:flex;align-items:center;gap:10px;}
-.uname{font-size:.85rem;color:var(--accent);font-weight:600;}
-.btnout{padding:6px 14px;border-radius:8px;border:1px solid rgba(255,23,68,.3);background:rgba(255,23,68,.08);color:var(--rojo);font-size:.78rem;cursor:pointer;font-family:'DM Sans';transition:all .2s;}
-.btnout:hover{background:rgba(255,23,68,.2);}
-.ntabs{display:flex;gap:2px;background:var(--bg2);padding:6px;border-radius:12px;border:1px solid var(--border);}
-.ntab{padding:8px 13px;border-radius:8px;border:none;cursor:pointer;font-family:'DM Sans';font-size:.82rem;font-weight:500;color:var(--muted);background:transparent;transition:all .2s;}
-.ntab.active{background:var(--accent);color:#000;font-weight:600;}
-.ntab:hover:not(.active){color:var(--text);background:var(--border);}
-/* MAIN */
-main{max-width:1400px;margin:0 auto;padding:2rem;position:relative;z-index:1;}
-.section{display:none;}.section.active{display:block;}
-/* STATS */
-.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-bottom:2rem;}
-.sc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:1.2rem;position:relative;overflow:hidden;transition:transform .2s;}
-.sc:hover{transform:translateY(-2px);}
-.sc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--ac,var(--accent));}
-.sl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;}
-.sv{font-family:'Bebas Neue';font-size:2.2rem;line-height:1;}
-.ss{font-size:.75rem;color:var(--muted);margin-top:4px;}
-.sp{color:var(--verde);}.sn{color:var(--rojo);}.su{color:var(--amarillo);}
-.stitle{display:flex;align-items:center;gap:10px;margin-bottom:1.5rem;}
-.stitle h2{font-family:'Bebas Neue';font-size:1.8rem;letter-spacing:2px;}
-.stitle .badge{background:var(--border);color:var(--muted);font-size:.7rem;padding:3px 10px;border-radius:20px;letter-spacing:1px;text-transform:uppercase;}
-/* FORM */
-.fcard{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2rem;margin-bottom:2rem;}
-.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
-.fg{display:flex;flex-direction:column;gap:6px;}
-.fg label{font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;}
-.fg input,.fg select{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:10px;font-family:'DM Sans';font-size:.9rem;outline:none;transition:border-color .2s;}
-.fg input:focus,.fg select:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,180,216,.1);}
-.fg select option{background:var(--bg3);}
-.btn{padding:11px 24px;border-radius:10px;border:none;cursor:pointer;font-family:'DM Sans';font-size:.9rem;font-weight:600;transition:all .2s;}
-.btnp{background:var(--accent);color:#000;}.btnp:hover{background:#00c8f0;transform:translateY(-1px);}
-.btnd{background:rgba(255,23,68,.1);color:var(--rojo);border:1px solid rgba(255,23,68,.3);}.btnd:hover{background:rgba(255,23,68,.2);}
-.btns{padding:6px 14px;font-size:.8rem;}
-.brow{display:flex;gap:10px;align-items:center;margin-top:1rem;}
-/* BADGES */
-.sb{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;font-size:.78rem;font-weight:600;}
-.s-local{background:rgba(0,230,118,.1);color:var(--verde);border:1px solid rgba(0,230,118,.2);}
-.s-corners{background:rgba(255,214,0,.1);color:var(--amarillo);border:1px solid rgba(255,214,0,.2);}
-.s-goles{background:rgba(0,180,216,.1);color:var(--accent);border:1px solid rgba(0,180,216,.2);}
-.s-tarjetas{background:rgba(255,23,68,.1);color:#ff6b8a;border:1px solid rgba(255,23,68,.2);}
-.s-ganalocal{background:rgba(0,230,118,.15);color:#69f0ae;border:1px solid rgba(0,230,118,.3);}
-.s-ganavisita{background:rgba(124,58,237,.15);color:#c4b5fd;border:1px solid rgba(124,58,237,.3);}
-.s-empate{background:rgba(156,163,175,.15);color:#d1d5db;border:1px solid rgba(156,163,175,.3);}
-.s-golivivo{background:rgba(255,107,53,.15);color:#ff9a3c;border:1px solid rgba(255,107,53,.3);}
-.s-ambosmarcan{background:rgba(255,214,0,.15);color:#ffe066;border:1px solid rgba(255,214,0,.3);}
-/* TABLE */
-.tcard{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;}
-.thead2{padding:1.2rem 1.5rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
-.thead2 h3{font-family:'Bebas Neue';font-size:1.2rem;letter-spacing:2px;color:var(--muted);}
-.frow{display:flex;gap:6px;flex-wrap:wrap;}
-.fbtn{padding:5px 11px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:.78rem;cursor:pointer;transition:all .2s;}
-.fbtn.active{background:var(--accent);color:#000;border-color:var(--accent);}
-table{width:100%;border-collapse:collapse;}
-thead th{padding:10px 16px;text-align:left;font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;background:var(--bg2);border-bottom:1px solid var(--border);}
-tbody tr{border-bottom:1px solid rgba(30,45,66,.5);transition:background .15s;}
-tbody tr:hover{background:rgba(0,180,216,.03);}
-tbody td{padding:12px 16px;font-size:.88rem;}
-.rw{color:var(--verde);font-weight:600;}.rl{color:var(--rojo);font-weight:600;}.rp{color:var(--amarillo);font-weight:600;}
-.gp{color:var(--verde);font-family:'JetBrains Mono';font-weight:600;}.gn{color:var(--rojo);font-family:'JetBrains Mono';font-weight:600;}
-.mono{font-family:'JetBrains Mono';}
-.empty{text-align:center;padding:3rem;color:var(--muted);}
-.empty .ei{font-size:3rem;margin-bottom:1rem;opacity:.5;}
-/* CHARTS */
-.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:1.5rem;margin-bottom:2rem;}
-.ccard{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:1.5rem;}
-.ccard h3{font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:2px;color:var(--muted);margin-bottom:1rem;}
-.cwrap{position:relative;height:220px;}
-/* SISTEMAS */
-.siscards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem;}
-.siscard{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:1.5rem;position:relative;overflow:hidden;}
-.siscard::after{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,var(--sc) 0%,transparent 70%);opacity:.05;}
-.sish{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;}
-.sisn{font-family:'Bebas Neue';font-size:1.5rem;letter-spacing:2px;}
-.sisstats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-.siss{background:var(--bg2);border-radius:12px;padding:.8rem;}
-.sissl{font-size:.68rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:3px;}
-.sissv{font-family:'Bebas Neue';font-size:1.4rem;}
-.pbar{background:var(--bg2);height:6px;border-radius:3px;overflow:hidden;margin-top:1rem;}
-.pfill{height:100%;border-radius:3px;transition:width .5s ease;}
-/* ESCALERA */
-.escwrap{display:grid;grid-template-columns:1fr 320px;gap:1.5rem;align-items:start;}
-@media(max-width:900px){.escwrap{grid-template-columns:1fr;}}
-.escsteps{display:flex;flex-direction:column;gap:8px;}
-.estep{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1rem 1.2rem;display:flex;align-items:center;gap:1rem;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;}
-.estep::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--border);}
-.estep:hover{border-color:rgba(0,180,216,.3);}
-.estep.sw{border-color:rgba(0,230,118,.3);background:rgba(0,230,118,.03);}.estep.sw::before{background:var(--verde);}
-.estep.sl{border-color:rgba(255,23,68,.3);background:rgba(255,23,68,.03);}.estep.sl::before{background:var(--rojo);}
-.estep.sp{border-color:rgba(255,214,0,.3);}.estep.sp::before{background:var(--amarillo);}
-.enum{font-family:'Bebas Neue';font-size:2rem;color:var(--muted);min-width:36px;text-align:center;line-height:1;}
-.einfo{flex:1;}
-.epartido{font-weight:600;font-size:.92rem;}
-.emeta{font-size:.76rem;color:var(--muted);margin-top:2px;}
-.eico{font-size:1.4rem;}
-.esidec{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:1.5rem;margin-bottom:1rem;}
-.esidec h3{font-family:'Bebas Neue';font-size:1.1rem;letter-spacing:2px;margin-bottom:1rem;}
-.esr{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:.88rem;}
-.esr:last-child{border-bottom:none;}
-.esrv{font-family:'JetBrains Mono';font-weight:600;}
-/* MODAL */
-.moverlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;backdrop-filter:blur(4px);align-items:center;justify-content:center;}
-.moverlay.open{display:flex;}
-.modal{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:2rem;width:90%;max-width:500px;}
-.modal h3{font-family:'Bebas Neue';font-size:1.5rem;margin-bottom:1.5rem;letter-spacing:2px;}
-.mbtns{display:flex;gap:10px;margin-top:1.5rem;justify-content:flex-end;}
-/* TOAST */
-.toast{position:fixed;bottom:2rem;right:2rem;z-index:999;transform:translateY(100px);opacity:0;transition:all .3s;}
-.toast.show{transform:translateY(0);opacity:1;}
-.tinner{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 20px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(0,0,0,.4);}
-/* MISC */
-::-webkit-scrollbar{width:6px;height:6px;}::-webkit-scrollbar-track{background:var(--bg2);}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px;}
-@keyframes slideIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.sc,.fcard,.tcard,.ccard,.siscard{animation:slideIn .35s ease both;}
-.dash-charts{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem;margin-bottom:2rem;}
-/* BLOG LINK */
-.blog-link{display:flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:.82rem;padding:6px 12px;border-radius:8px;border:1px solid var(--border);transition:all .2s;white-space:nowrap;}
-.blog-link:hover{color:var(--accent);border-color:var(--accent);background:rgba(0,180,216,.05);}
-/* RESPONSIVE */
-@media(max-width:900px){
-  header{padding:0 1rem;flex-wrap:wrap;height:auto;gap:8px;padding-top:10px;padding-bottom:10px;}
-  .logo-sub{display:none;}
-  .ntabs{order:3;width:100%;overflow-x:auto;padding:4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
-  .ntabs::-webkit-scrollbar{display:none;}
-  .ntab{padding:7px 10px;font-size:.78rem;white-space:nowrap;}
-  .ubadge{order:2;display:flex;align-items:center;gap:8px;}
-  .blog-link{font-size:.75rem;padding:5px 10px;}
-  .dash-charts{grid-template-columns:1fr;}
-}
-@media(max-width:768px){
-  main{padding:1rem;}
-  .cgrid{grid-template-columns:1fr;}
-  .siscards{grid-template-columns:1fr;}
-  .sgrid{grid-template-columns:repeat(2,1fr);}
-  .tcard{overflow-x:auto;}
-  table{min-width:580px;}
-  .fgrid{grid-template-columns:1fr!important;}
-  .escwrap{grid-template-columns:1fr;}
-}
-@media(max-width:480px){
-  .sv{font-size:1.8rem;}
-  .modal{padding:1.5rem;}
-  .lbox{padding:1.5rem;}
-}
+body{background:#080c10;color:#e8f0fe;font-family:'DM Sans',sans-serif;min-height:100vh;}
+header{background:linear-gradient(135deg,#0a1628,#0d1f3c);border-bottom:1px solid #1e2d42;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between;}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-icon{width:36px;height:36px;background:#00b4d8;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.logo-text{font-family:'Bebas Neue';font-size:1.6rem;letter-spacing:2px;color:#00b4d8;}
+.nav-links{display:flex;gap:20px;align-items:center;}
+.nav-links a{color:#4a6080;text-decoration:none;font-size:.9rem;transition:color .2s;}
+.nav-links a:hover{color:#00b4d8;}
+.nav-links .btn-app{background:#00b4d8;color:#000;padding:8px 18px;border-radius:8px;font-weight:600;}
+.nav-links .btn-app:hover{background:#00d4ff;color:#000;}
+main{max-width:900px;margin:0 auto;padding:3rem 2rem;}
+.blog-header{text-align:center;margin-bottom:3rem;}
+.blog-header h1{font-family:'Bebas Neue';font-size:3rem;letter-spacing:3px;color:#00b4d8;margin-bottom:1rem;}
+.blog-header p{font-size:1.1rem;color:#4a6080;max-width:600px;margin:0 auto;line-height:1.6;}
+.articles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;}
+.article-card{background:#161f2e;border:1px solid #1e2d42;border-radius:20px;overflow:hidden;transition:transform .2s,box-shadow .2s;text-decoration:none;color:inherit;}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(0,180,216,.15);border-color:rgba(0,180,216,.3);}
+.card-tag{background:rgba(0,180,216,.1);color:#00b4d8;font-size:.72rem;padding:4px 12px;border-radius:20px;display:inline-block;margin:1.2rem 1.2rem 0;letter-spacing:1px;text-transform:uppercase;border:1px solid rgba(0,180,216,.2);}
+.card-body{padding:1rem 1.2rem 1.5rem;}
+.card-body h2{font-family:'Bebas Neue';font-size:1.4rem;letter-spacing:1px;margin-bottom:.8rem;line-height:1.2;}
+.card-body p{font-size:.88rem;color:#4a6080;line-height:1.6;}
+.card-meta{display:flex;align-items:center;gap:8px;margin-top:1rem;font-size:.78rem;color:#4a6080;flex-wrap:wrap;}
+.card-meta span{color:#00b4d8;}
+.card-new{background:rgba(0,200,150,.1);color:#00c896;font-size:.65rem;padding:2px 8px;border-radius:20px;border:1px solid rgba(0,200,150,.2);margin-left:6px;text-transform:uppercase;letter-spacing:1px;}
+footer{text-align:center;padding:3rem 2rem;border-top:1px solid #1e2d42;color:#4a6080;font-size:.85rem;margin-top:4rem;}
+footer a{color:#00b4d8;text-decoration:none;}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-top:1rem;flex-wrap:wrap;}
+@media(max-width:768px){main{padding:2rem 1rem;}.blog-header h1{font-size:2.2rem;}}
 </style>
 </head>
 <body>
-
-<!-- LOGIN -->
-<div id="login-screen">
-  <div class="lbox">
-    <div class="llogo">
-      <div style="font-size:3rem">⚽</div>
-      <h1>Danni Apuesta!</h1>
-      <p>Tu tracker personal de apuestas</p>
-    </div>
-    <div class="ltabs">
-      <button class="ltab active" onclick="switchLT('login',this)">Iniciar Sesión</button>
-      <button class="ltab" onclick="switchLT('reg',this)">Registrarse</button>
-    </div>
-    <div class="lform" id="lf-login">
-      <input type="text" id="l-user" placeholder="Nombre de usuario">
-      <input type="password" id="l-pass" placeholder="Contraseña">
-      <div class="lerr" id="lerr"></div>
-      <button class="lbtn" onclick="doLogin()">ENTRAR</button>
-    </div>
-    <div class="lform" id="lf-reg" style="display:none">
-      <input type="text" id="r-user" placeholder="Elige un nombre de usuario (mín. 3 caracteres)">
-      <input type="password" id="r-pass" placeholder="Crea una contraseña (mín. 4 caracteres)">
-      <input type="password" id="r-pass2" placeholder="Repite la contraseña">
-      <div class="lerr" id="rerr"></div>
-      <button class="lbtn" onclick="doRegister()">CREAR CUENTA</button>
-    </div>
-    <div class="lfooter">🔒 Cada usuario tiene sus propios datos guardados</div>
-  </div>
-</div>
-
-<!-- ANIMATION OVERLAY -->
-<div id="anim-overlay" onclick="closeAnim()">
-  <div class="anim-bg" id="anim-bg"></div>
-  <div class="anim-ct" id="anim-ct"></div>
-  <div style="position:absolute;bottom:2rem;color:rgba(255,255,255,.4);font-size:.8rem;pointer-events:none">Toca para cerrar</div>
-</div>
-
-<!-- APP -->
-<div id="app" style="display:none">
-
-<!-- TEXTO SEO OCULTO PARA GOOGLE -->
-<div style="position:absolute;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none" aria-hidden="true">
-  <h1>Danni Apuesta - Tracker de Apuestas Deportivas Gratis</h1>
-  <p>Danni Apuesta es la mejor aplicación gratuita para llevar el control de tus apuestas deportivas de fútbol. Registra cada apuesta, calcula tu Win Rate, ROI y gestiona tu bankroll de forma profesional. Incluye análisis por sistema de apuesta: gana local, gana visita, ambos marcan, más 1.5 goles, corners, tarjetas y más. Disfruta del reto escalera de apuestas y sigue tu progreso con gráficos detallados. Sin descargas, gratis y disponible en todos los dispositivos.</p>
-  <h2>Funciones principales</h2>
-  <ul>
-    <li>Registro de apuestas deportivas de fútbol</li>
-    <li>Control de bankroll y gestión de stake</li>
-    <li>Cálculo automático de Win Rate y ROI</li>
-    <li>Análisis por tipo de apuesta y sistema</li>
-    <li>Reto escalera de apuestas deportivas</li>
-    <li>Historial completo con exportación CSV</li>
-    <li>Gráficos y estadísticas detalladas</li>
-    <li>Compatible con CLP, USD, EUR y más monedas</li>
-  </ul>
-</div>
 <header>
-  <div class="logo">
+  <a href="https://danniapuesta.com" class="logo">
     <div class="logo-icon">⚽</div>
-    <div><div class="logo-text">Danni Apuesta!</div><div class="logo-sub">Sistema de Apuestas · Fútbol</div></div>
-  </div>
-  <nav class="ntabs">
-    <button class="ntab active" onclick="switchTab('dashboard',this)">Dashboard</button>
-    <button class="ntab" onclick="switchTab('registro',this)">Registrar</button>
-    <button class="ntab" onclick="switchTab('historial',this)">Historial</button>
-    <button class="ntab" onclick="switchTab('sistemas',this)">Sistemas</button>
-    <button class="ntab" onclick="switchTab('graficos',this)">Gráficos</button>
-    <button class="ntab" onclick="switchTab('escalera',this)">🪜 Escalera</button>
+    <span class="logo-text">Danni Apuesta!</span>
+  </a>
+  <nav class="nav-links">
+    <a href="https://danniapuesta.com/blog">Blog</a>
+    <a href="https://danniapuesta.com" class="btn-app">Usar la App →</a>
   </nav>
-  <div class="ubadge">
-    <a href="https://danniapuesta.com/blog" class="blog-link">📚 Blog</a>
-    <span>👤</span><span class="uname" id="hdr-user"></span>
-    <button class="btnout" onclick="doLogout()">Salir</button>
-  </div>
 </header>
+
 <main>
+  <div class="blog-header">
+    <h1>📚 Blog de Apuestas</h1>
+    <p>Guías prácticas para apostadores de fútbol. Aprende a controlar tu bankroll, mejorar tu Win Rate y apostar con más inteligencia.</p>
+  </div>
 
-<!-- DASHBOARD -->
-<div id="tab-dashboard" class="section active">
-  <div class="stitle"><h2>📊 Dashboard</h2><span class="badge">General</span></div>
-  <div class="sgrid" id="main-stats"></div>
-  <div class="dash-charts">
-    <div class="ccard"><h3>📈 Evolución del Balance</h3><div class="cwrap"><canvas id="chartBalance"></canvas></div></div>
-    <div class="ccard"><h3>🎯 Win Rate</h3><div class="cwrap"><canvas id="chartWR"></canvas></div></div>
-  </div>
-  <div class="tcard">
-    <div class="thead2"><h3>🕐 Últimas 10 Apuestas</h3></div>
-    <div style="overflow-x:auto"><table><thead><tr><th>Fecha</th><th>Partido</th><th>Tipo</th><th>Cuota</th><th>Stake</th><th>Resultado</th><th>G/P</th></tr></thead><tbody id="tbody-rec"></tbody></table></div>
-  </div>
-</div>
+  <div class="articles-grid">
 
-<!-- REGISTRAR -->
-<div id="tab-registro" class="section">
-  <div class="stitle"><h2>➕ Registrar Apuesta</h2></div>
-  <div class="fcard">
-    <div class="fgrid">
-      <div class="fg"><label>Fecha</label><input type="date" id="inp-fecha"></div>
-      <div class="fg"><label>Cantidad de Partidos</label><input type="number" id="inp-liga" placeholder="Ej: 3" min="1"></div>
-      <div class="fg"><label>Partido</label><input type="text" id="inp-partido" placeholder="Ej: Arsenal vs Chelsea"></div>
-      <div class="fg"><label>Tipo de Apuesta</label>
-        <select id="inp-sistema">
-          <option value="ganalocal">🏠 Gana Local</option>
-          <option value="ganavisita">✈️ Gana Visita</option>
-          <option value="empate">🤝 Empate</option>
-          <option value="ambosmarcan">⚽⚽ Ambos Marcan</option>
-          <option value="goles">🎯 Más 1.5 Goles</option>
-          <option value="local">⚽ Goles del Local</option>
-          <option value="corners">🚩 Corners</option>
-          <option value="tarjetas">🟨 Tarjetas</option>
-          <option value="golivivo">🔴 Gol en Vivo</option>
-        </select>
+    <a href="https://danniapuesta.com/blog/under-2-5-goles" class="article-card">
+      <span class="card-tag">Tipos de apuesta</span>
+      <div class="card-body">
+        <h2>Qué es el Under 2.5 Goles y Cuándo Apostar a Él</h2>
+        <p>El Under 2.5 es ideal para ligas defensivas y eliminatorias. Te explicamos cuándo conviene y qué factores analizar.</p>
+        <div class="card-meta">⏱ 6 min · <span>Under 2.5 · Goles</span> <span class="card-new">Nuevo</span></div>
       </div>
-      <div class="fg"><label>Descripción</label><input type="text" id="inp-desc" placeholder="Ej: Ambos marcan, +9.5 corners..."></div>
-      <div class="fg"><label>Cuota</label><input type="number" id="inp-cuota" step="0.01" min="1" placeholder="1.85"></div>
-      <div class="fg"><label>Moneda</label>
-        <select id="inp-moneda">
-          <option value="CLP">🇨🇱 CLP — Peso Chileno</option>
-          <option value="USD">🇺🇸 USD — Dólar Americano</option>
-          <option value="EUR">🇪🇺 EUR — Euro</option>
-          <option value="ARS">🇦🇷 ARS — Peso Argentino</option>
-          <option value="MXN">🇲🇽 MXN — Peso Mexicano</option>
-          <option value="COP">🇨🇴 COP — Peso Colombiano</option>
-          <option value="PEN">🇵🇪 PEN — Sol Peruano</option>
-          <option value="BRL">🇧🇷 BRL — Real Brasileño</option>
-          <option value="UYU">🇺🇾 UYU — Peso Uruguayo</option>
-          <option value="GBP">🇬🇧 GBP — Libra Esterlina</option>
-          <option value="JPY">🇯🇵 JPY — Yen Japonés</option>
-          <option value="CAD">🇨🇦 CAD — Dólar Canadiense</option>
-          <option value="AUD">🇦🇺 AUD — Dólar Australiano</option>
-          <option value="CHF">🇨🇭 CHF — Franco Suizo</option>
-          <option value="CNY">🇨🇳 CNY — Yuan Chino</option>
-          <option value="BTC">₿ BTC — Bitcoin</option>
-          <option value="USDT">💲 USDT — Tether</option>
-        </select>
-      </div>
-      <div class="fg"><label>Stake (monto)</label><input type="number" id="inp-stake" step="0.01" min="0" placeholder="10.00"></div>
-      <div class="fg"><label>Resultado</label>
-        <select id="inp-resultado">
-          <option value="pendiente">⏳ Pendiente</option>
-          <option value="ganada">✅ Ganada</option>
-          <option value="perdida">❌ Perdida</option>
-          <option value="nula">↩️ Nula/Devuelta</option>
-        </select>
-      </div>
-      <div class="fg"><label>Notas</label><input type="text" id="inp-notas" placeholder="Observaciones..."></div>
-    </div>
-    <div class="brow">
-      <button class="btn btnp" onclick="guardarApuesta()">💾 Guardar Apuesta</button>
-      <button class="btn" style="background:var(--bg3);color:var(--muted)" onclick="limpiarForm()">🗑 Limpiar</button>
-      <div id="gprev" style="margin-left:auto;font-family:'JetBrains Mono';font-size:.9rem;color:var(--muted)"></div>
-    </div>
-  </div>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(165px,1fr));gap:1rem;">
-    <div class="fcard" style="padding:1rem;border-color:rgba(105,240,174,.25)"><div style="font-size:.65rem;color:#69f0ae;text-transform:uppercase;letter-spacing:2px;margin-bottom:5px">Tipo 1</div><div style="font-family:'Bebas Neue';font-size:1rem">🏠 Gana Local</div><div style="font-size:.75rem;color:var(--muted);margin-top:3px">El equipo local gana</div></div>
-    <div class="fcard" style="padding:1rem;border-color:rgba(196,181,253,.25)"><div style="font-size:.65rem;color:#c4b5fd;text-transform:uppercase;letter-spacing:2px;margin-bottom:5px">Tipo 2</div><div style="font-family:'Bebas Neue';font-size:1rem">✈️ Gana Visita</div><div style="font-size:.75rem;color:var(--muted);margin-top:3px">El equipo visitante gana</div></div>
-    <div class="fcard" style="padding:1rem;border-color:rgba(209,213,219,.2)"><div style="font-size:.65rem;color:#d1d5db;text-transform:uppercase;letter-spacing:2px;margin-bottom:5px">Tipo 3</div><div style="font-family:'Bebas Neue';font-size:1rem">🤝 Empate</div><div style="font-size:.75rem;color:var(--muted);margin-top:3px">El partido termina en empate</div></div>
-    <div class="fcard" style="padding:1rem;border-color:rgba(255,224,102,.3)"><div style="font-size:.65rem;color:#ffe066;text-transform:uppercase;letter-spacing:2px;margin-bottom:5px">Tipo 4</div><div style="font-family:'Bebas Neue';font-size:1rem">⚽⚽ Ambos Marcan</div><div style="font-size:.75rem;color:var(--muted);margin-top:3px">Los dos equipos anotan</div></div>
-    <div class="fcard" style="padding:1rem;border-color:rgba(0,180,216,.2)"><div style="font-size:.65rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:5px">Tipo 5</div><div style="font-family:'Bebas Neue';font-size:1rem">🎯 +1.5 Goles</div><div style="font-size:.75rem;color:var(--muted);margin-top:3px">2 o más goles totales</div></div>
-    <div class="fcard" style="padding:1rem;border-color:rgba(0,230,118,.2)"><div style="font-size:.65rem;color:var(--verde);text-transform:uppercase;letter-spacing:2px;margin-bottom:5px">Tipo 6</div><div style="font-family:'Bebas Neue';font-size:1rem">⚽ Goles Local</div><div style="font-size:.75rem;color:var(--muted);margin-top:3px">Local marca al menos 1</div></div>
-    <div class="fcard" style="padding:1rem;border-color:rgba(255,214,0,.2)"><div style="font-size:.65rem;color:var(--amarillo);text-transform:uppercase;letter-spacing:2px;margin-bottom:5px">Tipo 7</div><div style="font-family:'Bebas Neue';font-size:1rem">🚩 Corners</div><div style="font-size:.75rem;color:var(--muted);margin-top:3px">Número de córners</div></div>
-    <div class="fcard" style="padding:1rem;border-color:rgba(255,69,96,.2)"><div style="font-size:.65rem;color:#ff6b8a;text-transform:uppercase;letter-spacing:2px;margin-bottom:5px">Tipo 8</div><div style="font-family:'Bebas Neue';font-size:1rem">🟨 Tarjetas</div><div style="font-size:.75rem;color:var(--muted);margin-top:3px">Tarjetas del partido</div></div>
-    <div class="fcard" style="padding:1rem;border-color:rgba(255,107,53,.25)"><div style="font-size:.65rem;color:#ff9a3c;text-transform:uppercase;letter-spacing:2px;margin-bottom:5px">Tipo 9</div><div style="font-family:'Bebas Neue';font-size:1rem">🔴 Gol en Vivo</div><div style="font-size:.75rem;color:var(--muted);margin-top:3px">Apuesta durante el partido</div></div>
-  </div>
-</div>
+    </a>
 
-<!-- HISTORIAL -->
-<div id="tab-historial" class="section">
-  <div class="stitle"><h2>📋 Historial</h2><span class="badge" id="hist-count">0</span></div>
-  <div class="tcard">
-    <div class="thead2">
-      <div class="frow">
-        <button class="fbtn active" onclick="filtrar('todos',this)">Todos</button>
-        <button class="fbtn" onclick="filtrar('ganalocal',this)">🏠</button>
-        <button class="fbtn" onclick="filtrar('ganavisita',this)">✈️</button>
-        <button class="fbtn" onclick="filtrar('empate',this)">🤝</button>
-        <button class="fbtn" onclick="filtrar('ambosmarcan',this)">⚽⚽</button>
-        <button class="fbtn" onclick="filtrar('goles',this)">🎯</button>
-        <button class="fbtn" onclick="filtrar('local',this)">⚽</button>
-        <button class="fbtn" onclick="filtrar('corners',this)">🚩</button>
-        <button class="fbtn" onclick="filtrar('tarjetas',this)">🟨</button>
-        <button class="fbtn" onclick="filtrar('golivivo',this)">🔴</button>
-        <button class="fbtn" onclick="filtrar('ganada',this)">✅ Ganadas</button>
-        <button class="fbtn" onclick="filtrar('perdida',this)">❌ Perdidas</button>
+    <a href="https://danniapuesta.com/blog/que-es-btts-ambos-marcan" class="article-card">
+      <span class="card-tag">Tipos de apuesta</span>
+      <div class="card-body">
+        <h2>Qué es el BTTS (Ambos Marcan) en Apuestas Deportivas</h2>
+        <p>BTTS significa que ambos equipos marcan. Te explicamos cómo funciona, qué estadísticas analizar y cuándo conviene apostar.</p>
+        <div class="card-meta">⏱ 6 min · <span>BTTS · Ambos marcan</span> <span class="card-new">Nuevo</span></div>
       </div>
-      <div style="display:flex;gap:8px;align-items:center">
-        <input type="text" id="search-hist" placeholder="🔍 Buscar..." style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:7px 12px;border-radius:8px;font-size:.85rem;outline:none;width:170px" oninput="renderHistorial()">
-        <button class="btn btnp btns" onclick="exportCSV()">⬇ CSV</button>
+    </a>
+
+    <a href="https://danniapuesta.com/blog/que-es-el-over-2-5-goles" class="article-card">
+      <span class="card-tag">Tipos de apuesta</span>
+      <div class="card-body">
+        <h2>Qué es el Over 2.5 Goles y Cómo Apostar a Él</h2>
+        <p>El Over 2.5 es uno de los mercados más populares. Te explicamos cómo funciona, en qué ligas apostar y qué factores analizar.</p>
+        <div class="card-meta">⏱ 6 min · <span>Over 2.5 · Goles</span></div>
       </div>
-    </div>
-    <div style="overflow-x:auto">
-      <table><thead><tr><th>#</th><th>Fecha</th><th>Cant.</th><th>Partido</th><th>Tipo</th><th>Desc.</th><th>Cuota</th><th>Stake</th><th>Resultado</th><th>G/P</th><th>Notas</th><th></th></tr></thead>
-      <tbody id="tbody-hist"></tbody></table>
-    </div>
-  </div>
-</div>
+    </a>
 
-<!-- SISTEMAS -->
-<div id="tab-sistemas" class="section">
-  <div class="stitle"><h2>🎯 Análisis por Sistema</h2></div>
-  <div class="siscards" id="siscards"></div>
-  <div class="tcard" style="margin-top:1.5rem">
-    <div class="thead2"><h3>📊 Comparativa</h3></div>
-    <div style="overflow-x:auto"><table><thead><tr><th>Sistema</th><th>Apuestas</th><th>Ganadas</th><th>Perdidas</th><th>Win Rate</th><th>Inv.</th><th>Ret.</th><th>ROI</th><th>Balance</th></tr></thead><tbody id="tbody-sis"></tbody></table></div>
-  </div>
-</div>
-
-<!-- GRAFICOS -->
-<div id="tab-graficos" class="section">
-  <div class="stitle"><h2>📈 Gráficos</h2></div>
-  <div class="cgrid">
-    <div class="ccard"><h3>💰 Balance por Sistema</h3><div class="cwrap"><canvas id="cSis"></canvas></div></div>
-    <div class="ccard"><h3>📊 Win/Loss</h3><div class="cwrap"><canvas id="cDist"></canvas></div></div>
-    <div class="ccard"><h3>💵 Stakes vs Retornos</h3><div class="cwrap"><canvas id="cStake"></canvas></div></div>
-    <div class="ccard"><h3>📅 Apuestas por Mes</h3><div class="cwrap"><canvas id="cMes"></canvas></div></div>
-    <div class="ccard"><h3>🎯 ROI por Sistema</h3><div class="cwrap"><canvas id="cROI"></canvas></div></div>
-    <div class="ccard"><h3>📉 Racha</h3><div class="cwrap"><canvas id="cRacha"></canvas></div></div>
-  </div>
-</div>
-
-<!-- ESCALERA -->
-<div id="tab-escalera" class="section">
-  <div class="stitle"><h2>🪜 Reto Escalera</h2><span class="badge">10 Escalones</span></div>
-  <div class="escwrap">
-    <div class="escsteps" id="escsteps"></div>
-    <div>
-      <div class="esidec">
-        <h3 style="color:var(--accent)">📊 Tu Progreso</h3>
-        <div class="esr"><span>Completados</span><span class="esrv" id="esc-comp" style="color:var(--accent)">0/10</span></div>
-        <div class="esr"><span>Ganados</span><span class="esrv" id="esc-gan" style="color:var(--verde)">0</span></div>
-        <div class="esr"><span>Perdidos</span><span class="esrv" id="esc-per" style="color:var(--rojo)">0</span></div>
-        <div class="esr"><span>Total invertido</span><span class="esrv" id="esc-inv" style="color:var(--muted)">$0</span></div>
-        <div class="esr"><span>Ganancia neta</span><span class="esrv" id="esc-bal">$0</span></div>
-        <div class="esr"><span>Racha actual</span><span class="esrv" id="esc-racha" style="color:var(--amarillo)">—</span></div>
-        <div class="esr"><span>Estado</span><span class="esrv" id="esc-estado">Sin iniciar</span></div>
-        <div style="margin-top:1rem">
-          <div style="font-size:.7rem;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px">Progreso</div>
-          <div class="pbar"><div class="pfill" id="esc-prog" style="width:0%;background:var(--accent)"></div></div>
-        </div>
+    <a href="https://danniapuesta.com/blog/como-apostar-en-vivo" class="article-card">
+      <span class="card-tag">Estrategia</span>
+      <div class="card-body">
+        <h2>Cómo Apostar en Vivo: Guía Completa para el Betting en Directo</h2>
+        <p>Las apuestas en vivo son las más emocionantes. Aprende las mejores estrategias, mercados y momentos para apostar en directo.</p>
+        <div class="card-meta">⏱ 7 min · <span>In-play · En vivo</span></div>
       </div>
-      <div class="esidec">
-        <h3 style="color:var(--amarillo)">⚡ Acciones</h3>
-        <div style="display:flex;flex-direction:column;gap:10px">
-          <button class="btn btnp" style="width:100%" onclick="nuevoReto()">🔄 Nuevo Reto</button>
-          <button class="btn" style="background:var(--bg3);color:var(--muted);width:100%" onclick="resetEsc()">🗑 Resetear</button>
-        </div>
-        <div style="margin-top:1rem;padding:1rem;background:var(--bg2);border-radius:12px;font-size:.78rem;color:var(--muted);line-height:1.6">
-          💡 <strong style="color:var(--text)">¿Cómo funciona?</strong><br>
-          La ganancia de cada paso se reinvierte automáticamente en el siguiente escalón. ¡Llega al escalón 10! 🏆
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    </a>
 
+    <a href="https://danniapuesta.com/blog/que-es-el-handicap-asiatico" class="article-card">
+      <span class="card-tag">Tipos de apuesta</span>
+      <div class="card-body">
+        <h2>Qué es el Handicap Asiático y Cómo Funciona en Apuestas</h2>
+        <p>El handicap asiático es uno de los mercados más rentables. Te explicamos todos los tipos con ejemplos reales.</p>
+        <div class="card-meta">⏱ 7 min · <span>Handicap asiático</span></div>
+      </div>
+    </a>
+
+    <a href="https://danniapuesta.com/blog/como-leer-cuotas-apuestas" class="article-card">
+      <span class="card-tag">Guía básica</span>
+      <div class="card-body">
+        <h2>Cómo Leer las Cuotas de Apuestas Deportivas</h2>
+        <p>Aprende a interpretar cuotas, calcular probabilidades implícitas y detectar apuestas con valor real.</p>
+        <div class="card-meta">⏱ 6 min · <span>Cuotas · Value bet</span></div>
+      </div>
+    </a>
+
+    <a href="https://danniapuesta.com/blog/control-de-apuestas-deportivas" class="article-card">
+      <span class="card-tag">Guía básica</span>
+      <div class="card-body">
+        <h2>Cómo llevar un control de apuestas deportivas y multiplicar tus ganancias</h2>
+        <p>Aprende paso a paso cómo registrar tus apuestas, calcular tu ROI y tomar mejores decisiones con datos reales.</p>
+        <div class="card-meta">⏱ 5 min · <span>Control de apuestas</span></div>
+      </div>
+    </a>
+
+    <a href="https://danniapuesta.com/blog/reto-escalera-apuestas" class="article-card">
+      <span class="card-tag">Estrategia</span>
+      <div class="card-body">
+        <h2>Qué es el Reto Escalera en apuestas y cómo funciona paso a paso</h2>
+        <p>El reto escalera es una de las estrategias más emocionantes para apostadores. Te explicamos cómo hacerlo bien.</p>
+        <div class="card-meta">⏱ 4 min · <span>Reto escalera</span></div>
+      </div>
+    </a>
+
+    <a href="https://danniapuesta.com/blog/win-rate-roi-apuestas" class="article-card">
+      <span class="card-tag">Estadísticas</span>
+      <div class="card-body">
+        <h2>Win Rate y ROI en apuestas: las 2 métricas que todo apostador debe conocer</h2>
+        <p>¿Qué es el Win Rate? ¿Cómo se calcula el ROI? Estas dos métricas pueden transformar tu forma de apostar.</p>
+        <div class="card-meta">⏱ 6 min · <span>Win Rate · ROI</span></div>
+      </div>
+    </a>
+
+    <a href="https://danniapuesta.com/blog/gestion-bankroll-futbol" class="article-card">
+      <span class="card-tag">Bankroll</span>
+      <div class="card-body">
+        <h2>Gestión de bankroll en fútbol: la clave para no perder todo tu dinero</h2>
+        <p>El error número uno de los apostadores es no gestionar su bankroll. Aquí te enseñamos cómo hacerlo correctamente.</p>
+        <div class="card-meta">⏱ 5 min · <span>Bankroll · Stake</span></div>
+      </div>
+    </a>
+
+  </div>
 </main>
-</div><!-- end app -->
 
-<!-- TOAST -->
-<div class="toast" id="toast"><div class="tinner"><span id="tico">✅</span><span id="tmsg"></span></div></div>
-
-<!-- MODAL EDITAR -->
-<div class="moverlay" id="mod-edit">
-  <div class="modal">
-    <h3>✏️ Editar Resultado</h3>
-    <input type="hidden" id="edit-id">
-    <div class="fg" style="margin-bottom:1rem"><label>Resultado</label>
-      <select id="edit-res"><option value="pendiente">⏳ Pendiente</option><option value="ganada">✅ Ganada</option><option value="perdida">❌ Perdida</option><option value="nula">↩️ Nula</option></select>
-    </div>
-    <div class="mbtns">
-      <button class="btn" style="background:var(--bg3);color:var(--muted)" onclick="closeModal('mod-edit')">Cancelar</button>
-      <button class="btn btnp" onclick="saveEdit()">Guardar</button>
-    </div>
+<footer>
+  <p>© 2026 <a href="https://danniapuesta.com">Danni Apuesta!</a> — Tracker gratuito de apuestas deportivas</p>
+  <div class="footer-links">
+    <a href="https://danniapuesta.com/blog">Blog</a>
+    <a href="https://danniapuesta.com/privacidad">Privacidad</a>
+    <a href="https://danniapuesta.com/terminos">Términos</a>
+    <a href="https://danniapuesta.com/contacto">Contacto</a>
   </div>
-</div>
-
-<!-- MODAL ESCALÓN -->
-<div class="moverlay" id="mod-step">
-  <div class="modal">
-    <h3>🪜 Escalón <span id="step-n"></span></h3>
-    <input type="hidden" id="step-idx">
-    <div style="display:flex;flex-direction:column;gap:12px">
-      <div class="fg"><label>Cantidad de Partidos</label><input type="number" id="step-partido" placeholder="Ej: 3" min="1"></div>
-      <div class="fg"><label>Mercado / Descripción</label><input type="text" id="step-desc" placeholder="Ej: Ambos marcan, +1.5 goles..."></div>
-      <div class="fg"><label>Cuota</label><input type="number" id="step-cuota" step="0.01" min="1" placeholder="1.85"></div>
-      <div class="fg"><label>Stake (monto apostado)</label><input type="number" id="step-stake" step="0.01" min="0" placeholder="10.00"></div>
-      <div class="fg"><label>Moneda</label>
-        <select id="step-moneda">
-          <option value="CLP">🇨🇱 CLP</option><option value="USD">🇺🇸 USD</option><option value="EUR">🇪🇺 EUR</option>
-          <option value="ARS">🇦🇷 ARS</option><option value="MXN">🇲🇽 MXN</option><option value="COP">🇨🇴 COP</option>
-          <option value="PEN">🇵🇪 PEN</option><option value="BRL">🇧🇷 BRL</option><option value="GBP">🇬🇧 GBP</option>
-          <option value="BTC">₿ BTC</option><option value="USDT">💲 USDT</option>
-        </select>
-      </div>
-      <div class="fg"><label>Resultado</label>
-        <select id="step-res"><option value="pendiente">⏳ Pendiente</option><option value="ganado">✅ Ganado</option><option value="perdido">❌ Perdido</option></select>
-      </div>
-    </div>
-    <div class="mbtns">
-      <button class="btn" style="background:var(--bg3);color:var(--muted)" onclick="closeModal('mod-step')">Cancelar</button>
-      <button class="btn btnp" onclick="saveStep()">Guardar Escalón</button>
-    </div>
-  </div>
-</div>
-
-<script>
-// ============================================================
-// AUTH
-// ============================================================
-const UK='danni_users_v1';
-let CU=null;
-function getU(){try{return JSON.parse(localStorage.getItem(UK))||{};}catch{return{};}}
-function setU(u){localStorage.setItem(UK,JSON.stringify(u));}
-function switchLT(t,b){
-  document.querySelectorAll('.ltab').forEach(x=>x.classList.remove('active'));b.classList.add('active');
-  document.getElementById('lf-login').style.display=t==='login'?'flex':'none';
-  document.getElementById('lf-reg').style.display=t==='reg'?'flex':'none';
-  document.getElementById('lerr').textContent='';document.getElementById('rerr').textContent='';
-}
-function doLogin(){
-  const u=document.getElementById('l-user').value.trim().toLowerCase();
-  const p=document.getElementById('l-pass').value;
-  const e=document.getElementById('lerr');
-  if(!u||!p){e.textContent='Completa todos los campos.';return;}
-  const users=getU();
-  if(!users[u]){e.textContent='❌ Usuario no encontrado.';return;}
-  if(users[u].pass!==btoa(p)){e.textContent='❌ Contraseña incorrecta.';return;}
-  startSess(u);
-}
-function doRegister(){
-  const u=document.getElementById('r-user').value.trim().toLowerCase();
-  const p=document.getElementById('r-pass').value;
-  const p2=document.getElementById('r-pass2').value;
-  const e=document.getElementById('rerr');
-  if(!u||!p){e.textContent='Completa todos los campos.';return;}
-  if(u.length<3){e.textContent='❌ Usuario mínimo 3 caracteres.';return;}
-  if(p.length<4){e.textContent='❌ Contraseña mínimo 4 caracteres.';return;}
-  if(p!==p2){e.textContent='❌ Las contraseñas no coinciden.';return;}
-  const users=getU();
-  if(users[u]){e.textContent='❌ Ese usuario ya existe.';return;}
-  users[u]={pass:btoa(p),created:Date.now()};setU(users);startSess(u);
-}
-function startSess(u){
-  CU=u;
-  document.getElementById('login-screen').style.display='none';
-  document.getElementById('app').style.display='block';
-  document.getElementById('hdr-user').textContent=u;
-  load();initForm();renderDash();renderEsc();
-}
-function doLogout(){
-  CU=null;AP=[];FA='todos';CI={};ESC=mkEsc();
-  document.getElementById('app').style.display='none';
-  document.getElementById('login-screen').style.display='flex';
-  document.getElementById('l-user').value='';document.getElementById('l-pass').value='';
-}
-// ============================================================
-// DATA
-// ============================================================
-function uk(s){return 'danni_'+CU+'_'+s;}
-let AP=[],FA='todos',CI={};
-const mkEsc=()=>Array(10).fill(0).map((_,i)=>({paso:i+1,partido:'',desc:'',cuota:'',resultado:'pendiente'}));
-let ESC=mkEsc();
-const SYS={
-  ganalocal:{l:'Gana Local',i:'🏠',c:'s-ganalocal',col:'#69f0ae'},
-  ganavisita:{l:'Gana Visita',i:'✈️',c:'s-ganavisita',col:'#c4b5fd'},
-  empate:{l:'Empate',i:'🤝',c:'s-empate',col:'#d1d5db'},
-  ambosmarcan:{l:'Ambos Marcan',i:'⚽⚽',c:'s-ambosmarcan',col:'#ffe066'},
-  goles:{l:'+1.5 Goles',i:'🎯',c:'s-goles',col:'#00b4d8'},
-  local:{l:'Goles del Local',i:'⚽',c:'s-local',col:'#00e676'},
-  corners:{l:'Corners',i:'🚩',c:'s-corners',col:'#ffd600'},
-  tarjetas:{l:'Tarjetas',i:'🟨',c:'s-tarjetas',col:'#ff4560'},
-  golivivo:{l:'Gol en Vivo',i:'🔴',c:'s-golivivo',col:'#ff6b35'},
-};
-function load(){ AP=[]; } // Firebase carga en onAuthStateChanged
-function save(){ if(window._fbSave) window._fbSave(); else localStorage.setItem(uk('ap'),JSON.stringify(AP)); }
-function saveEsc(){ if(window._fbSaveEsc) window._fbSaveEsc(); else localStorage.setItem(uk('esc'),JSON.stringify(ESC)); }
-function calcG(a){if(a.resultado==='ganada')return+(a.stake*a.cuota-a.stake).toFixed(2);if(a.resultado==='perdida')return-(a.stake||0);return 0;}
-// ============================================================
-// ANIMATIONS
-// ============================================================
-let at=null;
-function showAnim(t){
-  if(at)clearTimeout(at);
-  const ov=document.getElementById('anim-overlay'),bg=document.getElementById('anim-bg'),ct=document.getElementById('anim-ct');
-  bg.innerHTML='';ov.classList.add('show');
-  const cols={gol:['#00e676','#ffd600','#fff','#00b4d8','#ff6b35'],escalon:['#00b4d8','#ffd600','#fff','#00e676'],campeon:['#ffd600','#ff6b35','#fff','#00e676','#ff1744']};
-  if(t==='gol'){
-    bg.style.background='radial-gradient(ellipse at center,rgba(0,60,0,.97),rgba(0,15,0,.98))';
-    spawnConf(bg,80,cols.gol);
-    ct.innerHTML='<div style="font-size:6rem;animation:ballKick .9s forwards">⚽</div><div style="font-family:\'Bebas Neue\';font-size:6rem;letter-spacing:8px;color:#00e676;animation:popIn .6s .8s both;text-shadow:0 0 40px rgba(0,230,118,.8)">¡GOOOL!</div><div style="font-family:\'Bebas Neue\';font-size:2rem;letter-spacing:4px;color:#fff;animation:popIn .5s 1.1s both">🏆 APUESTA GANADA 🏆</div>';
-  }else if(t==='lost'){
-    bg.style.background='radial-gradient(ellipse at center,rgba(80,0,0,.97),rgba(20,0,0,.98))';
-    spawnRain(bg,70);
-    ct.innerHTML='<div style="font-family:\'Bebas Neue\';font-size:5.5rem;letter-spacing:6px;color:#ff1744;animation:bounceIn .5s both,shake .5s .6s both,glowP 1s 1.1s infinite;text-shadow:0 0 40px rgba(255,23,68,.8)">YOU LOST</div><div style="font-family:\'Bebas Neue\';font-size:1.8rem;color:#ff6b8a;animation:bounceIn .5s .4s both;letter-spacing:3px">😔 Mejor suerte la próxima</div><div style="font-size:3rem;margin-top:1rem;animation:bounceIn .5s .8s both">💸</div>';
-  }else if(t==='escalon'){
-    bg.style.background='radial-gradient(ellipse at center,rgba(0,35,60,.97),rgba(0,12,25,.98))';
-    spawnConf(bg,50,cols.escalon);
-    ct.innerHTML='<div style="font-size:5rem;animation:bounceIn .5s both">🪜</div><div style="font-family:\'Bebas Neue\';font-size:4rem;color:#00b4d8;animation:popIn .6s .3s both;letter-spacing:4px;text-shadow:0 0 40px rgba(0,180,216,.8)">¡ESCALÓN SUPERADO!</div><div style="font-family:\'Bebas Neue\';font-size:1.8rem;color:#fff;animation:popIn .5s .7s both;letter-spacing:3px">SIGUE SUBIENDO 🚀</div>';
-  }else if(t==='campeon'){
-    bg.style.background='radial-gradient(ellipse at center,rgba(60,40,0,.97),rgba(20,10,0,.98))';
-    spawnConf(bg,130,cols.campeon);
-    ct.innerHTML='<div style="font-size:5rem;animation:bounceIn .5s both">🏆</div><div style="font-family:\'Bebas Neue\';font-size:5.5rem;color:#ffd600;animation:popIn .6s .3s both;letter-spacing:5px;text-shadow:0 0 60px rgba(255,214,0,.9)">¡CAMPEÓN!</div><div style="font-family:\'Bebas Neue\';font-size:2.2rem;color:#fff;animation:popIn .5s .7s both;letter-spacing:3px">ESCALERA COMPLETADA</div><div style="font-size:3rem;margin-top:1rem;animation:bounceIn .5s 1s both">🎆🎇🎆</div>';
-  }
-  at=setTimeout(closeAnim,3800);
-}
-function closeAnim(){
-  const ov=document.getElementById('anim-overlay');
-  ov.style.opacity='0';ov.style.transition='opacity .4s';
-  setTimeout(()=>{ov.classList.remove('show');ov.style.opacity='';ov.style.transition='';document.getElementById('anim-bg').innerHTML='';},400);
-}
-function spawnConf(bg,n,cols){for(let i=0;i<n;i++){const el=document.createElement('div');el.className='conf';const sz=6+Math.random()*12;el.style.cssText=`left:${Math.random()*100}%;top:-20px;width:${sz}px;height:${sz}px;background:${cols[Math.floor(Math.random()*cols.length)]};border-radius:${Math.random()>.5?'50%':'2px'};animation:confFall ${2+Math.random()*2.5}s ${Math.random()*1.2}s linear forwards;`;bg.appendChild(el);}}
-function spawnRain(bg,n){for(let i=0;i<n;i++){const el=document.createElement('div');el.className='rain';el.style.cssText=`left:${Math.random()*100}%;top:-30px;height:${20+Math.random()*50}px;background:rgba(255,23,68,${.4+Math.random()*.6});animation:rainFall ${.7+Math.random()*.8}s ${Math.random()*.6}s linear forwards;`;bg.appendChild(el);}}
-// ============================================================
-// UI
-// ============================================================
-function switchTab(t,b){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.ntab').forEach(x=>x.classList.remove('active'));
-  document.getElementById('tab-'+t).classList.add('active');if(b)b.classList.add('active');
-  if(t==='dashboard')renderDash();if(t==='historial')renderHistorial();
-  if(t==='sistemas')renderSistemas();if(t==='graficos')renderGraficos();if(t==='escalera')renderEsc();
-}
-function toast(msg,tipo='ok'){
-  document.getElementById('tico').textContent=tipo==='ok'?'✅':tipo==='err'?'❌':'ℹ️';
-  document.getElementById('tmsg').textContent=msg;
-  const el=document.getElementById('toast');el.classList.add('show');setTimeout(()=>el.classList.remove('show'),2800);
-}
-function closeModal(id){document.getElementById(id).classList.remove('open');}
-// ============================================================
-// FORM
-// ============================================================
-function initForm(){
-  document.getElementById('inp-fecha').value=new Date().toISOString().split('T')[0];
-  ['inp-cuota','inp-stake'].forEach(id=>document.getElementById(id).addEventListener('input',prevG));
-  ['inp-resultado','inp-moneda'].forEach(id=>document.getElementById(id).addEventListener('change',prevG));
-}
-function prevG(){
-  const c=parseFloat(document.getElementById('inp-cuota').value)||0;
-  const s=parseFloat(document.getElementById('inp-stake').value)||0;
-  const r=document.getElementById('inp-resultado').value;
-  const m=document.getElementById('inp-moneda').value||'CLP';
-  const p=document.getElementById('gprev');
-  if(!c||!s){p.textContent='';return;}
-  if(r==='ganada'){p.textContent='+'+m+' '+(+(s*c-s).toFixed(2))+' ganancia potencial';p.style.color='var(--verde)';}
-  else if(r==='perdida'){p.textContent='-'+m+' '+s+' pérdida';p.style.color='var(--rojo)';}
-  else if(r==='pendiente'){p.textContent='Retorno: '+m+' '+(s*c).toFixed(2);p.style.color='var(--accent)';}
-  else{p.textContent='Devuelto: '+m+' '+s;p.style.color='var(--muted)';}
-}
-function guardarApuesta(){
-  const r=document.getElementById('inp-resultado').value;
-  const ap={id:Date.now(),fecha:document.getElementById('inp-fecha').value,liga:document.getElementById('inp-liga').value.trim(),partido:document.getElementById('inp-partido').value.trim(),sistema:document.getElementById('inp-sistema').value,desc:document.getElementById('inp-desc').value.trim(),cuota:parseFloat(document.getElementById('inp-cuota').value),moneda:document.getElementById('inp-moneda').value,stake:parseFloat(document.getElementById('inp-stake').value),resultado:r,notas:document.getElementById('inp-notas').value.trim()};
-  AP.unshift(ap);save();toast('Apuesta guardada ✅');limpiarForm();
-  if(r==='ganada')setTimeout(()=>showAnim('gol'),300);
-  else if(r==='perdida')setTimeout(()=>showAnim('lost'),300);
-}
-function limpiarForm(){
-  ['inp-liga','inp-partido','inp-desc','inp-cuota','inp-stake','inp-notas'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('inp-resultado').value='pendiente';document.getElementById('inp-sistema').value='ganalocal';
-  document.getElementById('gprev').textContent='';document.getElementById('inp-fecha').value=new Date().toISOString().split('T')[0];
-}
-// ============================================================
-// DASHBOARD
-// ============================================================
-function dc(k){if(CI[k]){CI[k].destroy();delete CI[k];}}
-function renderDash(){
-  const cerr=AP.filter(a=>a.resultado!=='pendiente'&&a.resultado!=='nula');
-  const gan=cerr.filter(a=>a.resultado==='ganada'),per=cerr.filter(a=>a.resultado==='perdida');
-  const inv=cerr.reduce((s,a)=>s+(a.stake||0),0),ret=gan.reduce((s,a)=>s+(a.stake||0)*(a.cuota||0),0);
-  const bal=+(ret-inv).toFixed(2),wr=cerr.length?+(gan.length/cerr.length*100).toFixed(1):0,roi=inv?+((bal/inv)*100).toFixed(1):0;
-  const pend=AP.filter(a=>a.resultado==='pendiente').length;
-  document.getElementById('main-stats').innerHTML=[
-    {l:'Balance Total',v:(bal>=0?'+':'')+bal.toFixed(2),c:bal>=0?'sp':'sn',s:'Ganancia neta',ac:'var(--verde)'},
-    {l:'Apuestas Totales',v:AP.length,c:'',s:pend+' pendientes',ac:'var(--accent)'},
-    {l:'Win Rate',v:wr+'%',c:wr>=55?'sp':wr>=45?'su':'sn',s:gan.length+'G/'+per.length+'P',ac:'var(--amarillo)'},
-    {l:'ROI',v:(roi>=0?'+':'')+roi+'%',c:roi>=0?'sp':'sn',s:'Retorno inversión',ac:roi>=0?'var(--verde)':'var(--rojo)'},
-    {l:'Invertido',v:'$'+inv.toFixed(0),c:'',s:'Stake total',ac:'var(--accent)'},
-    {l:'Retornado',v:'$'+ret.toFixed(0),c:'',s:'Dinero recuperado',ac:'var(--verde)'},
-  ].map(s=>`<div class="sc" style="--ac:${s.ac}"><div class="sl">${s.l}</div><div class="sv ${s.c}">${s.v}</div><div class="ss">${s.s}</div></div>`).join('');
-  const cfg={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#4a6080',font:{size:11}}}},scales:{x:{ticks:{color:'#4a6080',font:{size:10}},grid:{color:'#1e2d42'}},y:{ticks:{color:'#4a6080',font:{size:10}},grid:{color:'#1e2d42'}}}};
-  dc('b');const sorted=[...AP].sort((a,b)=>new Date(a.fecha)-new Date(b.fecha));let run=0;const bd=sorted.map(a=>{run+=calcG(a);return+run.toFixed(2);});
-  CI['b']=new Chart(document.getElementById('chartBalance').getContext('2d'),{type:'line',data:{labels:sorted.map(a=>a.fecha),datasets:[{label:'Balance',data:bd,borderColor:'#00b4d8',backgroundColor:'rgba(0,180,216,.08)',fill:true,tension:.4,pointRadius:3,pointBackgroundColor:'#00b4d8'}]},options:{...cfg,plugins:{legend:{display:false}},scales:{x:{...cfg.scales.x,ticks:{...cfg.scales.x.ticks,maxTicksLimit:8}},y:{...cfg.scales.y,ticks:{...cfg.scales.y.ticks,callback:v=>'$'+v}}}}});
-  dc('wr');
-  CI['wr']=new Chart(document.getElementById('chartWR').getContext('2d'),{type:'doughnut',data:{labels:['Ganadas','Perdidas','Pendientes','Nulas'],datasets:[{data:[gan.length,per.length,pend,AP.filter(a=>a.resultado==='nula').length],backgroundColor:['rgba(0,230,118,.8)','rgba(255,23,68,.8)','rgba(255,214,0,.8)','rgba(74,96,128,.5)'],borderColor:['#00e676','#ff1744','#ffd600','#4a6080'],borderWidth:1}]},options:{...cfg,cutout:'65%',scales:{x:{display:false},y:{display:false}}}});
-  document.getElementById('tbody-rec').innerHTML=AP.slice(0,10).map(a=>{const s=SYS[a.sistema]||SYS['goles'];const g=calcG(a);const gs=a.resultado==='ganada'?'+$'+g.toFixed(2):a.resultado==='perdida'?'-$'+(a.stake||0).toFixed(2):'—';return`<tr><td>${a.fecha||'—'}</td><td style="font-weight:600">${a.partido||'—'}</td><td><span class="sb ${s.c}">${s.i} ${s.l}</span></td><td class="mono">${a.cuota||'—'}</td><td class="mono">$${(a.stake||0).toFixed(2)}</td><td class="${a.resultado==='ganada'?'rw':a.resultado==='perdida'?'rl':'rp'}">${{ganada:'✅ Ganada',perdida:'❌ Perdida',nula:'↩️ Nula',pendiente:'⏳ Pend.'}[a.resultado]||'—'}</td><td class="${a.resultado==='ganada'?'gp':a.resultado==='perdida'?'gn':''} mono">${gs}</td></tr>`;}).join('')||'<tr><td colspan="7"><div class="empty"><div class="ei">📋</div><p>Sin apuestas aún</p></div></td></tr>';
-}
-// ============================================================
-// HISTORIAL
-// ============================================================
-function renderHistorial(){
-  const q=(document.getElementById('search-hist')?.value||'').toLowerCase();
-  const data=AP.filter(a=>{if(FA==='todos')return true;if(['ganada','perdida','pendiente'].includes(FA))return a.resultado===FA;return a.sistema===FA;}).filter(a=>!q||(a.partido||'').toLowerCase().includes(q)||(a.desc||'').toLowerCase().includes(q));
-  document.getElementById('hist-count').textContent=data.length+' apuestas';
-  const tb=document.getElementById('tbody-hist');
-  if(!data.length){tb.innerHTML='<tr><td colspan="12"><div class="empty"><div class="ei">🔍</div><p>Sin resultados</p></div></td></tr>';return;}
-  tb.innerHTML=data.map(a=>{const s=SYS[a.sistema]||SYS['goles'];const g=calcG(a);const m=a.moneda||'CLP';const gc=a.resultado==='ganada'?'gp':a.resultado==='perdida'?'gn':'';const gs=a.resultado==='ganada'?'+'+m+' '+g.toFixed(2):a.resultado==='perdida'?'-'+m+' '+(a.stake||0).toFixed(2):a.resultado==='nula'?m+' 0':'—';const rc=a.resultado==='ganada'?'rw':a.resultado==='perdida'?'rl':a.resultado==='nula'?'rw':'rp';return`<tr><td style="color:var(--muted);font-size:.8rem">${AP.indexOf(a)+1}</td><td>${a.fecha||'—'}</td><td style="color:var(--muted);font-size:.82rem">${a.liga||'-'}</td><td style="font-weight:600">${a.partido||'-'}</td><td><span class="sb ${s.c}">${s.i} ${s.l}</span></td><td style="font-size:.82rem;color:var(--muted);max-width:130px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${a.desc||'-'}</td><td class="mono">${a.cuota||'—'}</td><td class="mono"><span style="font-size:.68rem;color:var(--muted);margin-right:2px">${m}</span>${(a.stake||0).toFixed(2)}</td><td class="${rc}">${{ganada:'✅ Ganada',perdida:'❌ Perdida',nula:'↩️ Nula',pendiente:'⏳ Pendiente'}[a.resultado]||'—'}</td><td class="${gc} mono">${gs}</td><td style="font-size:.8rem;color:var(--muted)">${a.notas||'-'}</td><td><div style="display:flex;gap:5px"><button class="btn btns" style="background:var(--bg3);color:var(--accent);padding:5px 9px" onclick="openEdit(${a.id})">✏️</button><button class="btn btnd btns" onclick="delAp(${a.id})">🗑</button></div></td></tr>`;}).join('');
-}
-function filtrar(t,b){FA=t;document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderHistorial();}
-function delAp(id){if(!confirm('¿Eliminar?'))return;AP=AP.filter(a=>a.id!==id);save();renderHistorial();toast('Eliminada','info');}
-function openEdit(id){const a=AP.find(x=>x.id===id);if(!a)return;document.getElementById('edit-id').value=id;document.getElementById('edit-res').value=a.resultado;document.getElementById('mod-edit').classList.add('open');}
-function saveEdit(){
-  const id=parseInt(document.getElementById('edit-id').value);const r=document.getElementById('edit-res').value;
-  const a=AP.find(x=>x.id===id);if(a){const prev=a.resultado;a.resultado=r;save();toast('Actualizado ✅');if(r==='ganada'&&prev!=='ganada')showAnim('gol');else if(r==='perdida'&&prev!=='perdida')showAnim('lost');}
-  closeModal('mod-edit');renderHistorial();
-}
-// ============================================================
-// SISTEMAS
-// ============================================================
-function renderSistemas(){
-  document.getElementById('siscards').innerHTML=Object.entries(SYS).map(([k,s])=>{
-    const sa=AP.filter(a=>a.sistema===k),ce=sa.filter(a=>a.resultado!=='pendiente'&&a.resultado!=='nula'),ga=sa.filter(a=>a.resultado==='ganada'),pe=sa.filter(a=>a.resultado==='perdida');
-    const inv=ce.reduce((x,a)=>x+(a.stake||0),0),ret=ga.reduce((x,a)=>x+(a.stake||0)*(a.cuota||0),0),bal=+(ret-inv).toFixed(2),wr=ce.length?+(ga.length/ce.length*100).toFixed(1):0,roi=inv>0?+((bal/inv)*100).toFixed(1):0,pend=sa.filter(a=>a.resultado==='pendiente').length;
-    return`<div class="siscard" style="--sc:${s.col};border-color:${s.col}22"><div class="sish"><div><div style="font-size:1.5rem;margin-bottom:4px">${s.i}</div><div class="sisn">${s.l}</div><span class="sb ${s.c}" style="margin-top:4px">${sa.length} apuestas</span></div><div style="text-align:right"><div style="font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Balance</div><div style="font-family:'Bebas Neue';font-size:2rem;color:${bal>=0?'var(--verde)':'var(--rojo)'}">${bal>=0?'+':''}$${bal.toFixed(2)}</div></div></div><div class="sisstats"><div class="siss"><div class="sissl">Win Rate</div><div class="sissv" style="color:${wr>=55?'var(--verde)':wr>=45?'var(--amarillo)':'var(--rojo)'}">${wr}%</div></div><div class="siss"><div class="sissl">ROI</div><div class="sissv" style="color:${roi>=0?'var(--verde)':'var(--rojo)'}">${roi>=0?'+':''}${roi}%</div></div><div class="siss"><div class="sissl">Ganadas</div><div class="sissv" style="color:var(--verde)">${ga.length}</div></div><div class="siss"><div class="sissl">Perdidas</div><div class="sissv" style="color:var(--rojo)">${pe.length}</div></div></div><div class="pbar" style="margin-top:.8rem"><div class="pfill" style="width:${wr}%;background:${s.col}"></div></div>${pend>0?`<div style="margin-top:8px;font-size:.78rem;color:var(--amarillo)">⏳ ${pend} pendiente${pend>1?'s':''}</div>`:''}</div>`;
-  }).join('');
-  document.getElementById('tbody-sis').innerHTML=Object.entries(SYS).map(([k,s])=>{
-    const sa=AP.filter(a=>a.sistema===k),ce=sa.filter(a=>a.resultado!=='pendiente'&&a.resultado!=='nula'),ga=sa.filter(a=>a.resultado==='ganada'),pe=sa.filter(a=>a.resultado==='perdida');
-    const inv=ce.reduce((x,a)=>x+(a.stake||0),0),ret=ga.reduce((x,a)=>x+(a.stake||0)*(a.cuota||0),0),bal=+(ret-inv).toFixed(2),wr=ce.length?+(ga.length/ce.length*100).toFixed(1):0,roi=inv>0?+((bal/inv)*100).toFixed(1):0;
-    return`<tr><td><span class="sb ${s.c}">${s.i} ${s.l}</span></td><td>${sa.length}</td><td style="color:var(--verde)">${ga.length}</td><td style="color:var(--rojo)">${pe.length}</td><td style="color:${wr>=55?'var(--verde)':wr>=45?'var(--amarillo)':'var(--rojo)'};font-weight:600">${wr}%</td><td class="mono">$${inv.toFixed(2)}</td><td class="mono">$${ret.toFixed(2)}</td><td class="${roi>=0?'gp':'gn'}">${roi>=0?'+':''}${roi}%</td><td class="${bal>=0?'gp':'gn'} mono">${bal>=0?'+':''}$${bal.toFixed(2)}</td></tr>`;
-  }).join('');
-}
-// ============================================================
-// GRAFICOS
-// ============================================================
-function renderGraficos(){
-  const cfg={responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:'#4a6080',font:{size:11}}}},scales:{x:{ticks:{color:'#4a6080',font:{size:10}},grid:{color:'#1e2d42'}},y:{ticks:{color:'#4a6080',font:{size:10}},grid:{color:'#1e2d42'}}}};
-  setTimeout(()=>{
-    ['g1','g2','g3','g4','g5','g6'].forEach(k=>dc(k));
-    const sk=Object.keys(SYS);
-    const sb=sk.map(k=>{const a=AP.filter(x=>x.sistema===k);const g=a.filter(x=>x.resultado==='ganada').reduce((s,x)=>s+(x.stake||0)*(x.cuota||0),0);const i=a.filter(x=>x.resultado!=='pendiente'&&x.resultado!=='nula').reduce((s,x)=>s+(x.stake||0),0);return+(g-i).toFixed(2);});
-    CI['g1']=new Chart(document.getElementById('cSis').getContext('2d'),{type:'bar',data:{labels:sk.map(k=>SYS[k].l),datasets:[{data:sb,backgroundColor:sk.map(k=>SYS[k].col+'99'),borderColor:sk.map(k=>SYS[k].col),borderWidth:1}]},options:{...cfg,plugins:{legend:{display:false}},scales:{...cfg.scales,y:{...cfg.scales.y,ticks:{...cfg.scales.y.ticks,callback:v=>'$'+v}}}}});
-    const ga=AP.filter(a=>a.resultado==='ganada').length,pe=AP.filter(a=>a.resultado==='perdida').length,pend=AP.filter(a=>a.resultado==='pendiente').length,nu=AP.filter(a=>a.resultado==='nula').length;
-    CI['g2']=new Chart(document.getElementById('cDist').getContext('2d'),{type:'doughnut',data:{labels:['Ganadas','Perdidas','Pendientes','Nulas'],datasets:[{data:[ga,pe,pend,nu],backgroundColor:['rgba(0,230,118,.8)','rgba(255,23,68,.8)','rgba(255,214,0,.8)','rgba(74,96,128,.5)'],borderColor:['#00e676','#ff1744','#ffd600','#4a6080'],borderWidth:1}]},options:{...cfg,cutout:'60%',scales:{x:{display:false},y:{display:false}}}});
-    const inv=AP.reduce((s,a)=>s+(a.stake||0),0),ret=AP.filter(a=>a.resultado==='ganada').reduce((s,a)=>s+(a.stake||0)*(a.cuota||0),0);
-    CI['g3']=new Chart(document.getElementById('cStake').getContext('2d'),{type:'bar',data:{labels:['Invertido','Retornado'],datasets:[{data:[+inv.toFixed(2),+ret.toFixed(2)],backgroundColor:['rgba(0,180,216,.6)','rgba(0,230,118,.6)'],borderColor:['#00b4d8','#00e676'],borderWidth:1}]},options:{...cfg,plugins:{legend:{display:false}},scales:{...cfg.scales,y:{...cfg.scales.y,ticks:{...cfg.scales.y.ticks,callback:v=>'$'+v}}}}});
-    const bm={};AP.forEach(a=>{const m=a.fecha?a.fecha.substring(0,7):'?';bm[m]=(bm[m]||0)+1;});const mk=Object.keys(bm).sort();
-    CI['g4']=new Chart(document.getElementById('cMes').getContext('2d'),{type:'bar',data:{labels:mk,datasets:[{label:'Apuestas',data:mk.map(k=>bm[k]),backgroundColor:'rgba(0,180,216,.6)',borderColor:'#00b4d8',borderWidth:1}]},options:{...cfg,plugins:{legend:{display:false}}}});
-    const rois=sk.map(k=>{const a=AP.filter(x=>x.sistema===k&&x.resultado!=='pendiente'&&x.resultado!=='nula');const i=a.reduce((s,x)=>s+(x.stake||0),0);const r=a.filter(x=>x.resultado==='ganada').reduce((s,x)=>s+(x.stake||0)*(x.cuota||0),0);return i>0?+((r-i)/i*100).toFixed(1):0;});
-    CI['g5']=new Chart(document.getElementById('cROI').getContext('2d'),{type:'bar',data:{labels:sk.map(k=>SYS[k].l),datasets:[{data:rois,backgroundColor:rois.map(r=>r>=0?'rgba(0,230,118,.6)':'rgba(255,23,68,.6)'),borderColor:rois.map(r=>r>=0?'#00e676':'#ff1744'),borderWidth:1}]},options:{...cfg,plugins:{legend:{display:false}},scales:{...cfg.scales,y:{...cfg.scales.y,ticks:{...cfg.scales.y.ticks,callback:v=>v+'%'}}}}});
-    const rd=[...AP].reverse().filter(a=>a.resultado!=='pendiente'&&a.resultado!=='nula');
-    CI['g6']=new Chart(document.getElementById('cRacha').getContext('2d'),{type:'bar',data:{labels:rd.map((_,i)=>i+1),datasets:[{data:rd.map(a=>a.resultado==='ganada'?1:-1),backgroundColor:rd.map(a=>a.resultado==='ganada'?'rgba(0,230,118,.7)':'rgba(255,23,68,.7)'),borderColor:rd.map(a=>a.resultado==='ganada'?'#00e676':'#ff1744'),borderWidth:1}]},options:{...cfg,plugins:{legend:{display:false}},scales:{x:{...cfg.scales.x},y:{...cfg.scales.y,ticks:{...cfg.scales.y.ticks,callback:v=>v>0?'✅':'❌'}}}}});
-  },50);
-}
-// ============================================================
-// ESCALERA
-// ============================================================
-function renderEsc(){
-  // Compute running balance and auto-fill next step stake
-  let running = 0;
-  let prevReturn = 0; // total payout from previous step (stake * cuota)
-  const runningArr = ESC.map((s, i) => {
-    const stake = parseFloat(s.stake) || 0;
-    const cuota = parseFloat(s.cuota) || 0;
-    if (s.resultado === 'ganado' && stake && cuota) {
-      const ganancia = +(stake * cuota - stake).toFixed(2);
-      running += ganancia;
-      prevReturn = +(stake * cuota).toFixed(2);
-    } else if (s.resultado === 'perdido' && stake) {
-      running -= stake;
-      prevReturn = 0;
-    } else {
-      // don't change prevReturn if pendiente
-    }
-    return +running.toFixed(2);
-  });
-
-  document.getElementById('escsteps').innerHTML = ESC.map((s, i) => {
-    const cls = s.resultado === 'ganado' ? 'sw' : s.resultado === 'perdido' ? 'sl' : s.partido ? 'sp' : '';
-    const ico = s.resultado === 'ganado' ? '✅' : s.resultado === 'perdido' ? '❌' : s.partido ? '⏳' : '➕';
-    const stake = parseFloat(s.stake) || 0;
-    const cuota = parseFloat(s.cuota) || 0;
-    const mon = s.moneda || 'CLP';
-
-    // Calculate what the auto-filled stake for this step would be (from previous step)
-    let autoStake = 0;
-    if (i > 0) {
-      const prev = ESC[i - 1];
-      const ps = parseFloat(prev.stake) || 0;
-      const pc = parseFloat(prev.cuota) || 0;
-      if (prev.resultado === 'ganado' && ps && pc) autoStake = +(ps * pc).toFixed(2);
-    }
-
-    let moneyLine = '';
-    if (stake) {
-      const retorno = +(stake * (cuota || 1)).toFixed(2);
-      const ganancia = +(stake * (cuota || 1) - stake).toFixed(2);
-      if (s.resultado === 'ganado') {
-        moneyLine = `<span style="color:var(--verde);font-family:'JetBrains Mono';font-size:.82rem;font-weight:700">+${mon} ${ganancia.toFixed(2)}</span> → <span style="color:var(--amarillo);font-family:'JetBrains Mono';font-size:.82rem">Retorno total: ${mon} ${retorno.toFixed(2)}</span> <span style="color:var(--muted);font-size:.72rem">· Acum: <span style="color:${runningArr[i]>=0?'var(--verde)':'var(--rojo)'}">${runningArr[i]>=0?'+':''}${mon} ${runningArr[i].toFixed(2)}</span></span>`;
-      } else if (s.resultado === 'perdido') {
-        moneyLine = `<span style="color:var(--rojo);font-family:'JetBrains Mono';font-size:.82rem;font-weight:700">-${mon} ${stake.toFixed(2)}</span> <span style="color:var(--muted);font-size:.72rem">· Acum: <span style="color:${runningArr[i]>=0?'var(--verde)':'var(--rojo)'}">${runningArr[i]>=0?'+':''}${mon} ${runningArr[i].toFixed(2)}</span></span>`;
-      } else {
-        const autoNote = autoStake && Math.abs(autoStake - stake) < 0.01 ? ` <span style="color:var(--accent);font-size:.7rem">⚡ auto</span>` : '';
-        moneyLine = `<span style="color:var(--muted);font-size:.82rem">${mon} ${stake.toFixed(2)} a jugar${autoNote} → Retorno potencial: <span style="color:var(--accent)">${mon} ${retorno.toFixed(2)}</span></span>`;
-      }
-    } else if (autoStake && s.resultado === 'pendiente') {
-      const mon2 = ESC[i-1]?.moneda || 'CLP';
-      moneyLine = `<span style="color:var(--accent);font-size:.78rem">⚡ Stake sugerido: <strong>${mon2} ${autoStake.toFixed(2)}</strong> (ganancia del paso anterior)</span>`;
-    }
-
-    const metaParts = [s.desc || null, cuota ? 'Cuota: ' + cuota : null].filter(Boolean).join(' · ');
-    const cantPartidos = s.partido ? `<strong>${s.partido}</strong> partido${s.partido>1?'s':''}` : 'Escalón vacío — toca para completar';
-    return `<div class="estep ${cls}" onclick="openStep(${i})">
-      <div class="enum">${i + 1}</div>
-      <div class="einfo">
-        <div class="epartido">${cantPartidos}</div>
-        ${metaParts ? `<div class="emeta">${metaParts}</div>` : ''}
-        ${moneyLine ? `<div style="margin-top:4px">${moneyLine}</div>` : ''}
-      </div>
-      <div class="eico">${ico}</div>
-    </div>`;
-  }).join('');
-
-  const ga = ESC.filter(s => s.resultado === 'ganado').length;
-  const pe = ESC.filter(s => s.resultado === 'perdido').length;
-  const co = ga + pe;
-  document.getElementById('esc-comp').textContent = co + '/10';
-  document.getElementById('esc-gan').textContent = ga;
-  document.getElementById('esc-per').textContent = pe;
-  document.getElementById('esc-prog').style.width = (ga / 10 * 100) + '%';
-
-  const totalInv = ESC.filter(s => parseFloat(s.stake) && s.resultado !== 'pendiente')
-    .reduce((sum, s) => sum + parseFloat(s.stake), 0);
-  const netBal = running;
-  const monFirst = ESC.find(s => s.moneda)?.moneda || 'CLP';
-  document.getElementById('esc-inv').textContent = monFirst + ' ' + totalInv.toFixed(2);
-  const balEl = document.getElementById('esc-bal');
-  balEl.textContent = (netBal >= 0 ? '+' : '') + monFirst + ' ' + netBal.toFixed(2);
-  balEl.style.color = netBal >= 0 ? 'var(--verde)' : 'var(--rojo)';
-
-  let ra = 0, rt = '';
-  for (let i = ESC.length - 1; i >= 0; i--) {
-    if (ESC[i].resultado === 'ganado') { if (rt === '' || rt === 'g') { ra++; rt = 'g'; } else break; }
-    else if (ESC[i].resultado === 'perdido') { if (rt === '' || rt === 'p') { ra++; rt = 'p'; } else break; }
-    else break;
-  }
-  document.getElementById('esc-racha').textContent = ra > 0 ? (rt === 'g' ? '🔥 ' + ra + ' ganados' : '😓 ' + ra + ' perdidos') : '—';
-  document.getElementById('esc-estado').textContent = ga === 10 ? '🏆 ¡Completada!' : pe > 0 ? '⚠️ Con caídas' : co > 0 ? '🚀 En curso' : '🎯 Sin iniciar';
-}
-function openStep(i){
-  const s=ESC[i];
-  document.getElementById('step-idx').value=i;
-  document.getElementById('step-n').textContent='#'+(i+1);
-  document.getElementById('step-partido').value=s.partido||'';
-  document.getElementById('step-desc').value=s.desc||'';
-  document.getElementById('step-cuota').value=s.cuota||'';
-  document.getElementById('step-res').value=s.resultado||'pendiente';
-
-  // Auto-fill stake: use saved stake, or auto-calculate from previous step's return
-  let autoStake = '';
-  let autoMon = s.moneda || 'CLP';
-  if (i > 0) {
-    const prev = ESC[i-1];
-    const ps = parseFloat(prev.stake) || 0;
-    const pc = parseFloat(prev.cuota) || 0;
-    if (prev.resultado === 'ganado' && ps && pc) {
-      autoStake = +(ps * pc).toFixed(2);
-      autoMon = prev.moneda || autoMon;
-    }
-  }
-  document.getElementById('step-stake').value = s.stake || autoStake || '';
-  document.getElementById('step-moneda').value = autoMon;
-  document.getElementById('mod-step').classList.add('open');
-}
-function saveStep(){
-  const i=parseInt(document.getElementById('step-idx').value);const prev=ESC[i].resultado;const nr=document.getElementById('step-res').value;
-  ESC[i]={paso:i+1,partido:document.getElementById('step-partido').value.trim(),desc:document.getElementById('step-desc').value.trim(),cuota:document.getElementById('step-cuota').value,stake:document.getElementById('step-stake').value,moneda:document.getElementById('step-moneda').value,resultado:nr};
-  saveEsc();closeModal('mod-step');renderEsc();
-  if(nr==='ganado'&&prev!=='ganado'){const tg=ESC.filter(s=>s.resultado==='ganado').length;setTimeout(()=>showAnim(tg===10?'campeon':'escalon'),300);}
-  else if(nr==='perdido'&&prev!=='perdido')setTimeout(()=>showAnim('lost'),300);
-  toast('Escalón guardado ✅');
-}
-function nuevoReto(){if(!confirm('¿Nuevo reto? Se borrará el progreso actual.'))return;resetEsc();}
-function resetEsc(){ESC=mkEsc();saveEsc();renderEsc();toast('Reto reseteado','info');}
-// ============================================================
-// CSV
-// ============================================================
-function exportCSV(){
-  const h=['ID','Fecha','Cant.','Partido','Sistema','Desc','Cuota','Moneda','Stake','Resultado','G/P','Notas'];
-  const rows=AP.map(a=>[a.id,a.fecha,a.liga||'',a.partido||'',(SYS[a.sistema]||SYS['goles']).l,a.desc||'',a.cuota||'',a.moneda||'CLP',a.stake||0,a.resultado,calcG(a),a.notas||''].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(','));
-  const csv=[h.join(','),...rows].join('\n');const blob=new Blob([csv],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='apuestas_'+new Date().toISOString().split('T')[0]+'.csv';a.click();URL.revokeObjectURL(url);toast('CSV exportado 📁');
-}
-// KEYBOARD
-document.getElementById('l-pass').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
-document.getElementById('l-user').addEventListener('keydown',e=>{if(e.key==='Enter')doLogin();});
-document.getElementById('r-pass2').addEventListener('keydown',e=>{if(e.key==='Enter')doRegister();});
-</script>
-
-<!-- FIREBASE -->
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
-import { getFirestore, doc, setDoc, getDoc, collection, getDocs, deleteDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAjAi6hLWKr8UhLebcO48m5ysp3e292XeI",
-  authDomain: "danniapuesta.firebaseapp.com",
-  projectId: "danniapuesta",
-  storageBucket: "danniapuesta.firebasestorage.app",
-  messagingSenderId: "780148952810",
-  appId: "1:780148952810:web:3aaa4ec4178f87363e5193",
-  measurementId: "G-KLRQXL6Z36"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-// ---- OVERRIDE AUTH FUNCTIONS WITH FIREBASE ----
-
-// El username se guarda como parte del email: username@danniapuesta.app
-function toEmail(u){ return u.toLowerCase().trim()+'@danniapuesta.app'; }
-
-window.doLogin = async function(){
-  const u=document.getElementById('l-user').value.trim().toLowerCase();
-  const p=document.getElementById('l-pass').value;
-  const e=document.getElementById('lerr');
-  if(!u||!p){e.textContent='Completa todos los campos.';return;}
-  try {
-    await signInWithEmailAndPassword(auth, toEmail(u), p);
-  } catch(err) {
-    if(err.code==='auth/user-not-found'||err.code==='auth/invalid-credential'||err.code==='auth/invalid-email')
-      e.textContent='❌ Usuario o contraseña incorrectos.';
-    else e.textContent='❌ Error: '+err.message;
-  }
-};
-
-window.doRegister = async function(){
-  const u=document.getElementById('r-user').value.trim().toLowerCase();
-  const p=document.getElementById('r-pass').value;
-  const p2=document.getElementById('r-pass2').value;
-  const e=document.getElementById('rerr');
-  if(!u||!p){e.textContent='Completa todos los campos.';return;}
-  if(u.length<3){e.textContent='❌ Usuario mínimo 3 caracteres.';return;}
-  if(p.length<4){e.textContent='❌ Contraseña mínimo 4 caracteres.';return;}
-  if(p!==p2){e.textContent='❌ Las contraseñas no coinciden.';return;}
-  try {
-    await createUserWithEmailAndPassword(auth, toEmail(u), p);
-    // Guardar nombre de usuario en Firestore
-    await setDoc(doc(db,'usuarios',toEmail(u)),{username:u,created:Date.now()});
-  } catch(err) {
-    if(err.code==='auth/email-already-in-use') e.textContent='❌ Ese usuario ya existe.';
-    else e.textContent='❌ Error: '+err.message;
-  }
-};
-
-window.doLogout = async function(){
-  await signOut(auth);
-  CU=null; AP=[]; FA='todos'; CI={};
-  ESC=Array(10).fill(0).map((_,i)=>({paso:i+1,partido:'',desc:'',cuota:'',stake:'',moneda:'CLP',resultado:'pendiente'}));
-  document.getElementById('app').style.display='none';
-  document.getElementById('login-screen').style.display='flex';
-  document.getElementById('l-user').value='';
-  document.getElementById('l-pass').value='';
-};
-
-// ---- OVERRIDE SAVE/LOAD WITH FIRESTORE ----
-
-window._fbSave = async function(){
-  if(!auth.currentUser) return;
-  await setDoc(doc(db,'datos',auth.currentUser.uid),{ apuestas: JSON.stringify(AP) });
-};
-
-window._fbSaveEsc = async function(){
-  if(!auth.currentUser) return;
-  await setDoc(doc(db,'escalera',auth.currentUser.uid),{ data: JSON.stringify(ESC) });
-};
-
-async function loadFromFirestore(uid){
-  try {
-    const snap = await getDoc(doc(db,'datos',uid));
-    if(snap.exists()) AP = JSON.parse(snap.data().apuestas||'[]');
-    else AP=[];
-  } catch{ AP=[]; }
-  try {
-    const snap2 = await getDoc(doc(db,'escalera',uid));
-    if(snap2.exists()){const e=JSON.parse(snap2.data().data||'[]');if(e.length===10)ESC=e;}
-  } catch{}
-}
-
-// ---- AUTH STATE LISTENER ----
-onAuthStateChanged(auth, async (user) => {
-  if(user){
-    // Obtener username desde Firestore
-    const usnap = await getDoc(doc(db,'usuarios',user.email));
-    const username = usnap.exists() ? usnap.data().username : user.email.replace('@danniapuesta.app','');
-    CU = username;
-    await loadFromFirestore(user.uid);
-    document.getElementById('login-screen').style.display='none';
-    document.getElementById('app').style.display='block';
-    document.getElementById('hdr-user').textContent=username;
-    initForm();
-    renderDash();
-    renderEsc();
-  } else {
-    document.getElementById('app').style.display='none';
-    document.getElementById('login-screen').style.display='flex';
-  }
-});
-</script>
+  <p style="margin-top:1rem">Juega con responsabilidad. Las apuestas deportivas pueden generar adicción.</p>
+</footer>
 </body>
 </html>
