@@ -1,599 +1,89 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog de Apuestas Deportivas | Danni Apuesta</title>
-  <meta name="description" content="Guías prácticas sobre apuestas deportivas de fútbol. Aprende sobre bankroll, ROI, value bet, BTTS, under 2.5, handicap asiático y más con Danni Apuesta." />
-  <link rel="canonical" href="https://danniapuesta.com/blog/" />
-
-  <meta property="og:title" content="Blog de Apuestas Deportivas | Danni Apuesta" />
-  <meta property="og:description" content="Artículos prácticos para entender apuestas deportivas, mejorar tu análisis y controlar tu bankroll." />
-  <meta property="og:url" content="https://danniapuesta.com/blog/" />
-  <meta property="og:type" content="website" />
-
-  <meta name="google-site-verification" content="XeVUGWBRjZH5mjTWQJiAL7mJFJ27vopU9fFpLLbrD8k" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #080c10;
-      color: #8099bb;
-      line-height: 1.7;
-    }
-
-    a { text-decoration: none; color: inherit; }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: 0 auto;
-    }
-
-    .site-header {
-      border-bottom: 1px solid #1e2d42;
-      background: rgba(8, 12, 16, 0.95);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(10px);
-    }
-
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      min-height: 78px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-family: 'Bebas Neue', sans-serif;
-      letter-spacing: 0.6px;
-      color: #e8f0fe;
-      font-size: 2rem;
-    }
-
-    .logo-mark {
-      color: #00b4d8;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .header-link {
-      color: #c7d8f0;
-      font-weight: 500;
-    }
-
-    .header-cta {
-      background: linear-gradient(135deg, #00b4d8, #0077b6);
-      color: #04121c;
-      font-weight: 700;
-      padding: 12px 18px;
-      border-radius: 999px;
-    }
-
-    .hero {
-      padding: 54px 0 28px;
-      text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
-      border: 1px solid #1e2d42;
-      border-radius: 999px;
-      background: #101823;
-      color: #9fc2eb;
-      margin-bottom: 18px;
-      font-size: 0.92rem;
-    }
-
-    .hero h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.8rem, 7vw, 4.8rem);
-      line-height: 0.95;
-      letter-spacing: 0.8px;
-      color: #e8f0fe;
-      margin-bottom: 14px;
-    }
-
-    .hero p {
-      max-width: 780px;
-      margin: 0 auto;
-      font-size: 1.05rem;
-      color: #a9bfdc;
-    }
-
-    .featured-strip {
-      margin: 28px auto 10px;
-      max-width: 980px;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-    }
-
-    .featured-box {
-      background: #111926;
-      border: 1px solid #1e2d42;
-      border-radius: 14px;
-      padding: 16px;
-      text-align: left;
-    }
-
-    .featured-box strong {
-      display: block;
-      color: #e8f0fe;
-      margin-bottom: 6px;
-      font-size: 0.98rem;
-    }
-
-    .featured-box span {
-      color: #8ea8ca;
-      font-size: 0.92rem;
-    }
-
-    .blog-section {
-      padding: 22px 0 60px;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 22px;
-    }
-
-    .section-head h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      color: #00b4d8;
-      font-size: 2.3rem;
-      letter-spacing: 0.6px;
-    }
-
-    .section-head p {
-      color: #91aacc;
-      max-width: 760px;
-    }
-
-    .posts-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .post-card {
-      display: block;
-      background: #161f2e;
-      border: 1px solid #1e2d42;
-      border-radius: 18px;
-      padding: 20px;
-      transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .post-card:hover {
-      transform: translateY(-3px);
-      border-color: #2a4364;
-      box-shadow: 0 14px 30px rgba(0,0,0,0.22);
-    }
-
-    .post-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 14px;
-    }
-
-    .post-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #0f1824;
-      border: 1px solid #1f3249;
-      color: #97b7df;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .badge-new {
-      display: inline-flex;
-      align-items: center;
-      padding: 5px 9px;
-      border-radius: 999px;
-      background: rgba(0,180,216,0.14);
-      color: #00d0f7;
-      border: 1px solid rgba(0,180,216,0.34);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-    }
-
-    .post-card h3 {
-      font-family: 'Bebas Neue', sans-serif;
-      color: #e8f0fe;
-      font-size: 1.9rem;
-      line-height: 1;
-      letter-spacing: 0.45px;
-      margin-bottom: 12px;
-    }
-
-    .post-card p {
-      color: #9ab1d1;
-      margin-bottom: 16px;
-    }
-
-    .post-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      color: #7d98bd;
-      font-size: 0.9rem;
-    }
-
-    .post-meta span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .cta-section {
-      padding: 0 0 64px;
-    }
-
-    .cta-box {
-      background: linear-gradient(135deg, #0f1722, #10273a);
-      border: 1px solid #1d3a55;
-      border-radius: 22px;
-      padding: 30px;
-      text-align: center;
-    }
-
-    .cta-box h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      color: #e8f0fe;
-      font-size: 2.5rem;
-      letter-spacing: 0.5px;
-      margin-bottom: 10px;
-    }
-
-    .cta-box p {
-      max-width: 760px;
-      margin: 0 auto 18px;
-      color: #a8c0e0;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: #00b4d8;
-      color: #04121c;
-      font-weight: 700;
-      padding: 13px 20px;
-      border-radius: 999px;
-    }
-
-    .site-footer {
-      border-top: 1px solid #1e2d42;
-      padding: 28px 0 36px;
-      color: #89a2c2;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 10px;
-    }
-
-    .footer-links a {
-      color: #b5cae8;
-    }
-
-    @media (max-width: 940px) {
-      .featured-strip {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .posts-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .header-inner {
-        padding: 12px 0;
-      }
-
-      .logo {
-        font-size: 1.7rem;
-      }
-
-      .header-actions {
-        gap: 10px;
-      }
-
-      .header-cta {
-        padding: 10px 14px;
-      }
-
-      .hero {
-        padding-top: 34px;
-      }
-
-      .featured-strip {
-        grid-template-columns: 1fr;
-      }
-
-      .post-card h3 {
-        font-size: 1.6rem;
-      }
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Blog",
-    "name":"Blog de Apuestas Deportivas | Danni Apuesta",
-    "url":"https://danniapuesta.com/blog/",
-    "description":"Guías prácticas sobre apuestas deportivas de fútbol. Aprende sobre bankroll, ROI, value bet, BTTS, under 2.5, handicap asiático y más con Danni Apuesta.",
-    "inLanguage":"es",
-    "publisher":{
-      "@type":"Organization",
-      "name":"Danni Apuesta"
-    }
-  }
-  </script>
-</head>
-<body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="https://danniapuesta.com" class="logo"><span class="logo-mark">⚽</span> Danni Apuesta!</a>
-      <div class="header-actions">
-        <a class="header-link" href="https://danniapuesta.com/blog/">Blog</a>
-        <a class="header-cta" href="https://danniapuesta.com">Usar la App →</a>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="hero-badge">📚 Blog de Apuestas Deportivas</div>
-        <h1>Aprende a apostar con más cabeza y menos impulso</h1>
-        <p>
-          Guías prácticas para entender mejor los mercados, controlar tu bankroll, analizar estadísticas y evitar errores comunes en apuestas deportivas de fútbol.
-        </p>
-
-        <div class="featured-strip">
-          <div class="featured-box">
-            <strong>Tipos de apuesta</strong>
-            <span>BTTS, Under 2.5, Over 2.5, Handicap Asiático y más.</span>
-          </div>
-          <div class="featured-box">
-            <strong>Gestión</strong>
-            <span>Controla tu bankroll, ROI y resultados reales.</span>
-          </div>
-          <div class="featured-box">
-            <strong>Estrategia</strong>
-            <span>Aprende a detectar value bets y apostar mejor.</span>
-          </div>
-          <div class="featured-box">
-            <strong>Guías básicas</strong>
-            <span>Contenido claro para principiantes y apostadores en crecimiento.</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="blog-section">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Últimos artículos</h2>
-            <p>Los artículos más nuevos aparecen primero. Aquí están los temas recientes y también las guías base de tu blog.</p>
-          </div>
-        </div>
-
-        <div class="posts-grid">
-
-          <a class="post-card" href="/blog/value-bet-apuestas/">
-            <div class="post-top">
-              <span class="post-tag">Estrategia</span>
-              <span class="badge-new">Nuevo</span>
-            </div>
-            <h3>Qué es el Value Bet y cómo encontrar apuestas con valor</h3>
-            <p>Aprende a detectar apuestas con ventaja matemática real y por qué este concepto es la base de las apuestas rentables.</p>
-            <div class="post-meta">
-              <span>⏱ 6 min</span>
-              <span>📌 Value Bet</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/errores-apuestas-deportivas/">
-            <div class="post-top">
-              <span class="post-tag">Guía básica</span>
-              <span class="badge-new">Nuevo</span>
-            </div>
-            <h3>Errores más comunes en apuestas deportivas (y cómo evitarlos)</h3>
-            <p>Descubre los fallos más frecuentes al apostar y aprende cómo proteger tu bankroll y tomar mejores decisiones.</p>
-            <div class="post-meta">
-              <span>⏱ 6 min</span>
-              <span>📌 Errores comunes</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/que-es-btts-ambos-marcan/">
-            <div class="post-top">
-              <span class="post-tag">Tipos de apuesta</span>
-              <span class="badge-new">Nuevo</span>
-            </div>
-            <h3>Qué es el BTTS (Ambos Marcan) en Apuestas Deportivas</h3>
-            <p>Aprende qué significa BTTS, cuándo conviene apostarlo y qué estadísticas revisar antes de entrar a este mercado.</p>
-            <div class="post-meta">
-              <span>⏱ 6 min</span>
-              <span>📌 BTTS</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/que-es-el-under-2-5-goles/">
-            <div class="post-top">
-              <span class="post-tag">Tipos de apuesta</span>
-              <span class="badge-new">Nuevo</span>
-            </div>
-            <h3>Qué es el Under 2.5 goles y cuándo apostar</h3>
-            <p>Descubre cómo funciona el mercado Under 2.5, cuándo conviene usarlo y qué analizar antes de apostar.</p>
-            <div class="post-meta">
-              <span>⏱ 6 min</span>
-              <span>📌 Under 2.5</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/que-es-el-over-2-5-goles/">
-            <div class="post-top">
-              <span class="post-tag">Tipos de apuesta</span>
-            </div>
-            <h3>Qué es el Over 2.5 goles y cómo apostar a este mercado</h3>
-            <p>Entiende cómo funciona uno de los mercados más populares del fútbol y cuándo puede tener valor.</p>
-            <div class="post-meta">
-              <span>⏱ 6 min</span>
-              <span>📌 Over 2.5</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/como-apostar-en-vivo/">
-            <div class="post-top">
-              <span class="post-tag">Estrategia</span>
-            </div>
-            <h3>Cómo apostar en vivo: guía completa para el betting en directo</h3>
-            <p>Aprende a analizar los momentos del partido y a aprovechar oportunidades en apuestas live sin improvisar.</p>
-            <div class="post-meta">
-              <span>⏱ 7 min</span>
-              <span>📌 En vivo</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/que-es-el-handicap-asiatico/">
-            <div class="post-top">
-              <span class="post-tag">Tipos de apuesta</span>
-            </div>
-            <h3>Qué es el Handicap Asiático y cómo funciona en apuestas</h3>
-            <p>Una guía clara para entender uno de los mercados más útiles para apostadores de fútbol.</p>
-            <div class="post-meta">
-              <span>⏱ 7 min</span>
-              <span>📌 Handicap Asiático</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/como-leer-cuotas-apuestas/">
-            <div class="post-top">
-              <span class="post-tag">Guía básica</span>
-            </div>
-            <h3>Cómo leer las cuotas de apuestas deportivas</h3>
-            <p>Aprende a interpretar cuotas, calcular probabilidades implícitas y detectar cuándo una cuota tiene valor real.</p>
-            <div class="post-meta">
-              <span>⏱ 8 min</span>
-              <span>📌 Cuotas</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/control-de-apuestas-deportivas/">
-            <div class="post-top">
-              <span class="post-tag">Guía básica</span>
-            </div>
-            <h3>Cómo llevar un control de apuestas deportivas y multiplicar tus ganancias</h3>
-            <p>Aprende paso a paso cómo registrar tus apuestas, calcular tu ROI y tomar mejores decisiones con datos reales.</p>
-            <div class="post-meta">
-              <span>⏱ 8 min</span>
-              <span>📌 Control</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/reto-escalera-apuestas/">
-            <div class="post-top">
-              <span class="post-tag">Estrategia</span>
-            </div>
-            <h3>Qué es el Reto Escalera en apuestas y cómo funciona paso a paso</h3>
-            <p>Descubre en qué consiste esta estrategia, qué riesgos tiene y cómo usarla con control.</p>
-            <div class="post-meta">
-              <span>⏱ 7 min</span>
-              <span>📌 Reto escalera</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/win-rate-roi-apuestas/">
-            <div class="post-top">
-              <span class="post-tag">Estadísticas</span>
-            </div>
-            <h3>Win Rate y ROI en apuestas: las 2 métricas que todo apostador debe conocer</h3>
-            <p>Entiende cómo medir tu rendimiento real y por qué ganar muchas apuestas no siempre significa ser rentable.</p>
-            <div class="post-meta">
-              <span>⏱ 8 min</span>
-              <span>📌 Win Rate · ROI</span>
-            </div>
-          </a>
-
-          <a class="post-card" href="/blog/gestion-bankroll-futbol/">
-            <div class="post-top">
-              <span class="post-tag">Gestión</span>
-            </div>
-            <h3>Gestión de bankroll en fútbol: la clave para no perder todo tu dinero</h3>
-            <p>Aprende a proteger tu capital de apuestas y a sobrevivir las malas rachas con una gestión inteligente.</p>
-            <div class="post-meta">
-              <span>⏱ 8 min</span>
-              <span>📌 Bankroll</span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-box">
-          <h2>Controla tus apuestas con Danni Apuesta</h2>
-          <p>
-            Registra tus picks, analiza tu ROI, cuida tu bankroll y descubre qué estrategias te funcionan de verdad. Todo gratis y en un solo lugar.
-          </p>
-          <a class="cta-button" href="https://danniapuesta.com">USAR DANNI APUESTA GRATIS →</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2026 <a href="https://danniapuesta.com">Danni Apuesta!</a> — Tracker gratuito de apuestas deportivas</p>
-      <div class="footer-links">
-        <a href="https://danniapuesta.com/blog/">Blog</a>
-        <a href="https://danniapuesta.com/privacidad/">Privacidad</a>
-        <a href="https://danniapuesta.com/terminos/">Términos</a>
-        <a href="https://danniapuesta.com/contacto/">Contacto</a>
-      </div>
-      <p style="margin-top:10px;">Juega con responsabilidad. Las apuestas deportivas pueden generar adicción. +18.</p>
-    </div>
-  </footer>
-</body>
-</html>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://danniapuesta.com/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/value-bet-apuestas/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/errores-apuestas-deportivas/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/que-es-btts-ambos-marcan/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/que-es-el-under-2-5-goles/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/que-es-el-over-2-5-goles/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/como-apostar-en-vivo/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/que-es-el-handicap-asiatico/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/como-leer-cuotas-apuestas/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/control-de-apuestas-deportivas/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/reto-escalera-apuestas/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/win-rate-roi-apuestas/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/blog/gestion-bankroll-futbol/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/privacidad/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/terminos/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+  <url>
+    <loc>https://danniapuesta.com/contacto/</loc>
+    <lastmod>2026-03-22</lastmod>
+  </url>
+
+</urlset>
