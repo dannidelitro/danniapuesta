@@ -68,20 +68,62 @@ def build_index(posts):
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Blog Danni Apuesta</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog de Apuestas Deportivas | Danni Apuesta</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans&display=swap" rel="stylesheet">
+
 <style>
-body {{ background:#080c10; color:#8099bb; font-family:'DM Sans'; }}
-.container {{ max-width:1000px; margin:auto; padding:20px; }}
-h1 {{ font-family:'Bebas Neue'; color:white; }}
-.post-card {{ display:block; background:#161f2e; padding:20px; margin:10px 0; border-radius:12px; }}
+body {{ background:#080c10; color:#8099bb; font-family:'DM Sans'; margin:0; }}
+.container {{ max-width:1100px; margin:auto; padding:20px; }}
+h1 {{ font-family:'Bebas Neue'; font-size:3rem; color:#e8f0fe; }}
+
+.posts-grid {{ display:grid; grid-template-columns:1fr 1fr; gap:20px; }}
+
+.post-card {{
+  background:#161f2e;
+  padding:20px;
+  border-radius:16px;
+  display:block;
+}}
+
+.post-card h3 {{
+  font-family:'Bebas Neue';
+  color:white;
+  font-size:1.6rem;
+}}
+
+.post-card p {{ color:#9ab1d1; }}
+
+.post-top {{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
+}}
+
+.post-tag {{
+  background:#0f1824;
+  padding:5px 10px;
+  border-radius:20px;
+}}
+
+.badge-new {{
+  color:#00d0f7;
+}}
 </style>
 </head>
+
 <body>
+
 <div class="container">
 <h1>Blog de Apuestas</h1>
+
+<div class="posts-grid">
 {cards}
 </div>
+
+</div>
+
 </body>
 </html>"""
 
