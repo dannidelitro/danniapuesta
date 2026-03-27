@@ -35,10 +35,15 @@ def extract_description(content: str) -> str:
     return "Guía práctica de apuestas deportivas en Danni Apuesta."
 
 
-def extract_canonical(content: str, slug: str) -> str:
+def extract_canonical(content: str, slug: str, article_file: Path) -> str:
     m = re.search(r'<link\s+rel="canonical"\s+href="(.*?)"\s*/?>', content, re.IGNORECASE | re.DOTALL)
     if m:
-        return m.group(1).strip()
+        url = m.group(1).strip()
+        if not url.endswith('/'):
+            url += '/'
+            new_content = content[:m.start(1)] + url + content[m.end(1):]
+            article_file.write_text(new_content, encoding="utf-8", errors="ignore")
+        return url
     return f"{BASE_URL}/blog/{slug}/"
 
 
@@ -137,7 +142,7 @@ def discover_posts():
         content = read_text(article_file)
         title = extract_title(content, slug)
         description = extract_description(content)
-        canonical = extract_canonical(content, slug)
+        canonical = extract_canonical(content, slug, article_file)
         lastmod = git_lastmod(article_file)
 
         posts.append({
