@@ -720,7 +720,11 @@ function spawnRain(bg,n){for(let i=0;i<n;i++){const el=document.createElement('d
 function switchTab(t,b){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.ntab').forEach(x=>x.classList.remove('active'));
-  document.getElementById('tab-'+t).classList.add('active');if(b)b.classList.add('active');
+  document.getElementById('tab-'+t).classList.add('active');
+  if(b){
+    b.classList.add('active');
+    b.scrollIntoView({behavior:'smooth', block:'nearest', inline:'center'});
+  }
   if(t==='dashboard')renderDash();if(t==='historial')renderHistorial();
   if(t==='sistemas')renderSistemas();if(t==='graficos')renderGraficos();if(t==='escalera')renderEsc();if(t==='pronosticos')renderPicks();
 }
