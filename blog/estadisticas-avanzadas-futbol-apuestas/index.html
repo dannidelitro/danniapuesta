@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estadísticas Avanzadas de Fútbol: El Poder de los Expected Goals (xG)</title>
+  <meta name="description" content="Aprende a apostar leyendo los Expected Goals (xG). Deja de mirar la posesión y descubre la métrica matemática que usan los verdaderos analistas deportivos." />
+  <link rel="canonical" href="https://danniapuesta.com/blog/estadisticas-avanzadas-futbol-apuestas/" />
+
+  <meta property="og:title" content="Estadísticas Avanzadas de Fútbol: El Poder de los Expected Goals (xG)" />
+  <meta property="og:description" content="La clave matemática para predecir si un equipo está teniendo suerte o está generando peligro real." />
+  <meta property="og:url" content="https://danniapuesta.com/blog/estadisticas-avanzadas-futbol-apuestas/" />
+  <meta property="og:type" content="article" />
+
+  <meta name="google-site-verification" content="XeVUGWBRjZH5mjTWQJiAL7mJFJ27vopU9fFpLLbrD8k" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #080c10; color: #8099bb; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    .site-header { border-bottom: 1px solid #1e2d42; background: rgba(8, 12, 16, 0.95); position: sticky; top: 0; z-index: 30; backdrop-filter: blur(10px); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 78px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.5px; color: #e8f0fe; font-size: 2rem; }
+    .logo-mark { color: #fe4a49; }
+    .header-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .header-link { color: #c7d8f0; font-weight: 500; }
+    .header-cta { background: linear-gradient(135deg, #fe4a49, #cc3635); color: #04121c; font-weight: 700; padding: 12px 18px; border-radius: 999px; }
+    .article-shell { padding: 34px 0 60px; }
+    .breadcrumb { font-size: 0.95rem; color: #6f88aa; margin-bottom: 22px; }
+    .breadcrumb a { color: #9bb7db; }
+    .article-wrap { max-width: 860px; margin: 0 auto; }
+    .meta-line { display: flex; flex-wrap: wrap; gap: 12px; color: #94abc9; margin-bottom: 16px; font-size: 0.95rem; }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.1; color: #e8f0fe; margin-bottom: 18px; letter-spacing: 0.5px; }
+    h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: #fe4a49; margin: 34px 0 14px; letter-spacing: 0.4px; }
+    h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; color: #dbe9ff; margin: 26px 0 10px; letter-spacing: 0.4px; }
+    p { margin-bottom: 16px; }
+    ul { margin: 0 0 18px 20px; color: #b7c9e4; }
+    li { margin-bottom: 8px; }
+    .lead { font-size: 1.08rem; color: #b8cbe5; }
+    .box { background: #161f2e; border: 1px solid #1e2d42; border-radius: 16px; padding: 20px; margin: 24px 0; }
+    .highlight { border-left: 4px solid #fe4a49; }
+    .warning { border-left: 4px solid #ffb400; background: #1a1200; border-color: #3b2a00; }
+    .mini-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 18px 0 26px; }
+    .mini-card { background: #161f2e; border: 1px solid #1e2d42; border-radius: 14px; padding: 16px; text-align: center;}
+    .mini-card strong { display: block; color: #e8f0fe; font-size: 1.2rem; margin-bottom: 4px; }
+    .cta-box { margin-top: 34px; background: linear-gradient(135deg, #0f1722, #1a0f0f); border: 1px solid #3d1b1b; border-radius: 20px; padding: 28px; }
+    .cta-box h3 { margin-top: 0; color: #e8f0fe; }
+    .cta-button { display: inline-block; margin-top: 14px; background: #fe4a49; color: #04121c; font-weight: 700; padding: 12px 18px; border-radius: 999px; }
+    .related { margin-top: 42px; border-top: 1px solid #1e2d42; padding-top: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
+    .related-card { display: block; background: #161f2e; border: 1px solid #1e2d42; border-radius: 16px; padding: 18px; }
+    .related-card span { display: inline-block; font-size: 0.8rem; color: #fe4a49; margin-bottom: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; }
+    .related-card h3 { margin: 0 0 8px; font-size: 1.3rem; }
+    .site-footer { border-top: 1px solid #1e2d42; margin-top: 56px; padding: 26px 0 34px; color: #89a2c2; }
+    .footer-links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 10px; }
+    .footer-links a { color: #b5cae8; }
+    @media (max-width: 640px) {
+      .header-inner { padding: 12px 0; }
+      .logo { font-size: 1.7rem; }
+      .header-actions { gap: 10px; }
+      .header-cta { padding: 10px 14px; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Estadísticas Avanzadas de Fútbol: El Poder de los Expected Goals (xG)",
+    "description":"Aprende a apostar leyendo los Expected Goals (xG). Deja de mirar la posesión y descubre la métrica matemática de los verdaderos analistas.",
+    "author": { "@type":"Organization", "name":"Danni Apuesta" },
+    "publisher": { "@type":"Organization", "name":"Danni Apuesta" },
+    "url":"https://danniapuesta.com/blog/estadisticas-avanzadas-futbol-apuestas/",
+    "inLanguage":"es"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="https://danniapuesta.com" class="logo"><span class="logo-mark">⚽</span> Danni Apuesta!</a>
+      <div class="header-actions">
+        <a class="header-link" href="https://danniapuesta.com/blog/">Blog</a>
+        <a class="header-cta" href="https://danniapuesta.com">Usar la App →</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-shell">
+    <div class="container article-wrap">
+      <div class="breadcrumb">
+        <a href="https://danniapuesta.com">Inicio</a> → <a href="https://danniapuesta.com/blog/">Blog</a> → Estadísticas Avanzadas
+      </div>
+
+      <div class="meta-line">
+        <span>Goles Esperados (xG)</span>
+        <span>29 de marzo de 2026</span>
+        <span>⏱ 7 min de lectura</span>
+      </div>
+
+      <h1>El fin de la Posesión: Entendiendo los Expected Goals (xG) para apostar como un Pro</h1>
+      
+      <p class="lead">
+        El 95% de los apostadores deportivos aficionados todavía juzgan un partido mirando quién tuvo más la pelota, o la famosa "posesión" de balón. Creen que el equipo que domina posesivamente "mereció ganar". La gran mentira que les quita el dinero. El verdadero Santo Grial se llama "xG".
+      </p>
+
+      <div class="box highlight">
+        <p><strong>¿Qué son los Goles Esperados (xG)?</strong> El "Expected Goals (xG)" es una métrica predictiva que evalúa la <em>calidad</em> de cada disparo. A cada tiro a puerta se le asigna una probabilidad matemática de terminar en gol, dictada por miles de datos previos (distancia, ángulo, presión defensiva, parte del cuerpo usada, etc).</p>
+      </div>
+
+      <h2>La Calidad de Oportunidad VS La Cantidad de Tiros</h2>
+      <p>
+        Si el Manchester City patea 30 veces a portería desde 35 metros de distancia a la grada con un muro humano enfrente, de forma tradicional las estadísticas dirán <strong>"Manchester City tuvo 30 intentos a puerta! Impresionante! Dominó!"</strong>. 
+      </p>
+      <p>Sin embargo, si esos 30 tiros ridículos desde la lejanía solo tenían, digamos, un 0.02 de probabilidad matemática de entrar (xG de 0.02 por cada disparo), su xG Total del partido fue un miserable **0.60**. El equipo no generó peligro claro en todo el partido.</p>
+      
+      <p>
+        Por otro lado, si el equipo rival, jugando al contragolpe, metió a su delantero solo frente al portero 2 veces, eso significa 2 tiros de altísima probabilidad (ej. 0.45 de xG cada uno). Con solo 2 tiros generaron casi **0.90 xG**. 
+      </p>
+
+      <h2>¿Cómo encontramos apuestas de valor usando xG?</h2>
+      <p>Aquí es donde le ganamos la guerra a las casas de apuestas (Value Betting).</p>
+
+      <div class="mini-grid">
+        <div class="mini-card">
+          <strong>Buscar a la "Víctima de la Varianza"</strong><br>
+          <span style="font-size:1.1rem; color:#b7c9e4">Equipos con Alto xG pero pocos goles reales en la tabla.</span><br><br>
+          <span style="font-family:monospace; font-size:1rem; color:var(--verde)">Están fallando por mala suerte, pronto van a golear.</span>
+        </div>
+        <div class="mini-card">
+          <strong>Detectar al "Falso Dominador"</strong><br>
+          <span style="font-size:1.1rem; color:#b7c9e4">Equipos con poco xG pero muchos goles reales (sobreactuando).</span><br><br>
+          <span style="font-family:monospace; font-size:1rem; color:#00b4d8">Están teniendo suerte asombrosa. Tarde o temprano caerán.</span>
+        </div>
+      </div>
+
+      <div class="box warning">
+        <p><strong>⚠️ La regresión hacia la media:</strong> La ley de los grandes números nos asegura que el azar no es eterno. El equipo "ganador con suerte" empezará a perder ante equipos de la media tabla. Ese es el día en que tu <strong>Cuota 3.50 a favor de la sorpresa</strong> va a entrar mágicamente. Eso es el Value Bet por excelencia.</p>
+      </div>
+
+      <h2>xGA: Expected Goals Against (Goles Esperados en Contra)</h2>
+      <p>No todo es el ataque. Del mismo modo, el "xGA" mide el volumen general de peligro y la gravedad de los ataques que su propia defensa ha permitido a los oponentes. Evaluar el xGA te convierte en el francotirador de las apuestas de "Ambos Marcan (BTTS)" o "Over 2.5 Goles", porque ubicarás partidos donde los dos escudos defensivos son caóticos y extremadamente vulnerables según los números duros.</p>
+
+      <div class="cta-box">
+        <h3>Tu Historial en base a xG</h3>
+        <p>
+          Si integras el análisis de datos de xG y apuestas por las verdaderamente importantes, necesitas documentar el desempeño de cada una de ellas de forma inteligente. Sigue la progresión de tu *Yield* y comprueba con **Danni Apuesta Web App** el crecimiento y cómo tu lectura fina del mercado comienza a batir directamente a las casas de apuesta mes a mes.
+        </p>
+        <a class="cta-button" href="https://danniapuesta.com">MEDIR MÍ RENDIMIENTO HOY →</a>
+      </div>
+
+      <section class="related">
+        <h2>Lecturas Vitales</h2>
+        <div class="related-grid">
+          <a class="related-card" href="https://danniapuesta.com/blog/que-es-btts-ambos-marcan/">
+            <span>Mercados Útiles</span>
+            <h3>Mercado 'Ambos Marcan'</h3>
+            <p>Por qué la defensa define esta apuesta y cómo mezclar este concepto general con el xG en las ligas correctas.</p>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 <a href="https://danniapuesta.com">Danni Apuesta!</a> — Tracker gratuito de apuestas deportivas</p>
+      <div class="footer-links">
+        <a href="https://danniapuesta.com/blog/">Blog</a>
+        <a href="https://danniapuesta.com/privacidad/">Privacidad</a>
+        <a href="https://danniapuesta.com/terminos/">Términos</a>
+        <a href="https://danniapuesta.com/contacto/">Contacto</a>
+      </div>
+      <p style="margin-top:10px;">Juega con responsabilidad. Las apuestas deportivas pueden generar adicción. +18.</p>
+    </div>
+  </footer>
+</body>
+</html>
