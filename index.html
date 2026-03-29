@@ -557,8 +557,12 @@ tbody td{padding:12px 16px;font-size:.88rem;}
 <!-- PRONOSTICOS -->
 <div id="tab-pronosticos" class="section">
   <div class="stitle"><h2>🌟 Pronósticos VIP</h2><span class="badge" style="background:var(--accent);color:#000;font-weight:bold;">Value Bets</span></div>
-  <div style="margin-bottom:2rem;padding:1rem;background:rgba(0,180,216,0.05);border:1px solid rgba(0,180,216,0.2);border-radius:12px;color:#9bb7db;font-size:0.88rem;line-height:1.5;">
+  <div style="margin-bottom:1.5rem;padding:1rem;background:rgba(0,180,216,0.05);border:1px solid rgba(0,180,216,0.2);border-radius:12px;color:#9bb7db;font-size:0.88rem;line-height:1.5;">
     💡 <strong>Análisis Estadístico:</strong> Estos son partidos donde nuestro modelo detecta "Valor" matemático a largo plazo. <strong style="color:var(--verde)">Juega con cabeza y usa un Stake Responsable (1-2%)</strong> de tu Banca en cada Pick. Registra absolutamente todo en tu sección "Registrar" para ver tu ROI.
+  </div>
+  <div class="ltabs" style="max-width: 400px; margin: 0 auto 2rem auto;">
+    <button class="ltab active" onclick="setPickDay('hoy', this)">📅 Hoy (29 Mar)</button>
+    <button class="ltab" onclick="setPickDay('manana', this)">📆 Mañana (30 Mar)</button>
   </div>
   <div id="picks-container"></div>
 </div>
@@ -994,7 +998,7 @@ function exportCSV(){
 // ============================================================
 // PRONOSTICOS
 // ============================================================
-const PICKS_DATA = [
+const PICKS_HOY = [
   {
     liga: "🇪🇸 Liga F (España)",
     partido: "FC Barcelona Fem vs. Real Madrid Fem",
@@ -1077,8 +1081,101 @@ const PICKS_DATA = [
   }
 ];
 
+const PICKS_MANANA = [
+  {
+    liga: "🌍 Amistoso Internacional",
+    partido: "Alemania vs. Ghana",
+    fecha: "30 de marzo, 19:45 GMT+1",
+    pronostico: "Victoria de Alemania (Local)",
+    cuota: "1.23",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 88% | Riesgo: Bajo</strong><br>Alemania llega con 5 victorias consecutivas y promedia 2.83 goles de local. Posesión arrolladora del 68%. Ghana (1-5 contra Austria) sufre graves fracturas defensivas y la baja de Kudus los limita totalmente ante la presión teutona."
+  },
+  {
+    liga: "🇪🇺 Clasif. Euro Sub-21",
+    partido: "Francia Sub-21 vs. Islandia Sub-21",
+    fecha: "30 de marzo, 17:00 GMT",
+    pronostico: "Victoria de Francia (Local)",
+    cuota: "1.15",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 85% | Riesgo: Bajo</strong><br>Francia domina el grupo C con un increíble 3.50 goles por partido de local. Cuentan con talento de élite absoluta (Tel, Kroupi). Islandia concede goles temprano de visita y no aguantará este asedio físico."
+  },
+  {
+    liga: "🇩🇿 Argelia Ligue 1",
+    partido: "MC Alger vs. USM Alger",
+    fecha: "30 de marzo, 12:00 GMT",
+    pronostico: "Doble Oportunidad 1X (Local o Empate)",
+    cuota: "1.18",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 82% | Riesgo: Bajo</strong><br>MC Alger, el líder, lleva 20 partidos invicto de local y la defensa menos goleada del Magreb (0.43 p/p). USM Alger defiende bien pero apenas anota de visita. La probabilidad de que el visitante gane es inferior al 12%."
+  },
+  {
+    liga: "🇨🇴 Colombia Liga DIMAYOR",
+    partido: "Millonarios vs. Fortaleza CEIF",
+    fecha: "30 de marzo, 18:20 GMT-5",
+    pronostico: "Local - Empate No Válido (DNB)",
+    cuota: "1.25",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 78% | Riesgo: Bajo</strong><br>Millonarios aplasta con su localía y la altitud de Bogotá, invictos y efectivos. Fortaleza es una ruina de visita (ha perdido 6 de sus últimos 10) sufriendo especialmente con equipos grandes."
+  },
+  {
+    liga: "🌍 Amistoso Internacional",
+    partido: "Indonesia vs. Bulgaria",
+    fecha: "30 de marzo, 13:00 GMT",
+    pronostico: "Más de 1.5 goles",
+    cuota: "1.25",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 80% | Riesgo: Bajo</strong><br>Ambas son máquinas de atacar y conceder. Bulgaria acaba de meter 10 goles. Indonesia ganó 4-0 con fútbol ultra-agresivo. Se esperan desajustes tácticos inmensos porque habrá muchísimas rotaciones tipo amistoso."
+  },
+  {
+    liga: "🇦🇷 Copa Argentina",
+    partido: "Unión de Santa Fe vs. Agropecuario",
+    fecha: "30 de marzo, 17:15 GMT-3",
+    pronostico: "Doble Oportunidad 1X (Local o Empate)",
+    cuota: "1.13",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 84% | Riesgo: Bajo</strong><br>Unión (1ª División) en casa es una muralla con más del 55% de la posesión. Agropecuario (Ascenso) promedia unos tristes 0.6 goles de visita y está sufriendo muchísimo anotando contra equipos de poder superior."
+  },
+  {
+    liga: "🌎 Amistoso Concacaf",
+    partido: "Guyana vs. Belice",
+    fecha: "30 de marzo, 12:00 GMT",
+    pronostico: "Victoria de Guyana (Local)",
+    cuota: "1.50",
+    explicacion: "<strong style='color:var(--amarillo)'>Probabilidad: 72% | Riesgo: Medio</strong><br>Guyana arrastra un 100% de victorias en casa en sus últimos 5 juegos (2.2 goles/partido). Belice #181 FIFA sufre horriblemente con defensas físicas. H2H es claro para Guyana (3-1 y 2-1 históricamente)."
+  },
+  {
+    liga: "🌍 Amistoso Internacional",
+    partido: "Uzbekistán vs. Venezuela",
+    fecha: "30 de marzo, 15:00 GMT",
+    pronostico: "Más de 1.5 goles",
+    cuota: "1.30",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 75% | Riesgo: Bajo</strong><br>Ambos desatados ofensivamente: Venezuela viene de hacer un letal 4-1 con Rondón intratable y Uzbekistán de firmar un 3-1. Encuentro neutro ideal para un espectáculo abierto y goles fluidos sin candados defensivos."
+  },
+  {
+    liga: "🇵🇾 Paraguay Div. Honor",
+    partido: "Libertad vs. Deportivo Recoleta",
+    fecha: "30 de marzo, 16:30 GMT-4",
+    pronostico: "Doble Oportunidad 1X (Local o Empate)",
+    cuota: "1.20",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 77% | Riesgo: Bajo</strong><br>Libertad quiere recuperar terreno y, de local frente a su público y en su gran cancha, dictan todos los tiempos. Recoleta, siendo un recién ascendido, es muy vulnerable como visitante (1.31 goles recibidos de media)."
+  },
+  {
+    liga: "🌍 Amistoso Internacional",
+    partido: "Chile vs. Nueva Zelanda",
+    fecha: "30 de marzo, 08:00 GMT",
+    pronostico: "Victoria de Chile",
+    cuota: "1.33",
+    explicacion: "<strong style='color:var(--amarillo)'>Probabilidad: 70% | Riesgo: Medio</strong><br>Chile cierra la gira con hambre de victoria y una plantilla técnica hiper-superior frente a una rocosa Nueva Zelanda que adolece de creación creativa, limitándose al juego físico sin ideas."
+  }
+];
+
+let CURRENT_PICK_DAY = 'hoy';
+window.setPickDay = function(day, btn) {
+  CURRENT_PICK_DAY = day;
+  document.querySelectorAll('#tab-pronosticos .ltab').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  window.renderPicks();
+};
+
 window.renderPicks = function() {
   const container = document.getElementById('picks-container');
+  const PICKS_DATA = CURRENT_PICK_DAY === 'hoy' ? PICKS_HOY : PICKS_MANANA;
+  
   if (!PICKS_DATA || PICKS_DATA.length === 0) {
     container.innerHTML = '<div class="empty"><div class="ei">🧭</div><p>No hay pronósticos activos ahora mismo.</p></div>';
     return;
