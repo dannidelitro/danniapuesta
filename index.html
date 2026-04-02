@@ -996,8 +996,86 @@ function exportCSV(){
 // ============================================================
 const PICKS_DATA = [
   {
+    liga: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 League One - Inglaterra",
+    partido: "Wigan Athletic vs. Leyton Orient",
+    fecha: "2 de abril de 2026, 11:45",
+    pronostico: "Más de 1.5 Goles",
+    cuota: "1.30",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 78% | Riesgo: Bajo</strong><br>Wigan suma 41 goles en la temporada y Leyton Orient 55. El problema del Orient es su defensa fuera de casa: 38 goles concedidos en 20 partidos como visitante, uno de los peores registros de la división. Con ambos equipos necesitando puntos para alejarse del peligro, el partido abierto es inevitable."
+  },
+  {
+    liga: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 League Two - Inglaterra",
+    partido: "Cambridge United vs. Swindon Town",
+    fecha: "2 de abril de 2026, 12:00",
+    pronostico: "Cambridge United o Empate (1X)",
+    cuota: "1.35",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 80% | Riesgo: Bajo</strong><br>Cambridge (4°, 72 pts) recibe a Swindon (5°, 70 pts) en un duelo de ascenso. El Abbey Stadium es un fortín: solo 12 goles concedidos en casa y 16 porterías a cero. Cambridge lleva 7 partidos sin perder en casa. La probabilidad de derrota local es estadísticamente muy baja en este contexto."
+  },
+  {
     liga: "🇪🇸 LaLiga 2 - Segunda División",
-    partido: "Burgos CF vs. AD Ceuta FC",
+    partido: "Las Palmas vs. Granada",
+    fecha: "2 de abril de 2026, 10:00",
+    pronostico: "Menos de 3.5 Goles",
+    cuota: "1.25",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 85% | Riesgo: Bajo</strong><br>La LaLiga 2 es célebre por su baja producción goleadora. Las Palmas maneja el ritmo con posesiones largas y el Granada se repliega efectivamente fuera de casa. El último cara a cara terminó 0-0. Los modelos sitúan el Under 2.5 en 65-70%, subiendo al 85%+ bajando la línea a 3.5. Un festival de goles no se corresponde con los patrones de ambos equipos."
+  },
+  {
+    liga: "🇪🇸 LaLiga 2 - Segunda División",
+    partido: "Castellón vs. Almería",
+    fecha: "2 de abril de 2026, 11:00",
+    pronostico: "Más de 1.5 Goles",
+    cuota: "1.28",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 82% | Riesgo: Bajo</strong><br>Dos de los equipos más goleadores de la categoría: Castellón suma 51 goles y Almería 59. El Castellón lleva 6 jornadas sin ganar y deberá adelantar líneas obligatoriamente. Almería ha marcado en sus últimos 7 enfrentamientos directos contra este rival y ganó 5 de los últimos 10 choques. La inercia goleadora de ambos es innegable."
+  },
+  {
+    liga: "🇪🇸 LaLiga 2 - Segunda División",
+    partido: "Leganés vs. Real Zaragoza",
+    fecha: "2 de abril de 2026, 12:30",
+    pronostico: "Menos de 2.5 Goles",
+    cuota: "1.45",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 76% | Riesgo: Bajo</strong><br>Leganés (16°) promedia solo 0.80 goles anotados y 0.80 concedidos en sus últimos 10 partidos. Zaragoza (19°) suma apenas 29 goles en toda la temporada. Ambos equipos priorizan no perder sobre el ataque. El pánico a cometer errores garantiza un partido cerrado en el centro del campo con pocas llegadas al área."
+  },
+  {
+    liga: "🇦🇺 A-League - Australia",
+    partido: "Macarthur FC vs. Newcastle Jets",
+    fecha: "2 de abril de 2026, 01:35",
+    pronostico: "Más de 1.5 Goles",
+    cuota: "1.25",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 83% | Riesgo: Bajo</strong><br>La A-League es una de las ligas con mayor promedio goleador del mundo. Macarthur supera el 1.5 en el 81% de sus partidos, Newcastle Jets en el 85%. Los visitantes promedian 2.33 goles a favor por partido. El promedio histórico de goles en enfrentamientos directos entre ambos es de 3.65 por partido."
+  },
+  {
+    liga: "🇦🇺 A-League - Australia",
+    partido: "Brisbane Roar vs. Sydney FC",
+    fecha: "2 de abril de 2026, 03:00",
+    pronostico: "Más de 1.5 Goles",
+    cuota: "1.22",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 85% | Riesgo: Bajo</strong><br>Brisbane Roar registra ambos equipos anotando en 8 de sus últimos 9 partidos, evidenciando una defensa permeable. Sydney FC (5°) llega con obligación de sumar y vocación ofensiva. El intercambio de golpes es la tónica histórica de este derbi australiano. Solo se necesitan 2 goles en 90 minutos, una cifra mínima para estos estándares."
+  },
+  {
+    liga: "🇦🇷 Liga Profesional - Argentina",
+    partido: "Barracas Central vs. Sarmiento",
+    fecha: "2 de abril de 2026, 11:00",
+    pronostico: "Barracas Central o Empate (1X)",
+    cuota: "1.30",
+    explicacion: "<strong style='color:var(--amarillo)'>Probabilidad: 78% | Riesgo: Bajo</strong><br>Barracas lleva 5 partidos consecutivos sin perder en su mejor momento de la temporada. Sarmiento (22°) perdió los 5 partidos disputados fuera de casa en este ciclo, mostrando una fragilidad alarmante como visitante. La fortaleza del Estadio Claudio Tapia combinada con el pésimo rendimiento foráneo del rival hace casi imposible una derrota local."
+  },
+  {
+    liga: "🇨🇴 Primera A - Colombia",
+    partido: "Santa Fe vs. Llaneros",
+    fecha: "2 de abril de 2026, 01:30",
+    pronostico: "Santa Fe o Empate (1X)",
+    cuota: "1.25",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 80% | Riesgo: Bajo</strong><br>Santa Fe en El Campín es un escenario difícil para cualquier visitante: promedia 1.40 goles anotados en casa y ha marcado primero en 6 partidos consecutivos. Llaneros solo ganó 1 de sus últimos 9 compromisos y la altitud de Bogotá agrava su rendimiento físico en los tramos finales. La probabilidad de derrota de Santa Fe en casa es marginal."
+  },
+  {
+    liga: "🇧🇷 Brasileirão Serie A",
+    partido: "Chapecoense vs. Atlético Mineiro",
+    fecha: "2 de abril de 2026, 23:00",
+    pronostico: "Menos de 3.5 Goles",
+    cuota: "1.20",
+    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 85% | Riesgo: Bajo</strong><br>El Atlético Mineiro no ha logrado puntuar fuera de Belo Horizonte en sus salidas recientes y llega con 4 jugadores clave ausentes por la fecha FIFA. Chapecoense acumula 5 partidos sin ganar pero es sólido en casa. Ritmo cansino post-fecha internacional y pocas genialidades individuales hacen casi imposible ver 4+ goles en este partido."
+  },
+];
     fecha: "1 de abril de 2026, 19:00 GMT",
     pronostico: "Burgos CF o Empate (1X)",
     cuota: "1.22",
