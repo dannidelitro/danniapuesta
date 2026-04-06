@@ -248,7 +248,61 @@ tbody td{padding:12px 16px;font-size:.88rem;}
 .pcard:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0,180,216,0.2);
-  border-color: rgba(0,180,216,0.4);
+}
+.btn-toggle-desc {
+  background: var(--accent);
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: 700;
+  display: block;
+  width: 100%;
+  text-align: center;
+  transition: all 0.3s;
+}
+.btn-toggle-desc:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+.p-expanded {
+  display: none;
+  padding: 15px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  margin-top: 15px;
+  border: 1px solid rgba(0,180,216,0.15);
+}
+.stat-box {
+  background: var(--card);
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+.stat-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  color: #9bb7db;
+}
+.stat-bar-container {
+  height: 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.stat-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  width: 0%;
+  transition: width 1s ease-in-out;
+  border-radius: 4px;
+  box-shadow: 0 0 10px var(--accent);
 }
 .ph {display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:1.2rem;}
 .p-liga {font-size:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px; font-weight: 700; display:flex; align-items:center; gap:6px;}
@@ -993,91 +1047,135 @@ function exportCSV(){
   const rows=AP.map(a=>[a.id,a.fecha,a.liga||'',a.partido||'',(SYS[a.sistema]||SYS['goles']).l,a.desc||'',a.cuota||'',a.moneda||'CLP',a.stake||0,a.resultado,calcG(a),a.notas||''].map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(','));
   const csv=[h.join(','),...rows].join('\n');const blob=new Blob([csv],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='apuestas_'+new Date().toISOString().split('T')[0]+'.csv';a.click();URL.revokeObjectURL(url);toast('CSV exportado 📁');
 }
-// ============================================================
 // PRONOSTICOS
 // ============================================================
 const PICKS_DATA = [
   {
-    liga: "🇳🇱 Eredivisie - Países Bajos",
-    partido: "FC Volendam vs. Feyenoord",
-    fecha: "5 de abril de 2026",
+    liga: "🇮🇹 Serie A (Italia)",
+    partido: "Napoli vs AC Milan",
+    fecha: "6 de abril de 2026",
     pronostico: "Más de 1.5 Goles",
-    cuota: "1.18",
-    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 92% | Riesgo: Muy Bajo</strong><br>El pick más sólido de la jornada. Volendam ha concedido 48 goles en la temporada y recibido 10 en sus últimos 5 partidos. Feyenoord (2°) lleva 61 goles anotados con Ueda como líder goleador con 22 dianas. El xG combinado proyecta 3.25 goles esperados. Volendam ha marcado en 13 de sus últimos 14 partidos en casa. Casi imposible que termine con 1 o menos goles."
+    cuota: "1.28",
+    prob: 78,
+    explicacion: "Napoli bajo Antonio Conte ataca fuerte en los primeros minutos. Acumulan 62 y 63 puntos, lo que garantiza choque de transiciones altísimas."
   },
   {
-    liga: "🇳🇱 Eredivisie - Países Bajos",
-    partido: "FC Volendam vs. Feyenoord",
-    fecha: "5 de abril de 2026",
-    pronostico: "Más de 8.5 Córners",
-    cuota: "1.45",
-    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 85% | Riesgo: Bajo</strong><br>Feyenoord promedia 7.6 córners a favor por partido. Volendam concede una media de 7.0 córners a sus rivales. El juego de banda del conjunto de Van Persie contra un bloque bajo genera constantes despejes hacia la línea de fondo. La probabilidad del 85% frente a una cuota que implica solo 69% representa valor matemático puro."
+    liga: "🇮🇹 Serie A (Italia)",
+    partido: "Juventus vs Genoa",
+    fecha: "6 de abril de 2026",
+    pronostico: "Gol Juventus (Local)",
+    cuota: "1.22",
+    prob: 88,
+    explicacion: "En casa, la Juve anota 2 goles por partido liderada por Kenan Yildiz, y mantienen un invicto histórico ante su contrincante visitante."
   },
   {
-    liga: "🇳🇱 Eredivisie - Países Bajos",
-    partido: "FC Volendam vs. Feyenoord",
-    fecha: "5 de abril de 2026",
+    liga: "🇪🇸 LaLiga (España)",
+    partido: "Girona vs Villarreal",
+    fecha: "6 de abril de 2026",
     pronostico: "Ambos Anotan (Sí)",
-    cuota: "1.55",
-    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 79% | Riesgo: Bajo</strong><br>Volendam ha anotado en 13 de sus últimos 14 partidos como local a pesar de su posición en la tabla. El Feyenoord ha mostrado lagunas defensivas fuera de Rotterdam en sus últimas salidas. La combinación de un local con hambre ofensiva y un visitante con concentración irregular crea condiciones ideales para goles en ambas porterías."
-  },
-  {
-    liga: "🇹🇷 Süper Lig - Turquía",
-    partido: "Fenerbahce vs. Besiktas",
-    fecha: "5 de abril de 2026",
-    pronostico: "Más de 1.5 Goles",
-    cuota: "1.20",
-    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 88% | Riesgo: Muy Bajo</strong><br>El clásico de Estambul con altísima producción goleadora histórica. Fenerbahce promedia 2.26 goles anotados y 1.04 concedidos. Besiktas suma 1.81 a favor y 1.15 en contra. El xG combinado proyecta 3.10 goles. En sus últimos 10 duelos directos se anotaron 22 goles entre ambos equipos. Partido de transiciones rápidas y espacios abiertos garantizados."
-  },
-  {
-    liga: "🇹🇷 Süper Lig - Turquía",
-    partido: "Fenerbahce vs. Besiktas",
-    fecha: "5 de abril de 2026",
-    pronostico: "Más de 9.5 Córners",
-    cuota: "1.50",
-    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 82% | Riesgo: Bajo</strong><br>Fenerbahce promedia 7.8 córners a favor por partido, el mayor de la Super Lig. Besiktas genera 6.0 de media. La suma proyecta más de 13 córners esperados. Los extremos de ambos equipos atacan constantemente por las bandas generando despejes hacia la línea de fondo. El 82% de probabilidad con buena cuota hace de este pick una opción de alto valor."
-  },
-  {
-    liga: "🇹🇷 Süper Lig - Turquía",
-    partido: "Fenerbahce vs. Besiktas",
-    fecha: "5 de abril de 2026",
-    pronostico: "Más de 5.5 Tarjetas",
     cuota: "1.65",
-    explicacion: "<strong style='color:var(--amarillo)'>Probabilidad: 89% | Riesgo: Medio</strong><br>El derbi de Estambul es históricamente el partido con más tarjetas de Turquía: media de 6.8 amonestaciones en los últimos 10 H2H. Ambos equipos pelean por clasificarse a Champions. Las faltas cometidas por partido suman 29.7 entre ambos. La probabilidad del 89% con cuota 1.65 es la mejor relación valor/probabilidad de toda la jornada."
+    prob: 79,
+    explicacion: "Girona anota en casa constantemente y Villarreal es un misil atacando pero recibe 1.5 en contra como visita. Tiroteo inminente."
   },
   {
-    liga: "🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scottish Premiership - Escocia",
-    partido: "Dundee vs. Celtic",
-    fecha: "5 de abril de 2026",
+    liga: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 EFL Championship",
+    partido: "Ipswich Town vs Birmingham",
+    fecha: "6 de abril de 2026",
     pronostico: "Más de 1.5 Goles",
-    cuota: "1.15",
-    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 89% | Riesgo: Muy Bajo</strong><br>El Celtic genera un xG de 3.40 combinado en este partido. El bloque ofensivo del Celtic es uno de los más dominantes de Europa a nivel de su liga, acumulando 24 goles en sus últimos 10 partidos. Dundee como local no tiene capacidad para neutralizar la presión alta celta durante 90 minutos. Ancla perfecta para cualquier combinada de bajo riesgo."
+    cuota: "1.32",
+    prob: 85,
+    explicacion: "El mejor ataque local choca con un Birmingham con goteras en defensa asimilando 1.5 goles permitidos. Pick de oro."
   },
   {
-    liga: "🇦🇷 Liga Profesional - Argentina",
-    partido: "River Plate vs. Belgrano",
-    fecha: "5 de abril de 2026",
-    pronostico: "Gol del Equipo Local (River Plate)",
-    cuota: "1.12",
-    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 94% | Riesgo: Muy Bajo</strong><br>River Plate en el Monumental con 85,000 espectadores es el escenario más predecible de Sudamérica. Promedia 1.90 goles como local y anota en el 90% de sus partidos en casa. A pesar de las ausencias internacionales, la profundidad de plantilla garantiza competitividad ofensiva con Driussi y Subiabre. La probabilidad del 94% lo convierte en el pick más seguro de la jornada."
-  },
-  {
-    liga: "🇨🇱 Primera División - Chile",
-    partido: "Universidad de Chile vs. Deportes La Serena",
-    fecha: "5 de abril de 2026",
-    pronostico: "Gol del Equipo Local (U. de Chile)",
-    cuota: "1.15",
-    explicacion: "<strong style='color:var(--verde)'>Probabilidad: 91% | Riesgo: Muy Bajo</strong><br>Fernando Gago ha construido un equipo de posesión y presión alta en el Estadio Nacional ante 55,000 fanáticos. Eduardo Vargas lidera el ataque con jerarquía indiscutible. La U anota en el 88% de sus partidos como local. La Serena no tiene estructura para evitar el gol local durante 90 minutos de presión constante en altura."
-  },
-  {
-    liga: "🇪🇸 La Liga - España",
-    partido: "Getafe vs. Athletic Club de Bilbao",
-    fecha: "5 de abril de 2026",
+    liga: "🇮🇹 Serie A (Italia)",
+    partido: "Lecce vs Atalanta",
+    fecha: "6 de abril de 2026",
     pronostico: "Más de 4.5 Tarjetas",
-    cuota: "1.55",
-    explicacion: "<strong style='color:var(--amarillo)'>Probabilidad: 85% | Riesgo: Bajo</strong><br>Bordalás es el entrenador con más faltas tácticas por partido de La Liga: Getafe promedia 16.8 faltas cometidas. El Athletic de Valverde responde con intensidad física igual de alta. Media de 5.5 tarjetas en sus H2H recientes. Las ausencias de Nyom y Femenía forzarán entradas a destiempo de suplentes menos rodados. Pick de altísimo valor por probabilidad vs cuota."
+    cuota: "1.70",
+    prob: 76,
+    explicacion: "Batalla por el Descenso ante Aspiración de Champions. Fricción asegurada y el juez Federico La Penna es implacable."
   },
+  {
+    liga: "🇮🇹 Serie A (Italia)",
+    partido: "Napoli vs AC Milan",
+    fecha: "6 de abril de 2026",
+    pronostico: "Más de 8.5 Córners",
+    cuota: "1.55",
+    prob: 75,
+    explicacion: "Fórmula de Rafael Leão volando por bandas. La tendencia es que el rebote y cierre termine en saque se esquina masivo."
+  },
+  {
+    liga: "🇪🇸 LaLiga (España)",
+    partido: "Girona vs Villarreal",
+    fecha: "6 de abril de 2026",
+    pronostico: "Más de 1.5 Goles",
+    cuota: "1.25",
+    prob: 82,
+    explicacion: "Aparte del 'Ambos', el volumen ofensivo puro de la liga española decanta en un partido dinámico sin especulaciones tácticas defensivas."
+  },
+  {
+    liga: "🇮🇹 Serie A (Italia)",
+    partido: "Udinese vs Como",
+    fecha: "6 de abril de 2026",
+    pronostico: "Gol Udinese (Local)",
+    cuota: "1.30",
+    prob: 71,
+    explicacion: "Metodología predictiva de localía avala este resultado directo como un anclaje fiable libre de cuotas artificiales."
+  },
+  {
+    liga: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 EFL Championship",
+    partido: "Ipswich Town vs Birmingham",
+    fecha: "6 de abril de 2026",
+    pronostico: "Gol Equipo Local (Ipswich)",
+    cuota: "1.20",
+    prob: 84,
+    explicacion: "A sus 69 puntos los respaldan un ritmo arrollador. Cubren y marcan de local como una imposición sistemática."
+  },
+  {
+    liga: "🇮🇹 Serie A (Italia)",
+    partido: "Juventus vs Genoa",
+    fecha: "6 de abril de 2026",
+    pronostico: "Más de 8.5 Córners",
+    cuota: "1.60",
+    prob: 72,
+    explicacion: "Juventus arrincona a sus rivales y bloquean remates generando un exceso de despejes. Alta probabilidad por acumulación técnica."
+  }
 ];
+
+window.goNovibet = async function() {
+  document.body.style.cursor = 'wait';
+  try {
+    const res = await fetch('https://ipapi.co/json/');
+    const data = await res.json();
+    const country = data.country_code;
+    document.body.style.cursor = 'default';
+    if(country === 'MX') {
+      window.open('https://rt.novibet.partners/o/AidpXC?lpage=qCU90V&site_id=1024102', '_blank');
+    } else if(country === 'EC') {
+      window.open('https://rt.novibet.partners/o/3_uD5_?lpage=kg9EYJ&site_id=1024102', '_blank');
+    } else {
+      window.open('https://rt.novibet.partners/o/hwi2qC?site_id=1024102', '_blank');
+    }
+  } catch (err) {
+    document.body.style.cursor = 'default';
+    window.open('https://rt.novibet.partners/o/hwi2qC?site_id=1024102', '_blank');
+  }
+};
+
+window.toggleDesc = function(btn) {
+  const expanded = btn.nextElementSibling;
+  if(expanded.style.display === 'block') {
+    expanded.style.display = 'none';
+    btn.innerHTML = 'Ver Análisis Extendido 📊';
+  } else {
+    expanded.style.display = 'block';
+    btn.innerHTML = 'Ocultar Análisis ⬆️';
+    setTimeout(() => {
+      const bar = expanded.querySelector('.stat-bar-fill');
+      if(bar) bar.style.width = bar.getAttribute('data-width');
+    }, 50);
+  }
+};
 
 window.renderPicks = function() {
   const container = document.getElementById('picks-container');
@@ -1085,7 +1183,7 @@ window.renderPicks = function() {
     container.innerHTML = '<div class="empty"><div class="ei">🧭</div><p>No hay pronósticos activos ahora mismo.</p></div>';
     return;
   }
-  container.innerHTML = PICKS_DATA.map(p => {
+  container.innerHTML = PICKS_DATA.map((p, i) => {
     return `
       <div class="pcard">
         <div class="ph">
@@ -1104,10 +1202,29 @@ window.renderPicks = function() {
               </div>
               <div class="p-cuota">@${p.cuota}</div>
             </div>
-            <div class="p-desc">
-              <div style="position:absolute; top:-15px; left:20px; background:var(--card); font-size:1.5rem; padding: 0 5px;">📖</div>
-              ${p.explicacion}
+            
+            <button class="btn-toggle-desc" onclick="toggleDesc(this)">Ver Análisis Extendido 📊</button>
+            <div class="p-expanded">
+              <div class="p-desc" style="position:relative; margin-top:20px; padding-left:15px; border-left:3px solid var(--accent)">
+                <div style="position:absolute; top:-15px; left:-18px; background:var(--card); font-size:1.5rem; padding: 0 5px;">📖</div>
+                ${p.explicacion}
+              </div>
+              
+              <div class="stat-box" style="margin-top:15px;">
+                <div class="stat-title">
+                  <span>Probabilidad Algorítmica</span>
+                  <span style="color:var(--accent); font-weight:bold;">${p.prob}%</span>
+                </div>
+                <div class="stat-bar-container">
+                  <div class="stat-bar-fill" data-width="${p.prob}%"></div>
+                </div>
+              </div>
+              
+              <button onclick="goNovibet()" style="width:100%; margin-top:10px; background:var(--verde); color:#000; border:none; padding:12px; border-radius:6px; font-weight:bold; font-size:1.05rem; cursor:pointer; text-transform:uppercase; transition:transform 0.2s;">
+                🔥 Apostar este Pick en Novibet
+              </button>
             </div>
+
           </div>
         </div>
       </div>
