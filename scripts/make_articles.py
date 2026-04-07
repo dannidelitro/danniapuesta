@@ -15,8 +15,10 @@ def create_article(folder_name, title, desc, tag, read_time, html_content):
     
     html = re.sub(r'(?<=→ )[^<]+(?=\s+</div>)', tag, html)
     
+    # Replace tag pill styling
     html = re.sub(r'<span style="background: rgba\(0,180,216,0\.1\).*?</span>', f'<span style="background: rgba(0,180,216,0.1); color: #00b4d8; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(0,180,216,0.2);">{tag}</span>', html)
-    html = re.sub(r'<span>29 de marzo de 2026</span>', '<span>6 de abril de 2026</span>', html)
+    # Update date
+    html = re.sub(r'<span>\d+ de \w+ de 2026</span>', '<span>7 de abril de 2026</span>', html)
     html = re.sub(r'<span>⏱.*?</span>', f'<span>⏱ {read_time} min de lectura</span>', html)
     
     body_pattern = r"<h1>.*?</h1>.*?<div class=\"cta-box\">"
@@ -28,53 +30,55 @@ def create_article(folder_name, title, desc, tag, read_time, html_content):
         f.write(html)
 
 html_1 = """
-<p class="lead">La evolución del análisis estadístico aplicado al fútbol profesional ha transformado la manera en que los analistas evalúan el rendimiento y proyectan resultados futuros. El análisis predictivo moderno ya no se fundamenta únicamente en los resultados históricos brutos.</p>
-<p>Estos últimos suelen estar influenciados por anomalías de varianza y factores aleatorios inherentes a una muestra pequeña de partidos. En su lugar, el modelado matemático avanzado recurre a métricas de expectativa, como los <strong>goles esperados (xG)</strong> y los goles en contra esperados, para normalizar el rendimiento y aislar la verdadera capacidad de producción ofensiva.</p>
+<p class="lead">Las métricas de Expected Goals (xG) y el rendimiento implícito en instancias eliminatorias de UEFA Champions League ofrecen una oportunidad monumental para mercados de goles. Un escenario representativo es el encuentro entre Real Madrid y Bayern Múnich.</p>
+<h2>Volumen Ofensivo Sostenido</h2>
+<p>El análisis cuantitativo revela que el Real Madrid genera un volumen de ataque devastador bajo presión, registrando un altísimo promedio. Han superado la línea de 1.5 goles en 28 de sus últimos 30 enfrentamientos (una absurdidad del 93.3% de impacto). Esta dinámica empuja el xG del Madrid a los márgenes superiores de 2.15 por juego.</p>
 <div class="box highlight">
-<p><strong>Distribución de Poisson Bivariada:</strong> Este modelo parte de la premisa de que los goles ocurren de manera independiente y aleatoria basándose en una tasa (lambda). Permite trazar probabilidades para marcadores exactos comparando el poder ofensivo vs defensivo de ambos equipos.</p>
+<p><strong>El Colapso de la Probabilidad Bivalente:</strong> Cuando dos equipos manejan niveles de xG superlativos (Bayern maneja 2.84), la probabilidad matemática pura de que rompan la barrera del "Ambos Anotan" se dispara hasta el 71%. Las debilidades posicionales a la contra del Bayern nutren directamente la letalidad de Vinicius y Rodrygo.</p>
 </div>
-<h2>Mercados de Córners y Tarjetas</h2>
-<p>La proyección de mercados secundarios requiere de un análisis multifactorial. Los córners están intrínsecamente ligados al volumen de ataques peligrosos y la tendencia a centrar. Equipos con bloques bajos conceden más tiros de esquina debido a la frecuencia de despejes forzados por la línea de fondo.</p>
-<p>En cuanto a las tarjetas, el modelado se apoya en regresiones logísticas que evalúan las faltas promedio de ambos conjuntos, el perfil de severidad del árbitro y la tensión de la tabla de posiciones. Solo integrando estas variables dinámicas se alcanza una rentabilidad superior al 65% de win rate.</p>
+<p>Invertir en ambos pronostican en cuotas cercanas a 1.20 - 1.30 y la combinada del BTTS representa uno de los movimientos matemáticamente más blindados del mercado europeo. Jamás apuestes en Champions guiándote por escudos, apóyate siempre en el valor puro del Expected Goal a mediano plazo.</p>
 """
 
 html_2 = """
-<p class="lead">El compromiso más trascendental de la jornada 31 en la máxima categoría del fútbol italiano se disputará en el Estadio Diego Armando Maradona, donde el Nápoles recibirá al AC Milán. Ambos luchan directamente por el subcampeonato.</p>
-<h2>Nápoles frente a AC Milán</h2>
-<p>El Nápoles bajo Antonio Conte ha consolidado un modelo de juego basado en agresividad vertical. Tienen el récord de más goles en los primeros 15 minutos en Serie A. Su capacidad para sostener ventajas es notable. Por el lado del Milán, priorizan el equilibrio defensivo con solo 23 goles encajados en 30 partidos y ataques letales con Rafael Leão.</p>
+<p class="lead">El factor del campo y del clima son parámetros cualitativos recurrentes en las apuestas deportivas. Sin embargo, pocos ofrecen una alteración cuantitativa tan drástica sobre todas las probabilidades base como el fútbol jugado a más de 4.000 metros de altitud.</p>
+<h2>Always Ready: Fortaleza Condicionada</h2>
+<p>En el estadio Municipal de El Alto (a 4.150 metros de altura), el esfuerzo fisiológico asfixiante destruye el esquema táctico del visitante durante las segundas mitades. Esto es lo que justifica que cuadros como Always Ready acumulen una asombrosa racha de 22 partidos consecutivos anotando como locales en Bolivia.</p>
 <div class="mini-grid">
-  <div class="mini-card"><strong>Nápoles</strong><br><span style="color:#b7c9e4">46 Goles a Favor | 30 en Contra</span></div>
-  <div class="mini-card"><strong>AC Milán</strong><br><span style="color:#b7c9e4">47 Goles a Favor | 23 en Contra</span></div>
+  <div class="mini-card"><strong>Efecto Altitud</strong><br><span style="color:#b7c9e4">Aumenta la densidad de errores defensivos un 27% a partir del min 60.</span></div>
+  <div class="mini-card"><strong>Always Ready Media</strong><br><span style="color:#b7c9e4">Alcanzan un descomunal promedio de 4.0 goles por partido en casa.</span></div>
 </div>
-<p>El árbitro Daniele Doveri introduce un parámetro crítico para amonestaciones con historial severo en choques directos. La incompatibilidad ofensiva dispara la probabilidad del <strong>Más de 1.5 Goles</strong> y <strong>Ambos Equipos Anotan</strong>.</p>
+<p>Visitas como LDU Quito, aunque históricamente preparadas, llegan a estas citas bajo severas bajas o caídas de rendimiento general. Un pronóstico de "Gol Equipo Local" con probabilidad de confianza al 98% no es una corazonada: es una ley estadística impuesta por un contexto donde la oxigenación inclina irreversiblemente el campo.</p>
 """
 
 html_3 = """
-<p class="lead">Analizamos dos focos cruciales en Europa: La Juventus consolidando su solidez de local y una guerra por el descenso entre el Lecce y un Atalanta hambriento de Champions en la Serie A.</p>
-<h2>Juventus de Turín frente a Génova</h2>
-<p>La balanza se inclina abrumadoramente hacia los locales con una racha de 9 partidos invictos ante el Génova. Juventus promedia 2 goles mientras recibe solo 0.87 en casa, liderados por el joven Kenan Yildiz. El Génova concede hasta 1.5 goles de visita y acumulan 53 amonestaciones, anticipando la necesidad de faltas tácticas de contención.</p>
+<p class="lead">Dentro del ecosistema de predicciones de apuestas, los apostadores profesionales suelen encontrar mayor rentabilidad (Closing Line Value) en el mercado de tarjetas (Booking Points) que en el tradicional 1-X-2. Hoy observamos un caso de estudio primigenio: Sporting CP contra Arsenal en torneos continentales.</p>
+<h2>Perfiles Disciplinarios y Tolerancia Arbitral</h2>
+<p>El mercado de tarjetas no depende primariamente de los equipos, sino de una triangulación estadística: la necesidad de fricción defensiva, el estilo de recuperación de balón y vitalmente, el perfil histórico del árbitro designado.</p>
+<p>Cuando un juego define clasificaciones vitales bajo árbitros que promedian más de 5 tarjetas por partido, apostar al "Over 3.5 o 4.5 Tarjetas" se convierte en una vía muy lucrativa, situando sus cuotas entre 1.70 y 1.90 de forma injustificadamente generosa por las casas de apuestas.</p>
 <div class="box warning">
-<p>A pesar del bajo promedio de córners de la Juventus (3.6), la acumulación de la zaga genovesa disparará los despejes, convirtiendo el mercado de "Over Córners" en una de las mayores gemas estadísticas de la jornada.</p>
+<p>En choques nórdicos como el Nordsjaelland frente al Brondby, la frustración por malas rachas ofensivas (Brondby) dispara exponencialmente el volumen de faltas no forzadas. Aquí radica la diferencia entre apostar ciego al ganador, o apostar a la desesperación medible en amarillas.</p>
 </div>
-<h2>Lecce contra Atalanta</h2>
-<p>Un choque de realidades: Lecce 17° luchando por sobrevivir frente al Atalanta en la 7ma plaza buscando escalar. Lecce concede estrepitosamente goles (40), frente a un Atalanta que destruye sus xG anotando 41 goles frente a 20 esperados. Esta combinación casi asegura goles para los visitantes y un exceso de amonestaciones locales.</p>
 """
 
 html_4 = """
-<p class="lead">Más allá de las superpotencias, identificamos valor masivo de inversión en cruces tácticos dispares de LaLiga Española y métricas puras de goles en la League Championship Inglesa.</p>
-<h2>Girona frente a Villarreal en LaLiga</h2>
-<p>El Girona experimenta modesta defensa concediendo hasta 14.2 tiros por partido, mientras el Villarreal prioriza un repliegue ordenado y contragolpes fulminantes (1.7 goles/partido con apenas 43% de posesión). La fragilidad del submarino a domicilio empuja los análisis inequívocos al <strong>Ambos Equipos Anotan</strong> y la superación de líneas estándar de córners (más de 8.5 combinados).</p>
-<h2>Ipswich Town frente a Birmingham City</h2>
-<p>La EFL Championship es el paraíso de la transición rápida. Ipswich 3° (1.8 goles pp) se enfrenta al Birmingham City que sufre defensivamente con 30 goles encajados fuera de casa (1.5 pp). Una anomalía asimétrica perfecta.</p>
-<div class="mini-grid">
-  <div class="mini-card"><strong>Ipswich (Local)</strong><br><span style="color:#b7c9e4">Ataque letal de banda, media 1.8 G.</span></div>
-  <div class="mini-card"><strong>Birmingham</strong><br><span style="color:#b7c9e4">Permeabilidad defensiva del 1.5 G.</span></div>
-</div>
-<p>El 80% de probabilidad de generar más de 1.5 goles en este partido subraya por qué la Championship representa el núcleo operativo de rentabilidad en apuestas deportivas contemporáneas.</p>
+<p class="lead">Mientras la liquidez excesiva inunda eventos como LaLiga o la Premier, mercados menos escrutados como divisiones secundarias de Polonia o Gales proporcionan agujeros de valor gigantes para el análisis métrico (Value Bets). Miedz Legnica o Wrexham son minas de oro.</p>
+<h2>Miedz Legnica y la Inversión en Córners</h2>
+<p>En el fútbol polaco, el Miedz lidera agresivamente su liga forzando un absurdo promedio de 7.04 córners por partido a solas. Un esquema fundamentado en explosión por bandas que convierte la cuota de "Over 10.5 Córners Combinados" (a rondando el 1.90) en una jugada estadística con 78% de cobertura intrínseca.</p>
+<h2>La Fricción de la Championship y Goleadas en Gales</h2>
+<p>El Wrexham sigue asombrando al mundo en su localía, anotando en 24 de sus últimos 25 compromisos. Sin embargo, sufren filtraciones severas que permiten recibir, en particular ante cuadros agresivos (como un eventual cruce de Copa ante estilo Southampton con BTTS garantizado al 69%).</p>
+<p>No huyas de las ligas menores. Encuentra las tendencias irrefutables, compara la línea proyectada de Poisson con las casas de apuestas, e invierte sin piedad.</p>
 """
 
-create_article("modelado-predictivo-cuantitativo", "Modelado Predictivo Cuantitativo", "Descubre cómo los analistas profesionales predicen con Poisson y xG", "Metodología", "6", html_1)
-create_article("analisis-napoles-milan-serie-a", "Análisis Profundo Serie A: Nápoles vs AC Milán", "Estadística cruzada y picks para el partidazo italiano de la jornada 31.", "Serie A", "4", html_2)
-create_article("juventus-genova-lecce-atalanta", "Dinámica Táctica: Juventus sólida y Guerra por el Descenso", "Radiografía estadística de Juventus vs Genoa y Lecce vs Atalanta.", "Serie A", "5", html_3)
-create_article("girona-villarreal-ipswich-championship", "Transiciones Letales en España e Inglaterra", "El valor puramente cuantitativo aplicado a LaLiga y la EFL Championship.", "Multiliga", "5", html_4)
+import os
+# Create the folders if they don't exist
+os.makedirs(r"C:\Users\dany\Documents\GitHub\danniapuesta\blog\analisis-xg-real-madrid-bayern", exist_ok=True)
+os.makedirs(r"C:\Users\dany\Documents\GitHub\danniapuesta\blog\apuestas-altitud-always-ready", exist_ok=True)
+os.makedirs(r"C:\Users\dany\Documents\GitHub\danniapuesta\blog\mercado-tarjetas-sporting-arsenal", exist_ok=True)
+os.makedirs(r"C:\Users\dany\Documents\GitHub\danniapuesta\blog\corners-btts-ligas-menores", exist_ok=True)
+
+create_article("analisis-xg-real-madrid-bayern", "El Valor del xG en Champions: Real Madrid vs Bayern", "Análisis matemático y estadístico (xG) para exprimir rentabilidad ofensiva en la UCL.", "Champions League", "5", html_1)
+create_article("apuestas-altitud-always-ready", "El Factor Altura en Apuestas: El Caso Always Ready", "Cómo los 4.150 metros imponen un 98% de probabilidad matemática para el gol local.", "Guía táctica", "4", html_2)
+create_article("mercado-tarjetas-sporting-arsenal", "Apostar en el Mercado de Tarjetas y Árbitros", "Desglose analítico de Booking Points en eliminatorias como Sporting vs Arsenal.", "Estrategia", "5", html_3)
+create_article("corners-btts-ligas-menores", "Extraer Value en Córners y BTTS: Torneos Menores", "El oro oculto de Polonia y Gales para los inversores estadísticos de tiros de esquina.", "Córners", "4", html_4)
+
 print("done")
