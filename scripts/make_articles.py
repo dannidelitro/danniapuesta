@@ -1,5 +1,6 @@
 import codecs
 import re
+import os
 
 template_path = r"C:\Users\dany\Documents\GitHub\danniapuesta\blog\estadisticas-avanzadas-futbol-apuestas\index.html"
 with codecs.open(template_path, "r", "utf-8") as f:
@@ -18,67 +19,58 @@ def create_article(folder_name, title, desc, tag, read_time, html_content):
     # Replace tag pill styling
     html = re.sub(r'<span style="background: rgba\(0,180,216,0\.1\).*?</span>', f'<span style="background: rgba(0,180,216,0.1); color: #00b4d8; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(0,180,216,0.2);">{tag}</span>', html)
     # Update date
-    html = re.sub(r'<span>\d+ de \w+ de 2026</span>', '<span>7 de abril de 2026</span>', html)
+    html = re.sub(r'<span>\d+ de \w+ de 2026</span>', '<span>8 de abril de 2026</span>', html)
     html = re.sub(r'<span>⏱.*?</span>', f'<span>⏱ {read_time} min de lectura</span>', html)
     
     body_pattern = r"<h1>.*?</h1>.*?<div class=\"cta-box\">"
     new_body = f"<h1>{title}</h1>\n{html_content}\n      <div class=\"cta-box\">"
     html = re.sub(body_pattern, new_body, html, flags=re.DOTALL)
     
+    os.makedirs(fr"C:\Users\dany\Documents\GitHub\danniapuesta\blog\{folder_name}", exist_ok=True)
     path = fr"C:\Users\dany\Documents\GitHub\danniapuesta\blog\{folder_name}\index.html"
     with codecs.open(path, "w", "utf-8") as f:
         f.write(html)
 
 html_1 = """
-<p class="lead">Las métricas de Expected Goals (xG) y el rendimiento implícito en instancias eliminatorias de UEFA Champions League ofrecen una oportunidad monumental para mercados de goles. Un escenario representativo es el encuentro entre Real Madrid y Bayern Múnich.</p>
-<h2>Volumen Ofensivo Sostenido</h2>
-<p>El análisis cuantitativo revela que el Real Madrid genera un volumen de ataque devastador bajo presión, registrando un altísimo promedio. Han superado la línea de 1.5 goles en 28 de sus últimos 30 enfrentamientos (una absurdidad del 93.3% de impacto). Esta dinámica empuja el xG del Madrid a los márgenes superiores de 2.15 por juego.</p>
+<p class="lead">El mercado del Over 1.5 goles es una de las estrategias estadísticamente más fiables y populares entre los apostadores rentables. A diferencia del Over 2.5, esta línea perdona empates y resultados conservadores, exigiendo únicamente dos celebraciones en 90 minutos.</p>
+<h2>Por qué el Over 1.5 es el refugio estructural</h2>
+<p>La inmensa mayoría de las élites futbolísticas superan promedios de 2.0 goles por partido. Al invertir en el +1.5, minimizamos dramáticamente el impacto brutal de las rojas imprevistas, los repliegues defensivos repentinos o la varianza de los penales fallados. Cuando las analíticas de <i>Expected Goals (xG)</i> combinadas de ambos equipos superan el 3.0, el over 1.5 acaricia un índice técnico de cumplimiento superior al 85%.</p>
 <div class="box highlight">
-<p><strong>El Colapso de la Probabilidad Bivalente:</strong> Cuando dos equipos manejan niveles de xG superlativos (Bayern maneja 2.84), la probabilidad matemática pura de que rompan la barrera del "Ambos Anotan" se dispara hasta el 71%. Las debilidades posicionales a la contra del Bayern nutren directamente la letalidad de Vinicius y Rodrygo.</p>
+<p><strong>El error del novato:</strong> Apostar al +1.5 solo porque son equipos "grandes". La verdadera magia reside en analizar duelos asimétricos, donde un local dominante (acostumbrado a promediar 6+ tiros al arco) recibe a un forastero con sistemas de repliegue deficientes. Allí es donde la cuota gana valor a largo plazo.</p>
 </div>
-<p>Invertir en ambos pronostican en cuotas cercanas a 1.20 - 1.30 y la combinada del BTTS representa uno de los movimientos matemáticamente más blindados del mercado europeo. Jamás apuestes en Champions guiándote por escudos, apóyate siempre en el valor puro del Expected Goal a mediano plazo.</p>
+<p>Combinar dos selecciones conservadoras de Over 1.5 goles puede resultar en una cuota final estable alrededor de 1.70, armando lo que en la industria se conoce como un "parlay inquebrantable".</p>
 """
 
 html_2 = """
-<p class="lead">El factor del campo y del clima son parámetros cualitativos recurrentes en las apuestas deportivas. Sin embargo, pocos ofrecen una alteración cuantitativa tan drástica sobre todas las probabilidades base como el fútbol jugado a más de 4.000 metros de altitud.</p>
-<h2>Always Ready: Fortaleza Condicionada</h2>
-<p>En el estadio Municipal de El Alto (a 4.150 metros de altura), el esfuerzo fisiológico asfixiante destruye el esquema táctico del visitante durante las segundas mitades. Esto es lo que justifica que cuadros como Always Ready acumulen una asombrosa racha de 22 partidos consecutivos anotando como locales en Bolivia.</p>
+<p class="lead">En las profundidades del análisis cualitativo deportivo, existe un asesino de rachas que rara vez se refleja en los programas de las casas de apuestas antes de la apertura de mercado: la altitud extrema y las diferencias barométricas del estadio.</p>
+<h2>Fisiología contra Táctica</h2>
+<p>Las apuestas tradicionales se centran en rachas de puntos y lesiones, olvidando que jugar por encima de los 2.500 metros sobre el nivel del mar es un choque fisiológico letal. Cuando cuadros del llano visitan el altiplano, las segundas mitades dictaminan el quiebre de toda táctica. Los niveles de oxígeno reducidos incitan calambres, fatiga en las transiciones defensivas y pérdidas de marca.</p>
 <div class="mini-grid">
-  <div class="mini-card"><strong>Efecto Altitud</strong><br><span style="color:#b7c9e4">Aumenta la densidad de errores defensivos un 27% a partir del min 60.</span></div>
-  <div class="mini-card"><strong>Always Ready Media</strong><br><span style="color:#b7c9e4">Alcanzan un descomunal promedio de 4.0 goles por partido en casa.</span></div>
+  <div class="mini-card"><strong>Aceleración Métrica</strong><br><span style="color:#b7c9e4">El 68% de los goles en ciudades de altura se anotan en los 30 minutos finales.</span></div>
+  <div class="mini-card"><strong>Efecto Balón</strong><br><span style="color:#b7c9e4">En atmósfera rarefacta, el balón viaja estadísticamente un 15% más rápido, propiciando disparos de media distancia.</span></div>
 </div>
-<p>Visitas como LDU Quito, aunque históricamente preparadas, llegan a estas citas bajo severas bajas o caídas de rendimiento general. Un pronóstico de "Gol Equipo Local" con probabilidad de confianza al 98% no es una corazonada: es una ley estadística impuesta por un contexto donde la oxigenación inclina irreversiblemente el campo.</p>
+<p>Invertir en "Marcan Ambos", "Over Goles" o "Gol de Equipo Local" cuando hay altura significativa de por medio, representa acaparar un <i>Edge</i> estadístico monumental frente al cual los simples resúmenes televisivos son ciegos.</p>
 """
 
 html_3 = """
-<p class="lead">Dentro del ecosistema de predicciones de apuestas, los apostadores profesionales suelen encontrar mayor rentabilidad (Closing Line Value) en el mercado de tarjetas (Booking Points) que en el tradicional 1-X-2. Hoy observamos un caso de estudio primigenio: Sporting CP contra Arsenal en torneos continentales.</p>
-<h2>Perfiles Disciplinarios y Tolerancia Arbitral</h2>
-<p>El mercado de tarjetas no depende primariamente de los equipos, sino de una triangulación estadística: la necesidad de fricción defensiva, el estilo de recuperación de balón y vitalmente, el perfil histórico del árbitro designado.</p>
-<p>Cuando un juego define clasificaciones vitales bajo árbitros que promedian más de 5 tarjetas por partido, apostar al "Over 3.5 o 4.5 Tarjetas" se convierte en una vía muy lucrativa, situando sus cuotas entre 1.70 y 1.90 de forma injustificadamente generosa por las casas de apuestas.</p>
+<p class="lead">Las tarjetas (Booking Points) no son un evento aleatorio producto del humor del árbitro, son la culminación obligatoria de esquemas tácticos defensivos rebasados. Dominar su mercado te permite desligarte por completo del resultado final del juego.</p>
+<h2>Colegiados y Fricción Temprana</h2>
+<p>El mercado de las tarjetas se apoya en un pilar bidimensional: el historial estadístico implacable del juez asignado y la tensión narrativa de la tabla. Árbitros con un umbral de paciencia nulo (promediando de forma constante 5 sentencias por cotejo) jamás titubean al iniciar la lluvia de plásticos. Cuando esto choca con choques eliminatorios de liga, copa u orgullo, las cuotas quedan desfasadas del plano real.</p>
 <div class="box warning">
-<p>En choques nórdicos como el Nordsjaelland frente al Brondby, la frustración por malas rachas ofensivas (Brondby) dispara exponencialmente el volumen de faltas no forzadas. Aquí radica la diferencia entre apostar ciego al ganador, o apostar a la desesperación medible en amarillas.</p>
+<p>El "Over Tarjetas" encuentra su Prime más generoso en los desenlaces de grupos o rondas de vida y muerte. Equipos en desesperación ofensiva por diferencias de un solo gol forzarán faltas tácticas, demoras de reinicio e insultos. Es un pronóstico medible puramente a partir de la frustración posicional.</p>
 </div>
 """
 
 html_4 = """
-<p class="lead">Mientras la liquidez excesiva inunda eventos como LaLiga o la Premier, mercados menos escrutados como divisiones secundarias de Polonia o Gales proporcionan agujeros de valor gigantes para el análisis métrico (Value Bets). Miedz Legnica o Wrexham son minas de oro.</p>
-<h2>Miedz Legnica y la Inversión en Córners</h2>
-<p>En el fútbol polaco, el Miedz lidera agresivamente su liga forzando un absurdo promedio de 7.04 córners por partido a solas. Un esquema fundamentado en explosión por bandas que convierte la cuota de "Over 10.5 Córners Combinados" (a rondando el 1.90) en una jugada estadística con 78% de cobertura intrínseca.</p>
-<h2>La Fricción de la Championship y Goleadas en Gales</h2>
-<p>El Wrexham sigue asombrando al mundo en su localía, anotando en 24 de sus últimos 25 compromisos. Sin embargo, sufren filtraciones severas que permiten recibir, en particular ante cuadros agresivos (como un eventual cruce de Copa ante estilo Southampton con BTTS garantizado al 69%).</p>
-<p>No huyas de las ligas menores. Encuentra las tendencias irrefutables, compara la línea proyectada de Poisson con las casas de apuestas, e invierte sin piedad.</p>
+<p class="lead">¿Sabías que los gigantes apostadores a nivel global obtienen sus inyecciones de crecimiento financiero analizando la media luna de la cancha? El mercado marginal de los Córners es el paraíso secreto del Value Bet.</p>
+<h2>Desbordar en Ligas Alternas</h2>
+<p>Las ligas secundarias suelen priorizar volúmenes asimétricos de centros laterales sobre filtraciones cerebrales. Equipos en divisiones inferiores europeas que usan carrileros como extremos natos fuerzan despejes desesperados a diestra y siniestra. Generar más de 7 córners por cuenta propia es factible cuando la estadística indica que cada internada en área tiene un 40% de ser disuelta en línea final.</p>
+<p>Apostar al total global de tiros de esquina (Ej. Over 9.5) requiere fijarse exclusivamente en la suma de "Centros por Partido" y "Despejes Laterales". Combina un equipo dominador por fuera con un equipo ultradefensivo por dentro, y el resultado natural, innegociable por las matemáticas esféricas, será tu verde rentabilizado.</p>
 """
 
-import os
-# Create the folders if they don't exist
-os.makedirs(r"C:\Users\dany\Documents\GitHub\danniapuesta\blog\analisis-xg-real-madrid-bayern", exist_ok=True)
-os.makedirs(r"C:\Users\dany\Documents\GitHub\danniapuesta\blog\apuestas-altitud-always-ready", exist_ok=True)
-os.makedirs(r"C:\Users\dany\Documents\GitHub\danniapuesta\blog\mercado-tarjetas-sporting-arsenal", exist_ok=True)
-os.makedirs(r"C:\Users\dany\Documents\GitHub\danniapuesta\blog\corners-btts-ligas-menores", exist_ok=True)
-
-create_article("analisis-xg-real-madrid-bayern", "El Valor del xG en Champions: Real Madrid vs Bayern", "Análisis matemático y estadístico (xG) para exprimir rentabilidad ofensiva en la UCL.", "Champions League", "5", html_1)
-create_article("apuestas-altitud-always-ready", "El Factor Altura en Apuestas: El Caso Always Ready", "Cómo los 4.150 metros imponen un 98% de probabilidad matemática para el gol local.", "Guía táctica", "4", html_2)
-create_article("mercado-tarjetas-sporting-arsenal", "Apostar en el Mercado de Tarjetas y Árbitros", "Desglose analítico de Booking Points en eliminatorias como Sporting vs Arsenal.", "Estrategia", "5", html_3)
-create_article("corners-btts-ligas-menores", "Extraer Value en Córners y BTTS: Torneos Menores", "El oro oculto de Polonia y Gales para los inversores estadísticos de tiros de esquina.", "Córners", "4", html_4)
+create_article("estrategia-over-1-5-goles", "Por qué Apostar al Over 1.5 es la Inversión Más Segura", "Descubre por qué la estrategia táctica del Over 1.5 garantiza éxito mitigando las volatilidades", "Guía básica", "5", html_1)
+create_article("apuestas-futbol-factor-clima-altitud", "Fisiología y Altitud: El Factor Invisible en Apuestas", "Controla la matemática táctica del quiebre físico que sufre el balón a más de 2.000 metros.", "Estadísticas", "4", html_2)
+create_article("booking-points-analisis-tarjetas", "Ganar con Booking Points: La Táctica de las Tarjetas", "Aprende a analizar perfiles arbitrales severos e ignorar el marcador final del fútbol", "Estrategia", "6", html_3)
+create_article("corners-mercado-valor-secreto", "Córners: El Paraíso Estadístico Oculto", "El análisis inquebrantable para extraer Value Bet con córners en perfiles de ligas menores", "Córners", "4", html_4)
 
 print("done")
