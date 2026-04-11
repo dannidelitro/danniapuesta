@@ -17,7 +17,7 @@ def create_article(folder_name, title, desc, tag, read_time, html_content):
     html = re.sub(r'(?<=→ )[^<]+(?=\s+</div>)', tag, html)
     
     html = re.sub(r'<span style="background: rgba\(0,180,216,0\.1\).*?</span>', f'<span style="background: rgba(0,180,216,0.1); color: #00b4d8; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(0,180,216,0.2);">{tag}</span>', html)
-    html = re.sub(r'<span>\d+ de \w+ de 2026</span>', '<span>10 de abril de 2026</span>', html)
+    html = re.sub(r'<span>\d+ de \w+ de 2026</span>', '<span>11 de abril de 2026</span>', html)
     html = re.sub(r'<span>⏱.*?</span>', f'<span>⏱ {read_time} min de lectura</span>', html)
     
     body_pattern = r"<h1>.*?</h1>.*?<div class=\"cta-box\">"
@@ -30,142 +30,132 @@ def create_article(folder_name, title, desc, tag, read_time, html_content):
         f.write(html)
 
 html_1 = """
-<p class="lead">El fenómeno "David contra Goliat" es romántico en el periodismo, pero un suicidio financiero en el sector de las inversiones deportivas. Apostar contra gigantes de la liga que enfrentan a colistas o equipos hundidos en zonas de descenso exige matemáticas frías, no narrativas cinematográficas. Hoy diseccionamos el <strong>Factor Goliat</strong>.</p>
+<p class="lead">El imaginario popualar asevera que "en los clásicos no existen favoritos" y que "cualquier cosa puede pasar". Pero a la hora de invertir capital real en mercados disciplinarios, de goles o victoria seca, los Derbis Desiguales (o clásicos de ciudad con enorme brecha presupuestaria) son ecosistemas predecibles con márgenes fantásticos de Edge Matemático (+EV).</p>
 
 <div class="box info">
 <h3 style="color: #00b4d8; margin-top:0;">Índice de Contenidos</h3>
 <ul style="margin-top: 8px;">
-  <li>El abismo de la Inversión en Grandes Ligas</li>
-  <li>Mecanismos de Cuotas: Por qué el 1.20 tiene Valor Oculto</li>
-  <li>Diferencial de Goles Neto (Expected Goal Difference)</li>
-  <li>Pro-Tips: Evita las Rotaciones Peligrosas</li>
+  <li>El Mito del "Partido Parejo"</li>
+  <li>Déficit Táctico y el Exceso de Fricción</li>
+  <li>Estrategia del Handicap Subestimado</li>
+  <li>Pro-Tips: Líneas Disciplinarias Infladas</li>
   <li>Preguntas Frecuentes (FAQ)</li>
 </ul>
 </div>
 
-<h2>El abismo de la Inversión en Grandes Ligas</h2>
-<p>Cuanto miramos divisiones top de Europa (Italia, España, Inglaterra), la brecha presupuestaria entre el Top 3 y el Bottom 3 es astronómica. Equipos élite no solo dominan la posesión per cápita promediando un escandaloso 65% de tenencia de balón general, sino que asfixian físicamente a plantillas confeccionadas con una fracción minúscula de los recursos físicos y técnicos.</p>
-<p>Apostar al "Gol Local" de una superpotencia contra un visitante con diferencia negativa de goles (por ejemplo, aquellos conjuntos que arrastran un -15 o un -30 estrepitoso a mitad de campeonato) constituye el cimiento angular de cualquier apuesta del tipo Combinada (Parlay) de baja volatilidad.</p>
+<h2>El Mito del "Partido Parejo"</h2>
+<p>Cuando un gigante global, usualmente acaudalado y dueño hegemónico de su país, se enfrenta al eterno rival de su propia ciudad que sobrevive en la medianía de la tabla (ejemplos claros abundan en Cataluña, Turín o Manchester a principios de la década pasada), el aficionado común prevé un combate gladiador de igual a igual. Las matemáticas afirman lo contrario.</p>
+<p>La tensión emocional de la grada empuja al cuadro débil a abandonar su sistema primario de contención defensiva. En vez de "aparcar el autobús" de forma organizada y gélida como haría un colista normal, la presión territorial les incita a salir a presionar inicuamente y dejar autopistas destapadas al super-plantel rival. Es por esto que los derbis urbanos desiguales terminan históricamente, en más del 72% de ocasiones, en abultadas goleadas y marcadores Over 2.5 muy fáciles.</p>
 
-<h2>Mecanismos de Cuotas: Por qué el 1.20 tiene Valor Oculto</h2>
-<p>La mente inexperta reniega de cuotas tildadas de "pobres" que rondan entre el 1.20 y el 1.30. La inexperiencia tacha de ilógico arriesgar 100 dólares para recolectar tan solo 20 o 30. No obstante, en la matemática pura y probabilística aplicada, si una cuota estipulada de 1.25 posee una probabilidad real de ejecución por encima del 90%, significa empíricamente que la casa de apuestas te está "regalando" margen (Positive Expected Value, +EV).</p>
+<h2>Déficit Táctico y el Exceso de Fricción</h2>
+<p>Mientras la técnica de posesión impera intocable en el esquema del 'Goliat' local, el "David" de ciudad sufre el desgaste de perseguir sombras. Esta privación del esférico sumada al fervor barrial conlleva a detenciones bruscas del contragolpe. Los Derbis Desiguales son minas de platino para el <strong>Mercado Disciplinario</strong>.</p>
 <ul style="margin-left: 20px; color: #a9bfdc; margin-bottom: 20px;">
-  <li><strong>Ruptura de Líneas Tempranas:</strong> Los súper favoritos tienden a fulminar la muralla visitante en los primeros 25 minutos.</li>
-  <li><strong>El Factor "Clean Sheet" del Líder:</strong> Frecuentemente, el líder no solo golea, sino que ostenta rachas abrumadoras de local (Ej: 10 partidos sin recibir un solo gol), lo cual permite coberturas del estilo "Local Gana a Cero".</li>
+  <li><strong>Liderazgo de Amarillas en la Visita:</strong> El mercado de 'Quien recibe más Tarjetas' (Card Match Bet) paga espectacularmente bien hacia el equipo inferior, quien estadísticamente monopolizará el 65% o más de las infracciones tácticas.</li>
+  <li><strong>Rojas Directas Temporales:</strong> Si el bloque grande golea temprano (2-0 al minuto 25), la frustración psicológica del derbi dispara las agresiones por inoperancia, convirtiendo la Cuota de "Expulsión en el Partido: SÍ" en un valor fundamental.</li>
 </ul>
 
-<h2>Diferencial de Goles Neto (Expected Goal Difference)</h2>
-<p>La métrica angular reina sobre esta táctica: el xGD o Expected Goals Difference. Cuando el diferencial paramétrico entre la ofensiva local y la endeblez foránea supera la marca de los 2.0 goles teóricos, la contienda abandona la lógica deportiva y se sumerge en el monopolio. El Gol Local es, en estas condiciones asimétricas, una garantía inquebrantable.</p>
-
 <div class="box highlight" style="margin: 25px 0;">
-  <strong>PRO-TIP: Evita las Rotaciones Peligrosas (El Síndrome Pre-Champions)</strong><br>
-  La kriptonita fatal para apostar tu Bankroll entero a favor del mega favorito contra el colista se detona única y exclusivamente cuando el gigante tiene programado un cruce vital de UEFA Champions League tres días después. Es vital verificar alineaciones, porque el entrenador top rotará a sus tres puntas artilleros, transformando el partido de una cuota "segura" de 1.20 en un somnífero 0-0 que devorará tu billete.
+  <strong>PRO-TIP: Apostando al Handicap Subestimado</strong><br>
+  En derbis desiguales, el mercado público tiene pánico al Handicap Asiático (-1.5 o -2) del gran favorito porque creen erróneamente en "el milagro del clásico". Esta inyección masiva de dinero al Empate o Victoria del humilde, obliga a las casas a subir la cuota de la goleada local para equilibrar el libro mayor (Book). Esta fisura artificial de mercado es exactamente donde asestar tu apuesta.
 </div>
 
 <h2>Preguntas Frecuentes (FAQ)</h2>
-<h3>¿Es recomendable apostar al Over 2.5 en estos asimetrías absolutas?</h3>
-<p>Pese a la creencia popular dictaminada por la masa, apostar al Over 2.5 porque "Van de locales y golean" entraña riesgos brutales de relajación posicional (Drop Off) en las instancias complementarias. El equipo marca dos goles tempraneros y desactiva motores para cuidar reservas físicas, estancando el duelo en un sólido e inamovible 2-0.</p>
+<h3>¿Vale la pena el Ambos Anotan en un derbi tan desigual?</h3>
+<p>Excepcionalmente. La mayoría de Derbis Asimétricos (como Juve-Torino, o derbis catalanes) se caracterizan porque la superioridad defensiva del líder asfixia mentalmente a los delanteros vecinos. Las victorias "A cero" (To Win to Nil) ofrecen un refugio mucho más estable que rogar por un solitario milagro del colista urbano.</p>
 """
 
 html_2 = """
-<p class="lead">El mercado de los goles Over/Under (Específicamente las modalidades del Over 1.5 y Over 2.5) sufre de una epidemia diagnosticada en foros globales: apostar al instinto basados enteramente en los blasones artilleros. Irónicamente, el secreto inconfesable para reinar en goles rara vez mira de frente hacia el ataque. Se enfoca estrictamente en <strong>analizar las defensas más porosas, fracturadas y vulnerables</strong> de cada liga.</p>
+<p class="lead">¿Qué diferencia estructural poseen campeonatos mundiales como la MLS (Estados Unidos) o la A-League (Australia) con el rigor militar europeo? La ausencia absoluta del precipicio llamado "Descenso de Categoría". Esta sutil diferencia de burocracia directiva transforma dichos torneos en los santuarios más prolíficos para apostar al mercado de Goles.</p>
 
 <div class="box info">
 <h3 style="color: #00b4d8; margin-top:0;">Índice de Contenidos</h3>
 <ul style="margin-top: 8px;">
-  <li>Anatomía Estricta de una "Defensa Rota"</li>
-  <li>xGA (Expected Goals Against) como Santo Grial</li>
-  <li>Impacto del Ambos Anotan (BTTS)</li>
-  <li>Pro-Tips: Analizando las Bajas Defensivas</li>
+  <li>El Terror al Descenso vs. El Entretenimiento de Franquicia</li>
+  <li>La Matemática de las Ligas Abiertas (xG Promedio)</li>
+  <li>Por Qué el Over 1.5 es un Trámite Administrativo</li>
+  <li>Pro-Tips: Aprovecha los Primeros Tiempos Extremos</li>
 </ul>
 </div>
 
-<h2>Anatomía Estricta de una "Defensa Rota"</h2>
-<p>Una defensa disfuncional no se identifica únicamente leyendo pasivamente la tabla de posiciones en la columna de "Goles en Contra". Existen deficiencias crónicas posicionales dictaminadas por esquemas de corte muy kamikaze (típico de escuadras alemanas o neerlandesas, reconocidas en todo el gremio por proponer bloques en extrema amplitud sin carrileros marcadores). Una escuadra que sale a presionar sin orden propicia autopistas hacia su guardameta.</p>
-<p>Si convergen en la programación dominical dos conjuntos propensores a recibir estrepitosos contragolpes debido a un retroceso letárgico, la contienda huele inexorablemente a pólvora antes del pitido liminar.</p>
+<h2>El Terror al Descenso vs. El Entretenimiento de Franquicia</h2>
+<p>En España, Inglaterra o Italia, cuando el vigésimo de la tabla recibe al poderoso líder, el equipo modesto implanta formaciones del lúgubre 5-4-1, asumiendo su mediocridad a fin de rescatar un empate 0-0 de oro sólido que evite su irremediable caída a las catacumbas financieras. Juegan literalmente por las nóminas salariales de sus familias.</p>
+<p>En el modelo de Norteamérica o de los canguros australianos rige el hermetismo corporativo: franquicias exclusivas sin descenso garantizado por estatutos. El peor de la tabla, gane o pierda, sigue cobrando dividendos de televisión y permanece en Primera. No existe un pánico fundacional por rascar puntos; la directiva prefiere vender "Espectáculo". Esto propicia cuadros plagados de atacantes mediáticos con mediocampistas de poca presión (defensas extremadamente laxas y desconcentradas).</p>
 
-<h2>xGA (Expected Goals Against) como Santo Grial</h2>
-<p>Dejemos el instinto corazonado en el bar de la esquina y acojámonos al número puro. El <strong>xGA</strong> (Goles Esperados en Contra) desnuda por completo a aquellos defensores que tuvieron aparente suerte temporal gracias a las intervenciones divinas de su portero estelar.</p>
+<h2>La Matemática de las Ligas Abiertas (xG Promedio)</h2>
+<p>Consecuencia directa: ligas donde la asimetría posicional abunda. Cuanto menor preocupación táctica existe por resguardar bloqueos bajos impenetrables, más expuestos quedan los espacios transicionales. Ligas franquicia exhiben consistentemente los promedios más bestiales de <strong>Goles Esperados (Expected Goals / xG)</strong> de toda la base medular futbolística global.</p>
 <ul style="margin-left: 20px; color: #a9bfdc; margin-bottom: 20px;">
-  <li><strong>Disparos Asimilados desde el Empalme Central:</strong> Equipos débiles consienten, en promedio de los peores del ciclo, más de 12 oportunidades explícitas generadas en el perímetro de su área de rigor (Danger Zone).</li>
-  <li><strong>Colapso del Over 1.5:</strong> Cuando el xGA combinado de sendos escuadrones se remonta por encima de la marca teórica del 3.0, apostar a que se marquen mínimos dos tantos (Over 1.5 goles) se erige en una base de cimiento sólido y robusto.</li>
+  <li><strong>Over 1.5 como Rutina:</strong> Lograr más de una diana pasa de ser pronóstico a ser certidumbre en un abrumador 85-88% de los cotejos pautados.</li>
+  <li><strong>Tiros Efectivos:</strong> El índice de tiros francos al marco superior a los estándares UEFA obliga a los guardametas mediocres a constantes reanudaciones.</li>
 </ul>
 
-<h2>Impacto del Ambos Anotan (BTTS)</h2>
-<p>Cuando apuestas al Ambos Marcarán condicionado fundamentalmente a defensas rotas y de cristal, gozas de un doble apalancamiento. Careces de ansiedades frente a quién de los dos domine verdaderamente las riendas posicionales, ya que el equipo dominado, inevitablemente propiciará alguna arremetida fugaz donde la zaga contraria concederá inexplicablemente la deslucida diana del honor.</p>
-
 <div class="box highlight" style="margin: 25px 0;">
-  <strong>PRO-TIP: Revisa a los Porteros y Centrales Sancionados</strong><br>
-  Antes de precipitarte inyectándole capital pesado a un "Over 2.5", revisa escrupulosamente los partes médicos del club en su defensa titular. Faltas de porteros titulares y del 'Perro de Presa' de campo rebajan inmediatamente el nivel retentivo general del equipo, transformándolos en coladores garantizados durante la coyuntura del inminente choque.
+  <strong>PRO-TIP: Disparidad de las Reglas Salariales (DPs)</strong><br>
+  En torneos como Norteamérica se permiten figuras Designated Players (sueldos astronómicos), que en su abrumadora y soberbia mayoría se dirigen por puro marketing a la zona ofensiva (Nueves y creadores), mientras la línea defensiva se conforma por jugadores con topes salariales universitarios. Delanteros de élite castigando zagas semi-profesionales = Over inminente.
 </div>
 """
 
 html_3 = """
-<p class="lead">Dentro del intrincado y fascinante ecosistema de los mercados periféricos deportivos, la especulación de Tiros de Esquina ha escalado gradualmente hasta adueñarse de la corona suprema del <i>Value Trading</i> táctico. Hoy dilucidaremos por qué los carrileros, los laterales ofensivos profundos y el volumen de bandas constituyen la brújula inquebrantable tras los pronósticos Over de Córners.</p>
+<p class="lead">Dentro del ecosistema de Córners hemos hablado extensamente sobre la maravilla de los desbordes tácticos perimetrales. Pero hoy nos metemos al lodo técnico, analizando la principal fuente generadora de tiros angulares del mundo actual: el choque mortal contra los <strong>Sistemas Tácticos Defensivos de Tres Centrales (3-5-2 o 3-4-3)</strong>.</p>
 
 <div class="box info">
 <h3 style="color: #00b4d8; margin-top:0;">Índice de Contenidos</h3>
 <ul style="margin-top: 8px;">
-  <li>Conceptos Basales: Rompiendo mitos de Posesión</li>
-  <li>El Factor 'Alas' o Bandas Densas (Wing Play)</li>
-  <li>Cómo afecta la debilidad foránea al Despeje al lateral</li>
-  <li>Pro-Tips: Analítica Visual Periférica</li>
-</ul>
-</div>
-
-<h2>Conceptos Basales: Rompiendo mitos de Posesión</h2>
-<p>Incluso inversores consolidados caen regularmente atrapados en red de la falacia abismal de "Mayor Posesión significa obligatoriamente Mayores Córners". Una mentira absoluta que debe erradicarse. Numerosas escuadras dominan hasta un asfixiante 70% la pelota, dictando cátedra por el pasillo central, lo que deriva en remates francos que concluyen en gol directo o en intercepciones reanudadas por meta o portero, eliminando la aparición masiva de tiros angulares.</p>
-
-<h2>El Factor 'Alas' o Bandas Densas (Wing Play)</h2>
-<p>El santo grial subyace enteramente en el "Wing Play" o "Fluidez Perimetral". Los centros laterales propician invariablemente cabezazos rebotados en zagas en estado de pánico, y las galopadas por línea de fondo acaparan cortes milimétricos forzados de centrales barridos contra el abismo de meta.</p>
-<ul style="margin-left: 20px; color: #a9bfdc; margin-bottom: 20px;">
-  <li>Promedios por club: Busca clubes o franquicias que crucen la marca histórica de producir de media a solas la astronómica cifra de <strong>6.5 a 7.5 córners intencionales propios</strong>, basados en alas muy escurridizas.</li>
-  <li>Rivales Cómplices: Cruza esta agresividad local con un modesto rival que padece un bloqueo mental defendiendo embates por aire, lo cual le obligará irremediablemente a revolear pelotas hacia afuera a la desesperada de espaldas.</li>
-</ul>
-
-<div class="box highlight" style="margin: 25px 0;">
-  <strong>PRO-TIP: La Muerte del Marcador Favorable</strong><br>
-  Nunca se te ocurra apostarle grandes magnitudes a un evento "Over" de Córners antes que empiece sí prevés que el mega favorito aplastará rápidamente abriendo el marcador 2 o 3 por cero antes del minuto veinte. Las embestidas disminuirán, los centros dejarán de emerger y acabarán tocándola amablemente al medio. Si el juego es asimétrico pero presumiblemente parejo y tenso, el over corner fluye con majestuosidad durante la larga noche táctica.
-</div>
-"""
-
-html_4 = """
-<p class="lead">Existen encuentros pacíficos amparados por un transitar límpido y de noble lidia. No obstante, al asomar los clásicos de rivalidad arraigada o las contiendas por subsistir donde la derrota infiere caída irremediable al abismo del descenso, el balón cede estelaridad y protagonismo ciego al roce humano y la contrición visceral: surge el lucrativo firmamento del <strong>Mercado Disciplinario</strong>.</p>
-
-<div class="box info">
-<h3 style="color: #00b4d8; margin-top:0;">Índice de Contenidos</h3>
-<ul style="margin-top: 8px;">
-  <li>Apuestas de Cartulinas o Booking Points</li>
-  <li>La Tempestad Emocional de Derbis y Clásicos Locales</li>
-  <li>Perfil Arbitral: Jueces Impolutos</li>
-  <li>Pro-Tips: Evade Partidos Resueltos</li>
+  <li>La Falacia del Cerrojo Central</li>
+  <li>El Castigo Severo de los Carrileros Exclusivos</li>
+  <li>Por Qué el 3-5-2 Italiana Regala Despejes</li>
+  <li>Pro-Tips: Analizando las Bajas en el Tridente</li>
   <li>Preguntas Frecuentes</li>
 </ul>
 </div>
 
-<h2>Apuestas de Cartulinas o Booking Points</h2>
-<p>Las plataformas y agencias catalogan masivamente esta modalidad como "Más/Menos (Over/Under) Tarjetas Globales" o "Puntos Disciplinarios (Booking Points)", donde un cartón amarillo equivale a 1 unidad y una expulsión directa a 2 (dependiendo rigurosamente del tabulador operante de cada Bookie individual).</p>
-<p>Invertir cuantiosa o discretamente en mercados disciplinarios borra afortunadamente una preocupación fundamental de tu psique: a ti ya no te incumbe ni estresa quién alza el trofeo final, te importan las fricciones tácticas a ras de piso.</p>
+<h2>La Falacia del Cerrojo Central</h2>
+<p>Observar que una escuadra se para con una muralla de tres zagueros corpulentos acompañados de dos carrileros hundidos (defensa de cinco) atemoriza el pulso de quienes apuestan a Goles. Tienen toda la razón, suelen ser bloqueos infames para la creación por el embudo, pero en ese fango central florece paradójicamente el paraíso inmaculado del apostador a <strong>Over Córners</strong> o Tiros de Esquina.</p>
 
-<h2>La Tempestad Emocional de Derbis y Clásicos Locales</h2>
-<p>América Latina (Copa Libertadores o Ligas Mex/Arg) se corona en el pedestal invencible a nivel mundial de sobre-exposición de amonestaciones. Cruces por historia o tensión táctica por escapar del último cupo de descenso transforman la cancha en un tablero en disputa aguerrida donde acumular 5 o 6 tarjetones en el consolidado de ambos planteles se tilda como una mañana sumamente "normal" y pacífica.</p>
-
-<h2>Perfil Arbitral: Jueces Impolutos</h2>
-<p>No basta identificar a planteles carniceros u oligarcas del roce. La varita mágica del dinero descansa implacable en el nombre del sujeto de negro que pitará. Las estadísticas revelan una brecha descomunal; existen jueces ingleses que promedian un ridículo marco de 2 tarjetas pacíficas por lidia, en contraposición severa de algunos jueces latinos u oriental-europeos que abren su caja de castigos promediando arriba de los picos teóricos de 6 por contienda.</p>
+<h2>Por Qué el 3-5-2 Regala Despejes</h2>
+<p>Al alinear tres rocas defensivas netísimamente pesadas focalizadas brutalmente en proteger el área chica y la penal, toda la responsabilidad del desborde exterior recae en los espinales y carrileros-volantes. Cuando un rival ágil que emplea un agresivo 4-3-3 ensancha la cancha, obliga al carrilero solitario a hundirse, dejándole inferioridad geométrica ante el lateral y extremo visitantes.</p>
+<ul style="margin-left: 20px; color: #a9bfdc; margin-bottom: 20px;">
+  <li><strong>El Rechazo como Salvavidas:</strong> Superado el carrilero defensivamente, el zaguero central escorado al costado saldrá despavorido al cruce al borde del área. Al ser corpulentos y faltos de sutileza, el porcentaje de extirpado directo al tiro de esquina lateral frente a escaramusas supera la monumental cifra del 60% por eventualidad.</li>
+  <li><strong>Volea Exterior:</strong> La defensa de 5 obliga a los volantes visitantes a intentar disparar cañonazos ciegos desde la frontal, embistiendo una muralla densa de pantorrillas propiciando rebotes por línea de fondo.</li>
+</ul>
 
 <div class="box highlight" style="margin: 25px 0;">
-  <strong>PRO-TIP: El Peligro Oculto del Cartón Subjetivo</strong><br>
-  Se altamente vigilante; muchos apostadores y noveles del mercado creen que en partidos de goleada unilateral también saldrán cartulinas a relucir debido a la humillación ajena. Falso. Una vez el marcador sube al 3-0 irremediable y restan veinte minutos en agónica procesión perimetral, la frustración desaparece asimiendose como aceptación y el juez guardará celosamente sus amonestaciones, matando sin misericordia deportiva el Over tarjetas de quienes invertieron al filo del último minuto.
+  <strong>PRO-TIP: Identifica el Agobio Final del 5-3-2</strong><br>
+  Los sistemas italianos clásicos cimentados sobre este sistema táctico ceden el control deliberadamente como estrategia. Monopolizar y tolerar presión es su sello. Apostar en un Live al Over de Córners cuando el equipo italiano va sacando favorablemente 1-0 en las horas finales contra un equipo ofensivo desesperado, es una de las proezas tácticas más exquisitamente rentables que la estadística ha validado jamás.
 </div>
-
-<h2>Preguntas Frecuentes</h2>
-<h3>¿Las Tarjetas Rojas valen Doble en el mercado 'Más o Menos X Tarjetas'?</h3>
-<p>Varía infinitamente de agencia en agencia. Algunas casas, dictaminan por reglamento base que una cartulina es una cartulina (equivaliendo tanto amarilla y roja a un mero punto sumatorio del contador Over/Under), mientras que en plataformas anglosajonas con Booking Points, una expulsión suma 25 formidables puntos disciplinarios de impacto. Leer las bases legales y reglas de tu plataforma es imperativo para los apostadores metódicos de disciplinas periféricas.</p>
 """
 
-create_article("estrategia-david-vs-goliat-favoritos", "El Factor Goliat: Cómo Rentabilizar Apostando a Grandes Favoritos", "Estrategia profunda para comprender el diferencial neto y métricas asimétricas en duelos dispares de las Grandes Ligas europeas.", "Guía táctica", "7", html_1)
-create_article("defensas-rotas-estrategia-over-goles", "Defensas Rotas: El Secreto Definitivo para el Mercado de Over Goles", "Rompe con el engaño de los delanteros élite y domina el análisis de defensas kamikazes (xGA) para multiplicar el Win Rate absoluto.", "Análisis", "8", html_2)
-create_article("carrileros-bandas-value-corners", "Carrileros y Córners: Identificando Ligas Abiertas Periféricas", "Examen riguroso táctico para explotar el mercado de Tiros de Esquina a través del desborde incesante o Wing Play.", "Córners", "7", html_3)
-create_article("tensión-derbis-analisis-booking-points", "Apuestas Disciplinarias: El Psicoanálisis de los Derbis (Tarjetas)", "Domina agresivamente el circuito periférico previendo los cartones, la tolerancia de los arbitrajes y la rivalidad de zonas de descenso.", "Estrategia", "8", html_4)
+html_4 = """
+<p class="lead">Existe una paradoja técnica que vuelve completamente locos a los inversores incautos: apostar a que un cuadro de proporciones galácticas que amasará el 75% de la tenencia del esférico asfixiará al oponente y, por supuesto, jamás encajará un gol. Desglocemos por qué el "Tiki Taka" extremo y las transiciones lentas y abrumadoras son la carnada perfecta para el <strong>Mercado de Ambos Anotan (BTTS)</strong>.</p>
+
+<div class="box info">
+<h3 style="color: #00b4d8; margin-top:0;">Índice de Contenidos</h3>
+<ul style="margin-top: 8px;">
+  <li>El Efecto Soporífero de la Tenencia Estéril</li>
+  <li>Transición Quirúrgica: Por qué te Hacen Daño de la Nada</li>
+  <li>Líneas Adelantadas (La Trampa del Fuera de Juego)</li>
+  <li>Pro-Tips: Analizando las Fugas Tácticas</li>
+  <li>Preguntas Frecuentes</li>
+</ul>
+</div>
+
+<h2>El Efecto Soporífero de la Tenencia Estéril</h2>
+<p>Clubes titánicos aferrados a la dogmática de pase interminable, que marean el balón horizontalmente al borde de los dominios ajenos, desarrollan inexorablemente un espejismo ilusorio de dominancia absoluta. La cruda realidad y bitácora estadística resalta que, cuando una cuadrilla acampar permanentemente en área minada durante largos pasajes sin finalizar la jugada, sus retaguardas (los dos centrales que merodean el mediocampo solitarios) se enfrían cognitiva y muscularmente a unos ritmos fatales.</p>
+
+<h2>Transición Quirúrgica: Por qué te Hacen Daño de la Nada</h2>
+<p>Cuando apuestas al Ambos Marcan en cotejos de este perfil, confías ciegamente en el gol certero o los embates múltiples incesables del escuadrón favorito. La variable que requieres, que marca la diferencia, es ese chispazo esporádico (Counter-Pressing o Transición Rapida Defensiva-Ofensiva). Cuando un equipo dominado roba la redonda cerca a su cancerbero local, encuentra enfrente a un gigante expuesto, tendido de bruces sin contención lateral alguna que logre retroceder sesenta abismales metros de césped verde.</p>
+<ul style="margin-left: 20px; color: #a9bfdc; margin-bottom: 20px;">
+  <li><strong>Efectividad del Rival Sometido:</strong> El oponente sometido, que promediaría habitualmente un ínfimo y vergonzoso 0.40 xG de generación en posesiones normales, eleva su ratio de eficacia porque las escasas dos llegadas en largo que logra atinar durante 90 minutos se resuelven en crueles batallas directas 1 contra 1 frente al guardametas atónito del titán poseedor.</li>
+</ul>
+
+<div class="box highlight" style="margin: 25px 0;">
+  <strong>PRO-TIP: El Factor "Portería Fría" y Los Centrales Pesados</strong><br>
+  No subestimes esta falla geométrica. Los arqueros de grandes oncenas asfixiantes sufren horrores bajo los tres palos porque pasan una hora de reloj inactivos, perdiendo reflejos corporales primarios; cuando finalmente son embestidos por un delantero galopante, sus intervenciones resultan muy frecuentemente en atajadas defectuosas. Si además, los centrales locales no poseen estallido veloz, el <strong>BTTS (Both Teams to Score)</strong> ostenta en plataformas cuotas de 1.90 absurdamente regaladas por la ceguera algorítmica y la adoración fanática.
+</div>
+"""
+
+create_article("derbis-desiguales-estrategia", "Derbis Desiguales: Estrategia de Apuestas en Clásicos de Ciudad", "Análisis exhaustivo del espejismo psíquico en el que el fervor urbano destroza planteamientos tácticos generando masacres disciplinarias y de gol.", "Derbis locales", "7", html_1)
+create_article("ligas-franquicia-sin-descenso", "Ligas sin Descenso: La Mina de Oro para el Mercado Over Goles", "Una inmersión paramétrica de cómo las franquicias corporativas sin miedo a descender desprotegen sus defensas e inflan métricas mundiales del Under Goles.", "Estadísticas", "8", html_2)
+create_article("analitica-corners-tres-centrales", "Analítica de Córners Contra Sistemas de Tres Centrales (3-5-2)", "Refugio oculto del apostador esquinero para doblegar y exprimir algorítmicamente y en vivo a los sólidos candados italianos valiéndose en la estadística periférica.", "Córners", "8", html_3)
+create_article("paradoja-posesion-btts", "La Paradoja de la Posesión: Por Qué los Gigantes Regalan Transiciones Lentas", "La fisura maestra psicológica y topográfica detrás del incomprensible colapso de porterías gélidas para atrapar cuotas doradas en Ambos Equipos Anotan.", "Estrategia", "7", html_4)
 
 print("done")
