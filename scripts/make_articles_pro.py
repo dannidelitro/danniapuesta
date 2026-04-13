@@ -17,7 +17,7 @@ def create_article(folder_name, title, desc, tag, read_time, html_content):
     html = re.sub(r'(?<=→ )[^<]+(?=\s+</div>)', tag, html)
     
     html = re.sub(r'<span style="background: rgba\(0,180,216,0\.1\).*?</span>', f'<span style="background: rgba(0,180,216,0.1); color: #00b4d8; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; border: 1px solid rgba(0,180,216,0.2);">{tag}</span>', html)
-    html = re.sub(r'<span>\d+ de \w+ de 2026</span>', '<span>12 de abril de 2026</span>', html)
+    html = re.sub(r'<span>\d+ de \w+ de 2026</span>', '<span>13 de abril de 2026</span>', html)
     html = re.sub(r'<span>⏱.*?</span>', f'<span>⏱ {read_time} min de lectura</span>', html)
     
     body_pattern = r"<h1>.*?</h1>.*?<div class=\"cta-box\">"
@@ -30,130 +30,109 @@ def create_article(folder_name, title, desc, tag, read_time, html_content):
         f.write(html)
 
 html_1 = """
-<p class="lead">Dentro del inmenso y a veces caótico mercado de los Goles (Over/Under), los apostadores profesionales no dependen de corazonadas ni del fanatismo de turno. Dependen exclusivamente del seguimiento estricto de la <strong>Ley de los Grandes Números</strong> y de las rachas de consistencia abrumadora. Hoy te enseñaremos cómo aprovechar formaciones y equipos que ostentan tendencias estadísticas irrompibles.</p>
+<p class="lead">Las Ligas Menores y los Torneos Filiales ("Jong", "Sub-23") esconden el oro puro de las casas de apuestas deportivas. Hoy desmenuzaremos la inmensa anomalía detrás de las escuelas formadoras en países bajos y la estrategia empírica para amasar rentabilidad mediante el mercado de "Over de Goles".</p>
 
 <div class="box info">
 <h3 style="color: #00b4d8; margin-top:0;">Índice de Contenidos</h3>
 <ul style="margin-top: 8px;">
-  <li>El Significado Real de una "Tendencia Sólida"</li>
-  <li>Rachas de Consecutividad: La Variable de Oro</li>
-  <li>El Criterio del Expected Goals (xG) en Rachas</li>
-  <li>Pro-Tips: Evita las Trampas Estadológicas</li>
-  <li>Preguntas Frecuentes (FAQ)</li>
+  <li>El Principio de la Cantera Táctica</li>
+  <li>Ligas Menores Holandesas: Minería del Over 1.5</li>
+  <li>Psicología del Defensor Juvenil y el BTTS</li>
+  <li>Pro-Tips: Evitar los "Días de Convocatorias Internacionales"</li>
+  <li>FAQ</li>
 </ul>
 </div>
 
-<h2>El Significado Real de una "Tendencia Sólida"</h2>
-<p>Cuando observamos a un equipo que ha superado la línea del "Más de 1.5 goles" en 14 partidos consecutivos, el apostador novato podría pensar: *"Es imposible que esto siga, matemáticamente pronto ocurrirá el 0-0"*. Esto se conoce como la 'Falacia del Apostador'. La estadística y las matemáticas puras nos demuestran que las rachas se construyen por condiciones sistémicas y tácticas permanentes, no por azar.</p>
-<p>Si un equipo cruza el Over 1.5 en más del 85% de un torneo (Ejemplo: Holanda o Ligas Alemanas), no es coincidencia; se trata de una deficiencia defensiva de raíz acoplada a una ambición asimétrica por la verticalidad y el arco rival. Apostar de la mano con la tendencia prolongada es siempre el refugio más seguro a largo plazo.</p>
+<h2>El Principio de la Cantera Táctica</h2>
+<p>Diferente a un Club que pelea descensos al borde de la bancarrota (con técnicos paranoicos jugando 0-0), en los campeonatos de filiales (Como la <i>Eerste Divisie</i> de Países Bajos), las academias prohíben el "juego feo" destructivo. Las escuadras como "Jong Ajax" o "Jong AZ" rigen su desempeño bajo un manual donde atacar vertiginosamente a través de transiciones verticales constituye el 100% de la formación de los jóvenes. El retroceso y la asfixia son conceptualizaciones secundarias. </p>
 
-<h2>Rachas de Consecutividad: La Variable de Oro</h2>
-<p>Localizar estas anomalías estadísticas toma tiempo, pero existen diamantes en bruto (como las ligas de Austria y de los Países Bajos). Clubes de tabla media asimilan tácticas de suicidio deportivo semana tras semana.</p>
-<ul style="margin-left: 20px; color: #a9bfdc; margin-bottom: 20px;">
-  <li><strong>Monitoreo de 10-Jornadas:</strong> Fija tu análisis exclusivamente en los últimos 10 encuentros. Cualquier dato superior a 6 meses de antigüedad carece de relevancia por el cambio de forma física y rotación de plantillas.</li>
-  <li><strong>El Over Seguro (1.5):</strong> Renuncia al abrumador Over 2.5 en ligas cerradas e invierte agresivamente en el 1.5 en rachas abiertas; el Win-Rate aumenta del 55% al 82% solo reduciendo esa mínima muesca marginal de ambición.</li>
-</ul>
+<h2>Ligas Menores Holandesas: Minería del Over 1.5</h2>
+<p>Apostar que un partido entre fuerzas juveniles rebasará los 2 goles es la inversión con mayor Win Rate a nivel internacional de los apostadores en Asia ("Over Asiático"). Las proezas perimetrales alcanzan hitos lúgubres para porteros donde rachas monstruosas exhiben 18 partidos ininterrumpidos reventando las porterías contrarias. La ingenuidad táctica de los centrales sumados a transiciones frenéticas abren el partido a un correcalles irreversible.</p>
 
 <div class="box highlight" style="margin: 25px 0;">
-  <strong>PRO-TIP: El Clima y la Nieve</strong><br>
-  La tendencia más abismal se destruye por un factor externo que la computadora no prevé: Tormentas. Un partido plagado por lluvia torrencial, césped empapado y barro paralizará las transiciones del balón y anquilosará los músculos, provocando empates a ceros que despedazan parlays de "Equipos Goleadores" en invierno.
+  <strong>PRO-TIP: Convocatorias al Primer Equipo</strong><br>
+  El mayor talón de Aquiles para esta apuesta yace en no revisar las redes oficiales de las canteras. Ocasionalmente, la plantilla estelar sufre una horda de lesiones y suben temporalmente de urgencia a los goleadores del Jong al fin de semana, dejando al filial huérfano de peso artillero y arruinando el esperado festín goleador dominical.
 </div>
-
-<h2>Preguntas Frecuentes (FAQ)</h2>
-<h3>¿Cuándo se rompe una racha de Over Goles?</h3>
-<p>Típicamente, el punto de quiebre estadístico ocurre al enfrentarse a escuadras denominadas "Esponjas" o Bloques muy hundidos que priorizan perder 0-1 defendiendo amontonados. O bien, ocurre con el despido del entrenador titular y la llegada de un "apagafuegos" táctico conservador interino.</p>
 """
 
 html_2 = """
-<p class="lead">Si existiera un libro de oro resguardado celosamente por los analistas deportivos mundiales, un capítulo imperioso recaería sobre cómo atacar la geométrica táctica del <strong>Bloque Bajo Defensivo</strong> empleando el infalible Mercado de los Tiros de Esquina a favor del conjunto dominante.</p>
+<p class="lead">Las casas comerciales de América cuantifican brutalmente cada factor contextual, salvo un fantasma silente implacable: <strong>El Agotamiento por Altitud y el Calor Agobiante</strong>. Desgranamos por qué el Local Invencible es una falacia y por qué es una certeza rentable al apoyarse meteorológicamente con la estadística de gol cerrado.</p>
 
 <div class="box info">
 <h3 style="color: #00b4d8; margin-top:0;">Índice de Contenidos</h3>
 <ul style="margin-top: 8px;">
-  <li>Anatomía Defensiva del "Aparcar el Autobús"</li>
-  <li>Densidad Poblacional y Rebotes de Choque</li>
-  <li>Líneas Individuales de Equipo Córners</li>
-  <li>Pro-Tips: Analizando los Laterales Cortos</li>
+  <li>Más allá del Muro de los Aficionados</li>
+  <li>La Ventaja Fisiológica de los Metros Sobre el Nivel del Mar</li>
+  <li>Aplicación Matemática del "Gol De Equipo Local"</li>
+  <li>Pro-Tips: El Horario Matinal Fúnebre</li>
 </ul>
 </div>
 
-<h2>Anatomía Defensiva del "Aparcar el Autobús"</h2>
-<p>El "Bloque Bajo" o bloque profundo se concibe bajo el concepto único de asfixiar por completo los carriles interiores. Equipos inferiores alzan empalizadas de dos líneas ríspidas de cuatro y cinco hombres colgados patéticamente en la frontal del área de guardameta. Para la estadística de goles, esto es un veneno lúgubre, pero para los córners, es un billete abismal ganador hacia el éxito.</p>
-<p>Ante una formación asfixiante por el embudo donde hasta doce piernas rechazan ciegamente remates al arco, se genera la estadística del espeso rebote forzado que sale despejado forzosamente hacia atrás del arco penal.</p>
+<h2>Más allá del Muro de los Aficionados</h2>
+<p>Un equipo no arrastra 18 partidos o series titánicas de imbatibilidad porque todos posean talentos extraterrestres. Estadios enclavados como la cancha infernal toluqueña representan un hándicap que el mercado estándar de visitante jamás pondera acertadamente. El ahogo hipóxico aniquila la musculatura del adversario tras transcurridos los primeros plenos treinta minutos del duelo.</p>
 
-<h2>Densidad Poblacional y Rebotes de Choque</h2>
-<p>No debes conformarte con jugar al "Over Córners" global. Las cuotas más sofisticadas radican en seleccionar a un titán ofensivo y apostar por los <strong>"Córners Individuales"</strong> exclusivos de ellos (Ej: Equipo A supera los 6.5 córners él solo). Esto evade el riesgo de que el equipo humilde encerrado jamás logre siquiera pisar la otra mitad de la cancha, y te depriman arruinando el global del over final.</p>
-<ul style="margin-left: 20px; color: #a9bfdc; margin-bottom: 20px;">
-  <li><strong>Anchura contra Profundidad:</strong> Ligas italianas son maestras en este rigor geométrico; la desesperación del gran equipo asediador empuja el juego estrictamente al córner en porcentajes que ascienden al 70%.</li>
-</ul>
+<h2>La Ventaja Fisiológica</h2>
+<p>El "Gol de Equipo Local" en estadios que gozan simultáneamente de altura, racha de dos dígitos invictos y horarios dominicales de sol punzante (12:00PM), suponen la cúspide matemática predictiva. El XG del local incrementa absurdamente en la fase agónica (Minuto 60 al 90) ya que enfrentan una línea de zagueros visitantes mermados por asfixia celular.</p>
 
 <div class="box highlight" style="margin: 25px 0;">
-  <strong>PRO-TIP: La Regla de los Primeros 25 Minutos</strong><br>
-  No juegues un Under (Menos) córners en Live si un equipo favorito se adelanta pronto por un gol. Un solo tanto tempranero destraba la defensa y permite aperturas. El Over de Córners perfecto prospera y se infla masivamente en un angustiante 0-0 que se prolongue lúgubremente hasta los abismales minutos 80 o 90, donde la desesperación bombardea al área incesantemente desde los banderines laterales.
+  <strong>PRO-TIP: Coberturas Combinadas</strong><br>
+  No ciegues tu presupuesto con solo gol, anida de igual manera la inversión "Gana Cualquier Mitad" a favor del monstruo local aclimatado; si de forma extraña sucumben pronto, sus abismales remontadas en la altitud suelen asegurar ganar contundentemente la segunda etapa física al arrinconar al contrincante agónico.
 </div>
 """
 
 html_3 = """
-<p class="lead">El gremio de las plataformas operativas se afana infatigablemente por prever a los clubes peleadores, sin embargo, el veredicto definitivo tras una apuesta disciplinaria subyace exclusivamente bajo un único tirano en el campo verde: <strong>El Hombre del Silbato</strong>. El juez impone su idiosincrasia sicológica por encima de todas las barreras.</p>
+<p class="lead">Huir del mercado sobre "Ganador Directo" ante un derbi fiero de proporciones geopolíticas tensas es el acto sagrado de la prudencia. La inversión táctica superior anida perennemente sobre el caótico <strong>Mercado del "Total de Tarjetas"</strong> en regiones ríspidas balcánicas o estepas orientales.</p>
 
 <div class="box info">
 <h3 style="color: #00b4d8; margin-top:0;">Índice de Contenidos</h3>
 <ul style="margin-top: 8px;">
-  <li>¿Por qué el Análisis de Clubes NO es suficiente?</li>
-  <li>Promedio Arbitral (Severity Rating)</li>
-  <li>El Factor "Protagonista Localista"</li>
-  <li>Pro-Tips: Límites y Tolerancia a Faltas</li>
-  <li>Preguntas Frecuentes</li>
+  <li>Derbis Históricos: La Sangre Domina Toda Táctica</li>
+  <li>La Cuantificación del Mercado Búlgaro y Balcánico</li>
+  <li>Los Colegiados Presionados</li>
+  <li>Pro-Tips: "No Terminarán 11 Contendientes"</li>
 </ul>
 </div>
 
-<h2>¿Por qué el Análisis de Clubes NO es suficiente?</h2>
-<p>Puedes congregar en el círculo central a dos oncenas reputadamente violentas que promedien más de 6 amarillas combinadas semanalmente, pero si el organismo rector de la liga programa un árbitro británico característico por "dejar jugar" (tolerancia física elevada sin intervenciones pausadas), tu esplendorosa apuesta de "Over 5.5 Tarjetas" mutará lamentablemente a un escueto saldo de dos amarillas de puro consuelo.</p>
+<h2>Derbis Históricos: La Sangre Domina Toda Táctica</h2>
+<p>Encuentros polarizados desde antaño, donde la demografía e idiosincrasias religiosas confluyen en conatos violentos; es la premisa empírica superior del 'Over Booking' (exceso de cartulinas). El fútbol en los balcanes traslada formaciones frías e incorpora factores psicológicos del orgullo regional superando por mera estadística el XG disciplinario proyectado para Ligas Convencionales.</p>
 
-<h2>Promedio Arbitral (Severity Rating)</h2>
-<p>El perfil arbitral es numéricamente medible. Las plataformas de estadística forense dividen a los jueces por <i>Ratio de Faltas Dadas por Cartulina</i>.</p>
-<ul style="margin-left: 20px; color: #a9bfdc; margin-bottom: 20px;">
-  <li><strong>Colégios Estrictos:</strong> Árbitros del circuito Ibérico o Latino ostentan una sensibilidad febril a los reclamos (Gestos, aspavientos). Estas son penalizadas fulminantemente con amonestaciones de color, acelerando la meta que el inversor requiere. Si la media es de 5.5 cartulinas por aparición arbitral de un juez asignado en LaLiga, esa directriz se cumplirá fiel y ciegamente en el largo lapso probabilístico.</li>
-</ul>
+<h2>Los Colegiados Presionados</h2>
+<p>Es un suicidio para un árbitro de la confederación balcánica intentar perdonar pisotones arteros iniciales amparado por un discurso conciliador "british". Los ambientes del fuego pirotécnico fuerzan el silbato de acero y el desenfunde prematuro. Con líneas irrisorias estipuladas entre 5.5 o 6 tarjetas, el porcentaje de acierto por encima del umbral cruza la robusta validación del +85% en data histórica confirmada.</p>
 
 <div class="box highlight" style="margin: 25px 0;">
-  <strong>PRO-TIP: El Historial Personal Juez vs Equipo</strong><br>
-  Las rivalidades ocultas existen. Evalúa el registro o cruce individual de un juez particular con equipos tensos. Algunos árbitros promedian rojas directas inauditas en estadios con graderíos hostiles (por condicionamiento al ambiente sonoro estresante). El análisis psicométrico del colegiado es, literalmente, dinero y diamantes en el banco.
+  <strong>PRO-TIP: La Inversión Complementaria de la Roja</strong><br>
+  Al invertir sobre un "Over Violento", adjunta al plan algorítmico una mínima fracción presupuestal respaldando firmemente el mercado "¿Habrá Tarjeta Roja? -> SÍ". Cuotas por encima de 2.20 recompensan exponencialmente el caos desenfrenado cuando las amarillas múltiples maduran indefectiblemente en expulsiones obligadas.
 </div>
 """
 
 html_4 = """
-<p class="lead">En las trincheras del siglo XXI ya no se opina pasivamente sobre si un atacante "juega hermoso" o "luce estorboso". Los algoritmos modernos dictan rigor cuantitativo. Abordar partidos de ligas colosales, dotados de delanteros estratosféricos, demanda analizar fríamente las <strong>Métricas Avanzadas como los Goles Esperados (xG) y las Asistencias Esperadas (xA)</strong>.</p>
+<p class="lead">Las plataformas encubren tesoros bajo capas laberínticas, siendo sus diamantes pulidos apuestas de márgenes ignorados, entre estos destaca el "Mercado de Tiros de Esquina <strong>Exclusivamente por Equipo Individual</strong>", esquivando dependencias fútiles.</p>
 
 <div class="box info">
 <h3 style="color: #00b4d8; margin-top:0;">Índice de Contenidos</h3>
 <ul style="margin-top: 8px;">
-  <li>xG: La Fisiología Paramétrica del Gol</li>
-  <li>xG Combinado en Duelos de Titanes Magnos</li>
-  <li>Apostando en Jugadores Específicos (Mercado Player Props)</li>
-  <li>Pro-Tips: Desviación Estándar y Forma de Atacante</li>
-  <li>Preguntas Frecuentes</li>
+  <li>El Peligro del 'Over Combinado' Clásico</li>
+  <li>El Dominador Monopolista (Team Corners)</li>
+  <li>Anatomía de los Despejes Rotos Lentos</li>
+  <li>Pro-Tips: Transiciones por Extremos Argentinos</li>
 </ul>
 </div>
 
-<h2>xG: La Fisiología Paramétrica del Gol</h2>
-<p>La fórmula "XG" valora cada disparo ejecutado y lo dimensiona en probabilidad decimal. Entrar al ruedo de la Premier League sin valorar que dos potencias combinan un XG superior a 3.71, es como surcar los cielos con los parpados vendados. Los equipos élite que promedian esta barbaridad numérica no pueden ocultarse de un destino abismalmente marcado hacia presenciar balones hundidos en el blanco.</p>
+<h2>El Peligro del 'Over Combinado' Clásico</h2>
+<p>La inmensa mayoría acude religiosamente al "Over 9.5 Córners". Sin embargo, frente a disparidades abismales entre colosos asediadores de banda y rivales colistas arrinconados; requieres ciegamente colaboración esquina por parte de un visitante pálpido y hundido que jamás rebasará ni el círculo mediano, colapsando frustrantemente el monto final.</p>
 
-<h2>xG Combinado en Duelos de Titanes Magnos</h2>
-<p>Duelos magnos en Europa prometen ser ajedreces o fiestas frenéticas. Los analistas cruzan la generación del atacante local con las precariedades defensivas calculadas del adversario (xGA). Y aún más letal, contemplan el impacto de poseer a un "Outlier" estadístico; un individuo (Como Haaland, Lautaro o Mbappé) cuyas variables físicas logran sobrepasar la estadística de xG misma por puro mérito morfológico y letal implacable de remate y eficacia surrealista.</p>
-<ul style="margin-left: 20px; color: #a9bfdc; margin-bottom: 20px;">
-  <li><strong>Over Goles y Ambos Anotan:</strong> La conjunción de equipos top con ofensivas élite (superiores a 2.0 per cápita) empuja la línea del Over 1.5 a cuotas marginales, pero abre la compuerta gloriosa al "Marcador de Más de 2.5 y BTTS".</li>
-</ul>
+<h2>El Dominador Monopolista (Team Corners)</h2>
+<p>La cura universal proviene del <i>Asimétrico Individual</i>: El apostante aísla matemáticamente al Goliat hegemónico (ej. River Plate o Bayern Múnich) e impone una rentabilidad sobre una barrera estúpidamente ridícula para ellos (Ej: Más de 3.5 Córners Exclusivamente para el gigante). El Gigante arquetípico empuja al rival forzando barridas al banderín de forma reiterativa independientemente de cualquier auxilio ofensivo opositor, blindando un ticket rentable en extremo.</p>
 
 <div class="box highlight" style="margin: 25px 0;">
-  <strong>PRO-TIP: El Mercado Alterno de Goleadores (Player Props)</strong><br>
-  Cuando una máquina artillera como Haaland choca contra un equipo históricamente fracturado o con bajas masivas en su cerrojo, abandona el pronóstico general de 90 minutos y asalta el mercado individual de «Anotará en Cualquier Momento». La sobreexposición por centros medidos desde las bandas garantiza remates limpios que, multiplicados por el 'Killer Aspect' de la bestia atacante, rebozan las probabilidades efectivas por encima del 72% al día.
+  <strong>PRO-TIP: Laterales y Perfiles A Pierna Cambiada</strong><br>
+  No toda súper maquinaria genera un asedio esquinero. Estudia la plantilla; si el equipo arrollador asienta perfiles 'A pierna cambiada' dictos a acortar hacia adentro penal (recortes diagonales buscando portería frontal), los tiros perimetrales caerán. El over córner florece bajo conjuntos provistos de flechas veloces, laterales y carrileros obstinados en rasgar perpendicularmente buscando inyectar balones en centros altos hacia el área chica.
 </div>
 """
 
-create_article("tendencias-largas-rachas-over-goles", "La Ley de los Grandes Números: Rastreando Rachas en Over Goles", "Estrategia algorítmica para evitar la Falacia del Apostador y colgarse del tren imparable en anomalías goleadoras extremas de ligas medias.", "Guía táctica", "7", html_1)
-create_article("Corners-asedio-bloque-bajo", "El Asedio al Bloque Bajo: Análisis Geométrico para el Over Córners", "La anatomía matemática de las líneas y despejes periféricos asfixiantes ejecutada para destrozar formaciones defensivas lúgubres del Underdog.", "Córners", "8", html_2)
-create_article("analitica-severidad-juez-tarjetas", "La Importancia del Perfil Arbitral: Cómo el Juez Manda sobre el Campo", "Psicoanálisis táctico de la severidad (Severity Rating) y de cómo la procedencia de la autoridad rige irónicamente sobre las Inversiones Disciplinarias.", "Estrategia", "8", html_3)
-create_article("xg-esperados-delanteros-elite", "Métricas Avanzadas (xG xA): Transformando Atacantes Élite en Ganancias", "Descifrando algoritmos modernos de Goles Esperados Combinados (xG) en colosos ofensivos y Outliers morfológicos en competiciones top.", "Value Bet", "7", html_4)
+create_article("apuestas-ligas-filiales-jong-goles", "Apuestas en Ligas Filiales (Jong): Minería del Futbol Ofensivo", "Estrategia asiática secreta para obtener un asombroso Win-Rate mediante el mercado Goleador Over 1.5 analizando escuelas formativas holandesas.", "Guía táctica", "7", html_1)
+create_article("clima-altura-gol-equipo-local", "El Factor Fortaleza: Rachas Locales y la Fisiología de la Altura", "Aprovechando ventajas atmosféricas y agónicas para apostar científicamente al 'Gol de Equipo Local' y aniquilar falacias de estadios difíciles.", "Estadística Pro", "8", html_2)
+create_article("derbis-este-europa-tarjetas-apuestas", "Derbis Balcánicos del Este: El Paraíso de Apuestas por Tarjetas", "Beneficiándose financieramente de rivalidades históricas de choque y del comportamiento forense sancionador bajo árbitros condicionados de alta letalidad.", "Ranking Árbitros", "8", html_3)
+create_article("corners-asimetricos-individual-equipo", "Córners Asimétricos o de Equipo: Evadiendo a los Rivales Inútiles", "Aísla el XG perimetral del gran dominador dictaminando la destrucción y despejes constantes hacia el córner usando la táctica del Team Corner Individual.", "Value Bet", "7", html_4)
 
 print("done")
