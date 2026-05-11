@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Goles Esperados (xG): El Indicador Rey en Apuestas | Danni Apuesta</title>
+  <meta name="description" content="Guía completa sobre xG (Expected Goals). Descubre cómo esta métrica avanzada cambió las apuestas deportivas y cómo usarla para predecir partidos." />
+  <link rel="canonical" href="https://danniapuesta.com/blog/que-son-los-goles-esperados-xg-apuestas-deportivas/" />
+
+  <meta property="og:title" content="Goles Esperados (xG): El Indicador Rey en Apuestas | Danni Apuesta" />
+  <meta property="og:description" content="Guía completa sobre xG (Expected Goals). Descubre cómo esta métrica avanzada cambió las apuestas deportivas y cómo usarla para predecir partidos." />
+  <meta property="og:url" content="https://danniapuesta.com/blog/que-son-los-goles-esperados-xg-apuestas-deportivas/" />
+  <meta property="og:type" content="article" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #080c10; color: #8099bb; line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(800px, 92%); margin: 0 auto; }
+    .site-header { border-bottom: 1px solid #1e2d42; background: rgba(8, 12, 16, 0.95); position: sticky; top: 0; z-index: 50; backdrop-filter: blur(10px); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 78px; width: min(1180px, 92%); margin: 0 auto; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.6px; color: #e8f0fe; font-size: 2rem; }
+    .logo-mark { color: #00b4d8; }
+    .header-actions { display: flex; align-items: center; gap: 12px; }
+    .header-link { color: #c7d8f0; font-weight: 500; }
+    .header-cta { background: linear-gradient(135deg, #00b4d8, #0077b6); color: #04121c; font-weight: 700; padding: 12px 18px; border-radius: 999px; }
+    
+    .article-wrap { padding: 60px 0; }
+    .breadcrumb { display: flex; gap: 8px; font-size: 0.9rem; color: #6b82a0; margin-bottom: 24px; align-items: center; }
+    .breadcrumb a { color: #97b7df; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    
+    .article-header h1 { font-family: 'Bebas Neue', sans-serif; font-size: 3.2rem; color: #e8f0fe; line-height: 1.05; letter-spacing: 0.5px; margin-bottom: 20px; }
+    .article-meta { display: flex; gap: 16px; font-size: 0.95rem; color: #7d98bd; padding-bottom: 30px; border-bottom: 1px solid #1e2d42; margin-bottom: 40px; }
+    
+    .content h2 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: #00b4d8; margin: 40px 0 16px; }
+    .content h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.6rem; color: #c7d8f0; margin: 30px 0 12px; }
+    .content p { margin-bottom: 20px; font-size: 1.05rem; }
+    .content ul { margin: 0 0 20px 20px; }
+    .content li { margin-bottom: 10px; }
+    
+    .promo-box { background: linear-gradient(135deg, #0f1722, #10273a); border: 1px solid #1d3a55; border-radius: 16px; padding: 30px; text-align: center; margin: 40px 0; }
+    .promo-box h3 { font-family: 'Bebas Neue', sans-serif; color: #e8f0fe; font-size: 2rem; margin-bottom: 12px; margin-top:0; }
+    .promo-box p { color: #a8c0e0; margin-bottom: 20px; }
+
+    @keyframes pulseBono {
+      0% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0.7); transform: scale(1); }
+      50% { box-shadow: 0 0 25px 5px rgba(0, 230, 118, 0.5); transform: scale(1.02); }
+      100% { box-shadow: 0 0 0 0 rgba(0, 230, 118, 0); transform: scale(1); }
+    }
+    .btn-novibet-pro {
+      background: linear-gradient(135deg, #00e676, #00c6ff) !important; color: #051624 !important; font-weight: 900 !important;
+      text-transform: uppercase !important; letter-spacing: 1px !important; border: 2px solid rgba(255,255,255,0.4) !important;
+      animation: pulseBono 1.8s infinite !important; transition: all 0.3s ease !important;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 28px; border-radius: 8px;
+    }
+    .btn-novibet-pro:hover {
+      background: #fff !important; color: #00e676 !important; border-color: #00e676 !important;
+      transform: translateY(-2px) scale(1.03) !important; box-shadow: 0 10px 30px rgba(0, 230, 118, 0.8) !important;
+    }
+
+    @media (max-width: 640px) {
+      .article-header h1 { font-size: 2.4rem; }
+      .content h2 { font-size: 1.8rem; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://danniapuesta.com/blog/que-son-los-goles-esperados-xg-apuestas-deportivas/"
+    },
+    "headline": "Goles Esperados (xG): El Indicador Rey en Apuestas",
+    "description": "Guía completa sobre xG (Expected Goals). Descubre cómo esta métrica avanzada cambió las apuestas deportivas y cómo usarla para predecir partidos.",
+    "author": {
+      "@type": "Organization",
+      "name": "Danni Apuesta"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Danni Apuesta",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://danniapuesta.com/logo.png"
+      }
+    },
+    "datePublished": "2026-05-11"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://danniapuesta.com" class="logo"><span class="logo-mark">⚽</span> Danni Apuesta</a>
+      <div class="header-actions">
+        <a class="header-link" href="https://danniapuesta.com/blog/">Blog</a>
+        <a class="header-cta" href="https://danniapuesta.com">Ver Pronósticos →</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-wrap">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Inicio</a> <span>›</span>
+        <a href="/blog/">Blog</a> <span>›</span>
+        <span>Goles Esperados (xG): La Estadística que Revolucionó las Apuestas</span>
+      </div>
+
+      <article>
+        <header class="article-header">
+          <h1>Goles Esperados (xG): La Estadística que Revolucionó las Apuestas</h1>
+          <div class="article-meta">
+            <span>⏱ 7 min de lectura</span>
+            <span>📅 Actualizado: 11 de Mayo 2026</span>
+          </div>
+        </header>
+
+        <div class="content">
+          <p>Olvídate de métricas engañosas como "posesión del balón" o "tiros totales". En la era moderna del análisis de fútbol, hay una estadística reina que separa a los profesionales de los novatos: <strong>Los Goles Esperados (xG o Expected Goals)</strong>.</p>
+
+<h2>¿Qué es exactamente el xG?</h2>
+<p>El xG es una métrica estadística que evalúa la <strong>calidad</strong> de una ocasión de gol, calculando la probabilidad de que un disparo específico termine en el fondo de la red. Se basa en el análisis de miles de tiros históricos similares.</p>
+<p>El valor del xG va del 0.00 (imposible anotar) al 1.00 (gol seguro).<br>
+Un tiro desde 35 metros con 3 defensores bloqueando puede tener un <strong>xG de 0.02</strong> (2% de probabilidad).<br>
+Un remate solo frente al portero desde el área chica puede tener un <strong>xG de 0.85</strong> (85% de probabilidad).</p>
+
+<h2>¿Por qué el xG es superior a otras estadísticas?</h2>
+<p>Imagina un partido que termina 1-0. El equipo perdedor tuvo un 70% de posesión y 15 tiros lejanos desviados (xG Total = 0.60). El equipo ganador, jugando al contraataque, tuvo solo 4 tiros, pero 3 de ellos fueron mano a mano con el portero (xG Total = 2.40).</p>
+<p>Un fanático casual verá el resumen y dirá "el resultado es injusto porque dominaron la posesión". El apostador inteligente verá el xG y dirá "el equipo que ganó generó muchísimo más peligro real, la victoria es totalmente justa".</p>
+
+<h2>Cómo Usar el xG en tus Pronósticos</h2>
+
+<h3>1. Identificar Falsas Rachas (Overperformance/Underperformance)</h3>
+<p>Si un equipo lleva ganando 4 partidos seguidos por 1-0, pero su xG a favor es de apenas 0.5 por partido y su xG en contra (xGA) es de 2.0, significa que están teniendo mucha suerte (o su portero es Superman). Matemáticamente, esa suerte se acabará pronto. Es el momento perfecto para apostar en su contra antes de que el mercado se dé cuenta.</p>
+
+<h3>2. Encontrar Valor en Mercados de Over/Under</h3>
+<p>Si dos equipos tienen una sequía de goles y sus últimos partidos han sido empates 0-0, las casas de apuestas pondrán cuotas altísimas para el mercado de "Más de 2.5 goles". Sin embargo, si al revisar sus datos ves que ambos equipos están generando un xG de 2.50 por partido pero fallando ocasiones insólitas, estás ante una mina de oro. Los goles llegarán, y la cuota es un regalo.</p>
+
+          <div class="promo-box">
+            <h3>Aplica esta estrategia hoy</h3>
+            <p>Regístrate en Novibet, recibe tu bono de bienvenida y pon en práctica estos conocimientos con nuestros pronósticos diarios gratuitos.</p>
+            <a href="https://tracker.noviaffiliates.com/link?btag=1164993_362243" target="_blank" rel="nofollow noreferrer" class="btn-novibet-pro">
+              🎁 RECLAMAR BONO NOVIBET
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </main>
+</body>
+</html>
