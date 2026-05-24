@@ -429,8 +429,7 @@ tbody td{padding:12px 16px;font-size:.88rem;}
 <div id="login-screen">
   <div class="hero-bg-anim"></div>
   <audio id="bg-audio" loop autoplay preload="auto">
-    <source src="https://cdn.pixabay.com/audio/2022/01/18/audio_d0a13f69d2.mp3" type="audio/mpeg">
-    <source src="https://actions.google.com/sounds/v1/crowds/stadium_crowd.ogg" type="audio/ogg">
+    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_73bb1b5591.mp3" type="audio/mpeg">
   </audio>
   <div class="hero-logo-top">DANNI APUESTA</div>
   
@@ -472,6 +471,9 @@ tbody td{padding:12px 16px;font-size:.88rem;}
   </div>
 </div>
 <script>
+const bgAudio = document.getElementById('bg-audio');
+if (bgAudio) bgAudio.volume = 0.15;
+
 document.body.addEventListener('click', function() {
   const aud = document.getElementById('bg-audio');
   if (aud && aud.paused) aud.play().catch(e => {});
