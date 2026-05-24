@@ -133,9 +133,9 @@ body::before { content: ''; position: fixed; inset: 0; background: radial-gradie
   transition: opacity 0.5s, transform 0.5s;
 }
 .hero-content.fade-out { opacity: 0; transform: scale(0.95); pointer-events: none; position: absolute; }
-.hero-danni {font-family:'Bebas Neue',sans-serif;font-size:7rem;line-height:.85;color:transparent; -webkit-text-stroke: 2px #fff; letter-spacing:8px; animation: slideInLeft .6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;}
-.hero-apuesta {font-family:'Bebas Neue',sans-serif;font-size:8.5rem;line-height:.85;color:var(--accent);letter-spacing:10px;text-shadow:0 0 40px rgba(0,208,247,0.8); animation: slideInRight .6s .1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;}
-.hero-sub {font-size:1.4rem;color:#a0b8d6;letter-spacing:6px;margin:2.5rem 0;font-weight:700;text-transform:uppercase; animation: fadeIn .8s .3s both; background: rgba(0,0,0,0.4); padding: 10px 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);}
+.hero-danni {font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem, 15vw, 7rem);line-height:.85;color:transparent; -webkit-text-stroke: 2px #fff; letter-spacing:clamp(2px, 2vw, 8px); animation: slideInLeft .6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;}
+.hero-apuesta {font-family:'Bebas Neue',sans-serif;font-size:clamp(4.5rem, 18vw, 8.5rem);line-height:.85;color:var(--accent);letter-spacing:clamp(2px, 2vw, 10px);text-shadow:0 0 40px rgba(0,208,247,0.8); animation: slideInRight .6s .1s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;}
+.hero-sub {font-size:clamp(0.8rem, 3vw, 1.4rem);color:#a0b8d6;letter-spacing:clamp(2px, 1vw, 6px);margin:2.5rem 0;font-weight:700;text-transform:uppercase; animation: fadeIn .8s .3s both; background: rgba(0,0,0,0.4); padding: 10px 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05);}
 .hero-btns {display:flex;gap:1.5rem;justify-content:center; animation: popIn .6s .4s both;}
 .hero-btn {background:rgba(18,24,35,0.8);color:#fff;border:1px solid rgba(0,208,247,0.3);padding:18px 45px;border-radius:30px;font-size:1.1rem;cursor:pointer;font-weight:700;letter-spacing:2px;text-transform:uppercase;transition:all .3s; backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(0,0,0,0.5);}
 .hero-btn:hover {background:var(--accent);color:#000;transform:translateY(-5px) scale(1.05);box-shadow:0 15px 30px rgba(0,208,247,0.4); border-color: transparent;}
@@ -428,7 +428,10 @@ tbody td{padding:12px 16px;font-size:.88rem;}
 <!-- LOGIN -->
 <div id="login-screen">
   <div class="hero-bg-anim"></div>
-  <audio id="bg-audio" autoplay loop src="https://actions.google.com/sounds/v1/crowds/stadium_crowd.ogg"></audio>
+  <audio id="bg-audio" loop autoplay preload="auto">
+    <source src="https://cdn.pixabay.com/audio/2022/01/18/audio_d0a13f69d2.mp3" type="audio/mpeg">
+    <source src="https://actions.google.com/sounds/v1/crowds/stadium_crowd.ogg" type="audio/ogg">
+  </audio>
   <div class="hero-logo-top">DANNI APUESTA</div>
   
   <div class="hero-content" id="hero-center">
@@ -473,8 +476,15 @@ document.body.addEventListener('click', function() {
   const aud = document.getElementById('bg-audio');
   if (aud && aud.paused) aud.play().catch(e => {});
 }, { once: true });
+document.body.addEventListener('touchstart', function() {
+  const aud = document.getElementById('bg-audio');
+  if (aud && aud.paused) aud.play().catch(e => {});
+}, { once: true });
 
 function openAuthBox(tab) {
+  const aud = document.getElementById('bg-audio');
+  if (aud && aud.paused) aud.play().catch(e => {});
+  
   document.getElementById('hero-center').classList.add('fade-out');
   document.getElementById('auth-box').classList.add('show');
   if(tab === 'login'){ switchLT('login', document.getElementById('tab-login-btn')); }
