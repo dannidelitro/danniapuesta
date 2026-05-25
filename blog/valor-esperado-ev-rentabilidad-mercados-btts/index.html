@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Comprende el concepto matemático de Valor Esperado Positivo aplicado al mercado de Ambos Equipos Marcan." />
+  <title>Valor Esperado (EV+): Rentabilidad real en mercados BTTS | Danni Apuesta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #00e676; --rojo: #ff1744; --amarillo: #ffd600; --bg: #05080c; --card: rgba(18,24,35,0.65); --border: rgba(255,255,255,0.08); --text: #e8f0fe; --muted: #7d98bd; --accent: #00d0f7; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg) url('../../dash_bg.png') center/cover no-repeat fixed; color: var(--text); line-height: 1.7; position: relative; }
+    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(circle at 15% 50%, rgba(0, 180, 216, 0.12), transparent 40%), radial-gradient(circle at 85% 30%, rgba(0, 230, 118, 0.08), transparent 40%), rgba(5,8,12,0.88); z-index: -2; }
+    a { text-decoration: none; color: inherit; }
+    header { background: rgba(10,15,22,0.85); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Bebas Neue'; font-size: 2rem; color: #fff; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,208,247,0.5); }
+    .back-btn { font-size: 0.9rem; color: var(--accent); border: 1px solid var(--accent); padding: 5px 15px; border-radius: 20px; transition: all 0.3s; }
+    .back-btn:hover { background: var(--accent); color: #000; box-shadow: 0 0 15px var(--accent); }
+    
+    .article-container { max-width: 800px; margin: 3rem auto; padding: 2.5rem; background: var(--card); backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: 24px; box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+    .article-header { text-align: center; margin-bottom: 3rem; }
+    .article-tag { background: rgba(0,208,247,0.1); color: var(--accent); padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 1rem; border: 1px solid rgba(0,208,247,0.3); }
+    h1 { font-family: 'Bebas Neue'; font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; letter-spacing: 1px; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    .article-meta { color: var(--muted); font-size: 0.9rem; }
+    
+    .article-content h2 { font-family: 'Bebas Neue'; font-size: 2.2rem; color: var(--accent); margin: 2.5rem 0 1rem; letter-spacing: 1px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .article-content p { margin-bottom: 1.5rem; font-size: 1.05rem; color: #a5b9d4; }
+    .article-content ul { margin: 0 0 1.5rem 2rem; color: #a5b9d4; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .article-content strong { color: #fff; background: rgba(255,255,255,0.05); padding: 0 4px; border-radius: 4px; }
+    
+    .cta-box { background: linear-gradient(145deg, rgba(0,230,118,0.1), rgba(0,0,0,0.5)); border: 1px solid rgba(0,230,118,0.3); padding: 2rem; border-radius: 16px; text-align: center; margin-top: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .cta-box h3 { font-family: 'Bebas Neue'; font-size: 2rem; margin-bottom: 1rem; color: #fff; letter-spacing: 1px; }
+    .cta-btn { display: inline-block; background: var(--verde); color: #000; font-weight: 900; padding: 15px 35px; border-radius: 30px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; box-shadow: 0 10px 25px rgba(0,230,118,0.4); }
+    .cta-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 15px 35px rgba(0,230,118,0.6); }
+    
+    @media(max-width: 768px) {
+      .article-container { margin: 1rem; padding: 1.5rem; }
+      h1 { font-size: 2.5rem; }
+      .article-content h2 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">DANNI APUESTA</a>
+    <a href="/blog/" class="back-btn">Volver al Blog</a>
+  </header>
+  
+  <main class="article-container">
+    <div class="article-header">
+      <span class="article-tag">Estrategia VIP</span>
+      <h1>Valor Esperado (EV+): La Base del Trading Deportivo</h1>
+      <div class="article-meta">Por Danni Apuesta | Teoría Cuantitativa</div>
+    </div>
+    
+    <div class="article-content">
+      
+        <p>La diferencia fundamental entre un apostador recreacional y un inversor cuantitativo es el dominio absoluto del concepto de <strong>Valor Esperado (EV)</strong>. Aplicar esta fórmula matemática al mercado de <em>Ambos Equipos Marcan (BTTS)</em> es una de las estrategias más rentables a largo plazo.</p>
+        
+        <h2>La Fórmula del Éxito</h2>
+        <p>El EV+ se calcula con una simple ecuación: <code>EV = (Probabilidad Real × Cuota) - 1</code>. Si el modelo estadístico determina que un partido tiene un 70% de probabilidades de BTTS, pero la casa de apuestas paga una cuota de 1.60, el cálculo es: (0.70 × 1.60) - 1 = +0.12. Esto significa un margen de beneficio teórico del 12% a largo plazo.</p>
+        
+        <h2>Ignorando la Intuición</h2>
+        <p>El mercado a menudo infla cuotas basándose en la popularidad de los equipos o rachas engañosas de "arco en cero" contra rivales de nivel inferior. Un modelo predictivo frío cruza métricas como Goles Esperados (xG), historial directo y bajas defensivas para establecer la probabilidad real, desnuda de emociones.</p>
+        
+        <h2>El Mercado BTTS</h2>
+        <p>El BTTS es particularmente sensible al EV+ porque depende de la fragilidad estructural de ambos contendientes. Un solo error defensivo cambia la dinámica del partido. Encontrar asimetrías entre la cuota ofrecida y el poderío ofensivo real es la verdadera clave para generar un bankroll sostenible en el tiempo.</p>
+        
+    </div>
+    
+    <div class="cta-box">
+      <h3>¿Listo para aplicar estas estrategias?</h3>
+      <p style="margin-bottom: 1.5rem; color: #a5b9d4;">Aprovecha el bono VIP y comienza a rentabilizar tu conocimiento en ligas de alta fricción.</p>
+      <a href="javascript:void(0)" onclick="window.goNovibet()" class="cta-btn">RECLAMAR BONO VIP</a>
+    </div>
+  </main>
+  
+  <script>
+    window.goNovibet = async function() {
+      window.open('https://pro.cl.novibet.com/apuestas-deportivas/chilean200/?btag=2007720_8533518657&utm_source=2007720_&utm_medium=affiliate&utm_campaign=CHILEAN200');
+    };
+  </script>
+</body>
+</html>

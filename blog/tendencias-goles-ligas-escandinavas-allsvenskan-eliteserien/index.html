@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Análisis de Goles Esperados (xG) y tendencias ofensivas en torneos escandinavos como la Allsvenskan y la Eliteserien." />
+  <title>Apuestas en Ligas Escandinavas: Tendencias de Goles y xG | Danni Apuesta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --verde: #00e676; --rojo: #ff1744; --amarillo: #ffd600; --bg: #05080c; --card: rgba(18,24,35,0.65); --border: rgba(255,255,255,0.08); --text: #e8f0fe; --muted: #7d98bd; --accent: #00d0f7; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg) url('../../dash_bg.png') center/cover no-repeat fixed; color: var(--text); line-height: 1.7; position: relative; }
+    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(circle at 15% 50%, rgba(0, 180, 216, 0.12), transparent 40%), radial-gradient(circle at 85% 30%, rgba(0, 230, 118, 0.08), transparent 40%), rgba(5,8,12,0.88); z-index: -2; }
+    a { text-decoration: none; color: inherit; }
+    header { background: rgba(10,15,22,0.85); backdrop-filter: blur(15px); border-bottom: 1px solid var(--border); padding: 1rem 2rem; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .logo { font-family: 'Bebas Neue'; font-size: 2rem; color: #fff; letter-spacing: 2px; text-shadow: 0 0 10px rgba(0,208,247,0.5); }
+    .back-btn { font-size: 0.9rem; color: var(--accent); border: 1px solid var(--accent); padding: 5px 15px; border-radius: 20px; transition: all 0.3s; }
+    .back-btn:hover { background: var(--accent); color: #000; box-shadow: 0 0 15px var(--accent); }
+    
+    .article-container { max-width: 800px; margin: 3rem auto; padding: 2.5rem; background: var(--card); backdrop-filter: blur(16px); border: 1px solid var(--border); border-radius: 24px; box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+    .article-header { text-align: center; margin-bottom: 3rem; }
+    .article-tag { background: rgba(0,208,247,0.1); color: var(--accent); padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: inline-block; margin-bottom: 1rem; border: 1px solid rgba(0,208,247,0.3); }
+    h1 { font-family: 'Bebas Neue'; font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; letter-spacing: 1px; text-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+    .article-meta { color: var(--muted); font-size: 0.9rem; }
+    
+    .article-content h2 { font-family: 'Bebas Neue'; font-size: 2.2rem; color: var(--accent); margin: 2.5rem 0 1rem; letter-spacing: 1px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .article-content p { margin-bottom: 1.5rem; font-size: 1.05rem; color: #a5b9d4; }
+    .article-content ul { margin: 0 0 1.5rem 2rem; color: #a5b9d4; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .article-content strong { color: #fff; background: rgba(255,255,255,0.05); padding: 0 4px; border-radius: 4px; }
+    
+    .cta-box { background: linear-gradient(145deg, rgba(0,230,118,0.1), rgba(0,0,0,0.5)); border: 1px solid rgba(0,230,118,0.3); padding: 2rem; border-radius: 16px; text-align: center; margin-top: 3rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+    .cta-box h3 { font-family: 'Bebas Neue'; font-size: 2rem; margin-bottom: 1rem; color: #fff; letter-spacing: 1px; }
+    .cta-btn { display: inline-block; background: var(--verde); color: #000; font-weight: 900; padding: 15px 35px; border-radius: 30px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; box-shadow: 0 10px 25px rgba(0,230,118,0.4); }
+    .cta-btn:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 15px 35px rgba(0,230,118,0.6); }
+    
+    @media(max-width: 768px) {
+      .article-container { margin: 1rem; padding: 1.5rem; }
+      h1 { font-size: 2.5rem; }
+      .article-content h2 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="logo">DANNI APUESTA</a>
+    <a href="/blog/" class="back-btn">Volver al Blog</a>
+  </header>
+  
+  <main class="article-container">
+    <div class="article-header">
+      <span class="article-tag">Estrategia VIP</span>
+      <h1>Ligas Escandinavas: El Paraíso del BTTS y el Over</h1>
+      <div class="article-meta">Por Danni Apuesta | Teoría Cuantitativa</div>
+    </div>
+    
+    <div class="article-content">
+      
+        <p>Las competiciones nórdicas como la <strong>Allsvenskan</strong> sueca y la <strong>Eliteserien</strong> noruega presentan un ecosistema fascinante para el inversor deportivo. Su calendario de primavera-otoño y la marcada vocación ofensiva de sus clubes generan tendencias de goles (xG) que desafían las medias del resto de Europa.</p>
+        
+        <h2>La Naturaleza Ofensiva Nórdica</h2>
+        <p>A diferencia de ligas latinas más conservadoras, el fútbol escandinavo prioriza las transiciones rápidas y el juego por las bandas. Esto se traduce en un volumen altísimo de llegadas al área, elevando drásticamente el porcentaje de éxito en los mercados de <em>Ambos Equipos Marcan (BTTS)</em> y <em>Over 2.5 Goles</em>.</p>
+        
+        <h2>Goles Esperados (xG) y Superficies</h2>
+        <p>Un factor crucial en estas ligas es el uso extensivo de césped artificial. Esta superficie acelera la circulación del balón y reduce los errores en pases cortos, lo que estadísticamente infla los Goles Esperados de los equipos locales. Apostar al BTTS en estadios sintéticos contra visitantes de élite suele arrojar un <strong>Valor Esperado (EV+)</strong> muy consistente.</p>
+        
+        <h2>Identificando Defensas Endebles</h2>
+        <p>El contraste en estas ligas es brutal. Mientras que los ataques suelen ser efectivos, los equipos de media tabla y baja sufren de un desorden defensivo estructural (muchos clubes encajan gol en el 90-100% de sus localías). Detectar estos agujeros estadísticos es el primer paso para capitalizar en Escandinavia.</p>
+        
+    </div>
+    
+    <div class="cta-box">
+      <h3>¿Listo para aplicar estas estrategias?</h3>
+      <p style="margin-bottom: 1.5rem; color: #a5b9d4;">Aprovecha el bono VIP y comienza a rentabilizar tu conocimiento en ligas de alta fricción.</p>
+      <a href="javascript:void(0)" onclick="window.goNovibet()" class="cta-btn">RECLAMAR BONO VIP</a>
+    </div>
+  </main>
+  
+  <script>
+    window.goNovibet = async function() {
+      window.open('https://pro.cl.novibet.com/apuestas-deportivas/chilean200/?btag=2007720_8533518657&utm_source=2007720_&utm_medium=affiliate&utm_campaign=CHILEAN200');
+    };
+  </script>
+</body>
+</html>
