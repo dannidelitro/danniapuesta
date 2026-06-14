@@ -650,6 +650,7 @@ def generate_article_html(art, all_articles):
   <meta property="og:site_name" content="Danni Apuesta" />
   <meta property="og:image" content="https://danniapuesta.com/hero_bg2.png" />
   
+  <link rel="canonical" href="https://danniapuesta.com/blog/{art['slug']}/" />
   <title>{art['title']} | Danni Apuesta</title>
   
   <script type="application/ld+json">
