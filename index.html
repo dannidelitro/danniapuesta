@@ -193,7 +193,7 @@ function closeAuthBox() {
   <div class="fcard">
     <div class="fgrid">
       <div class="fg"><label>Fecha</label><input type="date" id="inp-fecha"></div>
-      <div class="fg"><label>Cantidad de Partidos</label><input type="number" id="inp-liga" placeholder="Ej: 3" min="1"></div>
+      <div class="fg"><label>Competición / Liga</label><input type="text" id="inp-liga" placeholder="Ej: Premier League"></div>
       <div class="fg"><label>Partido</label><input type="text" id="inp-partido" placeholder="Ej: Arsenal vs Chelsea"></div>
       <div class="fg"><label>Tipo de Apuesta</label>
         <select id="inp-sistema">
@@ -360,7 +360,7 @@ function closeAuthBox() {
 </div>
 
 <!-- SEO Visible Footer Section -->
-<div style="background:var(--card); border-radius:20px; padding:2rem; margin:3rem 0 1rem; border:1px solid var(--border); box-shadow:0 10px 30px rgba(0,0,0,0.2);">
+<div style="display:none;" aria-hidden="true">
   <h2 style="font-family:'Bebas Neue';font-size:2rem;color:var(--accent);margin-bottom:1rem;letter-spacing:1px;">Plataforma Danni Apuesta: Tracker de Apuestas Deportivas</h2>
   <p style="color:var(--muted);margin-bottom:1.5rem;font-size:1.05rem;line-height:1.7;">
     Danni Apuesta es la aplicación definitiva para llevar el control de tus apuestas deportivas. Registra cada apuesta de fútbol, calcula automáticamente tu Win Rate, ROI, y gestiona tu bankroll de forma profesional y totalmente gratuita. Sin descargas, siempre accesible desde tu navegador.
@@ -407,7 +407,7 @@ function closeAuthBox() {
     <h3>🪜 Escalón <span id="step-n"></span></h3>
     <input type="hidden" id="step-idx">
     <div style="display:flex;flex-direction:column;gap:12px">
-      <div class="fg"><label>Cantidad de Partidos</label><input type="number" id="step-partido" placeholder="Ej: 3" min="1"></div>
+      <div class="fg"><label>Partido</label><input type="text" id="step-partido" placeholder="Ej: Arsenal vs Chelsea"></div>
       <div class="fg"><label>Mercado / Descripción</label><input type="text" id="step-desc" placeholder="Ej: Ambos marcan, +1.5 goles..."></div>
       <div class="fg"><label>Cuota</label><input type="number" id="step-cuota" step="0.01" min="1" placeholder="1.85"></div>
       <div class="fg"><label>Stake (monto apostado)</label><input type="number" id="step-stake" step="0.01" min="0" placeholder="10.00"></div>
@@ -729,11 +729,11 @@ function renderEsc(){
     }
 
     const metaParts = [s.desc || null, cuota ? 'Cuota: ' + cuota : null].filter(Boolean).join(' · ');
-    const cantPartidos = s.partido ? `<strong>${s.partido}</strong> partido${s.partido>1?'s':''}` : 'Escalón vacío — toca para completar';
+    const matchName = s.partido ? `<strong>${s.partido}</strong>` : 'Escalón vacío — toca para completar';
     return `<div class="estep ${cls}" onclick="openStep(${i})">
       <div class="enum">${i + 1}</div>
       <div class="einfo">
-        <div class="epartido">${cantPartidos}</div>
+        <div class="epartido">${matchName}</div>
         ${metaParts ? `<div class="emeta">${metaParts}</div>` : ''}
         ${moneyLine ? `<div style="margin-top:4px">${moneyLine}</div>` : ''}
       </div>
